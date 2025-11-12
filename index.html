@@ -99,6 +99,31 @@
       margin: 0 0 8px;
       font-weight: 700;
     }
+    .brand-badge{
+      display:flex; align-items:center; justify-content:center; gap:12px;
+      margin: 2px auto 12px;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      width: fit-content;
+    }
+    .brand-icon{ width: 32px; height: 32px; display:block; }
+    .brand-name{ font-weight:900; color:#fff; letter-spacing:.02em; font-size:1.05rem; }
+    .brand-sub{ font-size:.85rem; color:#d1f4ff; opacity:.85; margin-left:6px; }
+    /* Hero 组合：统一节奏与层级 */
+    .hero{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+    .hero h1{ margin: 2px 0 0; }
+    .hero-divider{ width:min(440px,88%); height:1px; background: rgba(255,255,255,.12); margin: 2px 0 0; border-radius:1px; }
+    .hero .notice-bar-top{ margin: 4px 0 0; font-size:.85rem; color:#cfeff6; }
+    .brand-title {
+      margin: 4px 0 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-align: center;
+    }
     .badges {
       display: flex;
       flex-wrap: wrap;
@@ -734,19 +759,15 @@
 
 /* 压缩首屏：隐藏大公告卡片，仅保留细公告条 */
 .cost-notice{ display:none !important; }
-.notice-bar-top{
-  margin: 10px auto 6px;
+  .notice-bar-top{
+  margin: 6px auto 2px;
   display:flex; align-items:center; justify-content:center;
   max-width:520px;
-  padding:.5rem .75rem; border-radius:9999px;
-  background:
-    linear-gradient(180deg, rgba(31,182,207,.20) 0%, rgba(20,184,166,.18) 100%),
-    rgba(255,255,255,.04);
-  color:#d9fbff; font-weight:700; border: 1px solid rgba(31,182,207,.45);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-  font-size:.95rem;
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  padding:0; border-radius:0;
+  background: transparent;
+  color:#aef3ff; font-weight:700; border: 0;
+  box-shadow: none;
+  font-size:.92rem;
 }
 .small-risk{
   margin:8px 0 2px; text-align:center; color: rgba(255,255,255,.9);
@@ -782,11 +803,11 @@
 
 /* 细公告条（保持简洁） */
 .notice-bar-top{
-  margin: 10px auto 6px; display:flex; align-items:center; justify-content:center;
-  max-width:520px; padding:.5rem .75rem; border-radius:12px;
-  background: var(--brand-glass);
-  color: var(--text-strong); font-weight:700; border: 1px solid var(--surface-glass);
-  box-shadow: none; font-size:.95rem;
+  margin: 6px auto 2px; display:flex; align-items:center; justify-content:center;
+  max-width:520px; padding:0; border-radius:0;
+  background: transparent;
+  color: #aef3ff; font-weight:700; border: 0;
+  box-shadow: none; font-size:.92rem;
 }
 .small-risk{ margin:8px 0 2px; text-align:center; color:rgba(255,255,255,.9); font-size:.9rem; }
 /* 底部公告条（全宽） */
@@ -925,18 +946,19 @@ a#openWhyTop:hover{ color:#fff; }
 .rs-title{margin:.2rem 0 1rem;font-size:1.1rem;font-weight:800;text-align:center;}
 .rs-close{position:absolute;transform:translate(470px,-10px);background:#111827;color:#fff;border:none;padding:.35rem .55rem;border-radius:8px;cursor:pointer;}
 .rs-body p{margin:.4rem 0;text-align:center;}
-.rs-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;}
-.rs-option{padding:16px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:12px;cursor:pointer;transition:all .2s ease;text-align:center;}
+    .rs-options{display:flex;flex-direction:column;gap:16px;margin:20px 0;max-width:400px;margin-left:auto;margin-right:auto;}
+    .rs-option{padding:20px 16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;cursor:pointer;transition:all .2s ease;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.1);}
 .rs-option:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);transform:translateY(-2px);}
-.rs-option-title{font-weight:700;margin-bottom:6px;color:#fff;}
-.rs-option-desc{font-size:.85rem;opacity:.8;margin-bottom:8px;}
-.rs-option-url{font-size:.8rem;color:var(--brand-500);word-break:break-all;}
+    .rs-option-title{font-weight:800;margin-bottom:8px;color:#fff;font-size:1.05rem;}
+    .rs-option-desc{font-size:.9rem;opacity:.85;margin-bottom:10px;color:#d1f4ff;}
+    .rs-option-url{font-size:.85rem;color:var(--brand-500);word-break:break-all;font-weight:600;}
 .rs-actions{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap;margin:.9rem 0 .4rem;justify-content:center;}
 .rs-btn{all:unset;cursor:pointer;padding:.55rem .9rem;border-radius:10px;font-weight:800;}
 .rs-btn-primary{background:linear-gradient(180deg,var(--brand-600),var(--brand-500));color:#fff;}
 .rs-btn-ghost{border:1px solid rgba(255,255,255,.65);color:#fff;}
 @media (max-width:640px){ 
-  .rs-options{ grid-template-columns:1fr; gap:8px; }
+  .rs-options{ max-width:100%; gap:12px; }
+  .rs-option{ padding:16px 12px; }
 }
 @media (max-width:480px){ 
   .rs-close{ transform:translate(260px,-10px);} 
@@ -985,8 +1007,32 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 <main class="card">
 <!-- 顶部 -->
 <header class="card-header">
+<div class="hero">
+<div class="brand-badge" aria-label="光年升级计划 官方充值平台">
+  <svg class="brand-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#22D3EE"/>
+        <stop offset="1" stop-color="#14B8A6"/>
+      </linearGradient>
+    </defs>
+    <!-- 上升箭头（升级感） -->
+    <path d="M30 8 L40 8 L40 18" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40 8 L25 23" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
+    <!-- "光"字抽象：竖 + 横 + 撇 -->
+    <path d="M14 10 L14 36" stroke="#aef3ff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M8 22 L26 22" stroke="#aef3ff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M10 36 C16 30, 22 28, 28 28" stroke="#aef3ff" stroke-width="4" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div>
+    <span class="brand-name">光年升级计划</span>
+    <span class="brand-sub">· 官方充值平台</span>
+  </div>
+</div>
 <h1>GPT Plus 安全充值❗</h1>
 <div class="notice-bar-top">📢 当前价 ¥188 ｜ 官方通道更稳</div>
+<div class="hero-divider"></div>
+</div>
 <!-- 成本暴涨通知 -->
 <div class="cost-notice">
 <div class="cost-notice-icon">📢</div>
@@ -1357,7 +1403,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
       <ul style="margin: 8px 0; padding-left: 20px; line-height: 1.6;">
         <li>购买了自动充值1卡密 → 进入网站1激活</li>
         <li>购买了自动充值2卡密 → 进入网站2激活</li>
-        <li>购买了自动充值3卡密 → 进入网站3激活</li>
       </ul>
       
       <div class="rs-options">
@@ -1370,11 +1415,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
           <div class="rs-option-title">自动充值2</div>
           <div class="rs-option-desc">点击进入激活网站</div>
           <div class="rs-option-url">www.987ai.vip</div>
-        </div>
-        <div class="rs-option" data-url="https://gptoline.com">
-          <div class="rs-option-title">自动充值3</div>
-          <div class="rs-option-desc">点击进入激活网站</div>
-          <div class="rs-option-url">gptoline.com</div>
         </div>
       </div>
       
@@ -1528,7 +1568,7 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   // 入口：顶部小链接 → 默认"流程"；底部按钮 → 默认"价格"
   var openTop = $('#openWhyTop');
   var openBottom = $('#openWhyFooter');
-  if(openTop)    openTop.addEventListener('click', function(e){ e.preventDefault(); openWhy('flow'); });
+  if(openTop)    openTop.addEventListener('click', function(e){ e.preventDefault(); openWhy('price'); });
   if(openBottom) openBottom.addEventListener('click', function(e){ e.preventDefault(); openWhy('price'); });
 
   // 将旧入口映射到新弹窗（兜底）
