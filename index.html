@@ -3,27 +3,28 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8"/>
-<meta content="GPT Plus 官方 iOS 通道代充，¥188/月，微信直充，5 分钟自动到帐" name="description"/>
+<meta content="GPT Plus 官方代充平台，提供稳定安全的GPT-4升级服务，正规iOS通道，封号包赔。" name="description"/>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-<title>GPT Plus 充值平台❗</title>
-<!-- 简单的 CSS，只依赖系统字体 -->
+<title>GPT4.pro - GPT Plus 官方代充平台 | 2025最新升级通道 🛡️</title>
 <style>
     :root {
-      --primary: #14b8a6;      /* 午夜蓝绿主色（Teal） */
-      --primary-dark: #0ea5e9; /* 靛青蓝强调 */
-      --accent: #06b6d4;       /* 霓虹青 */
-      --gray-300: #cbd5e1;     /* 冷灰 */
+      --primary: #14b8a6;      /* 旗舰青（Teal） */
+      --primary-dark: #0f766e; /* 深青强调 */
+      --accent: #2dd4bf;       /* 亮青点缀 */
+      --gray-300: #cbd5e1;
       --gray-500: #64748b;
       --radius: 22px;
 
-      /* Brand (蓝绿) */
-      --brand-500:#14B8A6; /* 主色 */
-      --brand-600:#0EA5E9; /* hover/强调 */
-      --brand-glass: rgba(20,184,166,.18); /* 玻璃条/轻底 */
-
-      /* Accent (冷青点缀，更贴合底色) */
-      --accent-500:#22D3EE;
-      --accent-600:#38BDF8;
+      /* Brand Colors (Teal/Cyan Theme) */
+      --brand-500:#14b8a6; /* 主色 */
+      --brand-600:#0d9488; /* hover/强调 */
+      --brand-glass: rgba(20, 184, 166, 0.18); /* 玻璃条/轻底 */
+      --brand-outline: rgba(45, 212, 191, 0.45);
+      --brand-outline-strong: rgba(45, 212, 191, 0.65);
+      --brand-shadow-soft: rgba(20, 184, 166, 0.18);
+      --brand-shadow-strong: rgba(20, 184, 166, 0.35);
+      --brand-tint: rgba(45, 212, 191, 0.12);
+      --brand-tint-strong: rgba(45, 212, 191, 0.22);
 
       /* Neutral */
       --overlay:#0B1220;                    /* 深夜蓝弹窗/底栏背景 */
@@ -43,15 +44,11 @@
         "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
       background:
         /* 大散景光斑 */
-        radial-gradient(260px 180px at 18% 22%, rgba(255,255,255,.10), transparent 70%),
-        radial-gradient(220px 160px at 68% 16%, rgba(255,255,255,.08), transparent 72%),
-        radial-gradient(180px 140px at 82% 42%, rgba(255,255,255,.06), transparent 75%),
-        radial-gradient(140px 120px at 32% 68%, rgba(255,255,255,.07), transparent 78%),
-        /* 冷青光晕层 */
-        radial-gradient(1200px 700px at 12% -8%, rgba(34,211,238,.18), transparent 60%),
-        radial-gradient(1000px 600px at 90% 12%, rgba(20,184,166,.14), transparent 60%),
+        radial-gradient(260px 180px at 18% 22%, rgba(20,184,166,.12), transparent 70%),
+        radial-gradient(220px 160px at 68% 16%, rgba(45,212,191,.08), transparent 72%),
+        radial-gradient(180px 140px at 82% 42%, rgba(255,255,255,.05), transparent 75%),
         /* 深青蓝底色 */
-        linear-gradient(135deg, #071a22 0%, #0a2430 45%, #0d2e3a 100%);
+        linear-gradient(135deg, #042f2e 0%, #0f172a 45%, #020617 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -66,17 +63,17 @@
       width: 100%;
       max-width: 620px;
       background:
-        linear-gradient(180deg, rgba(20,184,166,.10) 0%, rgba(56,189,248,.08) 100%),
-        rgba(255,255,255,.08);
+        linear-gradient(180deg, rgba(20,184,166,.12) 0%, rgba(45,212,191,.05) 100%),
+        rgba(15, 23, 42, 0.85);
       border-radius: var(--radius);
-      box-shadow: 0 6px 36px rgba(0, 0, 0, 0.10);
+      box-shadow: 0 6px 36px rgba(0, 0, 0, 0.20);
       backdrop-filter: blur(16px) saturate(130%);
       -webkit-backdrop-filter: blur(16px) saturate(130%);
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.35);
       position: relative;
     }
-  /* 金属渐变描边（双描边：外白、内金属） */
+  /* 金属渐变描边 */
   .card::before{
     content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
     border: 1px solid rgba(255,255,255,.45);
@@ -86,7 +83,7 @@
     padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor; mask-composite: exclude;
-    background: linear-gradient(135deg, rgba(58,167,176,.9), rgba(87,191,198,.7), rgba(34,197,221,.85));
+    background: linear-gradient(135deg, rgba(45,212,191,.9), rgba(20,184,166,.75), rgba(13,148,136,.85));
   }
 
     /* 卡片 – 顶部彩条、标题、徽章 */
@@ -111,19 +108,12 @@
     }
     .brand-icon{ width: 32px; height: 32px; display:block; }
     .brand-name{ font-weight:900; color:#fff; letter-spacing:.02em; font-size:1.05rem; }
-    .brand-sub{ font-size:.85rem; color:#d1f4ff; opacity:.85; margin-left:6px; }
-    /* Hero 组合：统一节奏与层级 */
+    .brand-sub{ font-size:.85rem; color:#ccfbf1; opacity:.85; margin-left:6px; }
+    /* Hero 组合 */
     .hero{ display:flex; flex-direction:column; align-items:center; gap:8px; }
     .hero h1{ margin: 2px 0 0; }
     .hero-divider{ width:min(440px,88%); height:1px; background: rgba(255,255,255,.12); margin: 2px 0 0; border-radius:1px; }
-    .hero .notice-bar-top{ margin: 4px 0 0; font-size:.85rem; color:#cfeff6; }
-    .brand-title {
-      margin: 4px 0 10px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-align: center;
-    }
+    .hero .notice-bar-top{ margin: 4px 0 0; font-size:.85rem; color:#ccfbf1; }
     .badges {
       display: flex;
       flex-wrap: wrap;
@@ -136,7 +126,7 @@
     font-weight: 600;
     border-radius: 9999px;
     background: var(--white-85);
-    color:#1f2937;
+    color:#0f172a;
     border: 1px solid var(--surface-glass);
     display: inline-flex;
     align-items: center;
@@ -145,17 +135,6 @@
     width: 95px;
     justify-content: center;
     white-space: nowrap;
-  }
-  .badge.clickable {
-    background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
-    border: 1px solid rgba(34,211,238,.45);
-    box-shadow: 0 2px 8px rgba(14,165,233,.30);
-    transition: all 0.2s ease;
-  }
-  .badge.clickable:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(14,165,233,.40);
-    background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
   }
 
     /* 指标区域 */
@@ -253,7 +232,7 @@
     }
     .btn:hover {
       filter: brightness(1.06);
-      box-shadow: 0 8px 24px rgba(139,92,246,.35);
+      box-shadow: 0 8px 24px rgba(20, 184, 166, 0.35);
       transform: translateY(-1px);
     }
 
@@ -270,67 +249,24 @@
       .card-header { padding: 40px 24px 24px; }
       .form-area   { padding: 32px 24px; }
       
-      /* 价格区域优化 */
-      .price {
-        margin-top: 8px;
-        gap: 6px;
-      }
-      .price-val {
-        font-size: 2.2rem;
-      }
-      .price-tag {
-        font-size: 0.75rem;
-        padding: 3px 8px;
-      }
+      .price { margin-top: 8px; gap: 6px; }
+      .price-val { font-size: 2.2rem; }
+      .price-tag { font-size: 0.75rem; padding: 3px 8px; }
       
-      /* 按钮组移动端优化 */
-      .button-group {
-        flex-direction: column;
-        gap: 8px;
-        margin: 20px 0 8px;
-      }
+      .button-group { flex-direction: column; gap: 8px; margin: 20px 0 8px; }
       .button-group .btn-buy,
-      .button-group .btn-recharge {
-        margin: 0;
-        padding: 16px 0;
-        font-size: 1.05rem;
-      }
+      .button-group .btn-recharge { margin: 0; padding: 16px 0; font-size: 1.05rem; }
       
-      /* 步骤优化 */
-      .steps-mini {
-        gap: 6px 8px;
-        margin: 8px 0 6px;
-      }
-      .step-pill {
-        font-size: 0.75rem;
-        padding: 5px 8px;
-      }
-      .steps-link {
-        font-size: 0.75rem;
-        margin-left: 4px;
-      }
+      .steps-mini { gap: 6px 8px; margin: 8px 0 6px; }
+      .step-pill { font-size: 0.75rem; padding: 5px 8px; }
+      .steps-link { font-size: 0.75rem; margin-left: 4px; }
       
-      /* 徽章优化 */
-      .badges {
-        gap: 8px;
-        margin-top: 16px;
-      }
-      .badge {
-        font-size: 0.7rem;
-        padding: 3px 8px;
-      }
+      .badges { gap: 8px; margin-top: 16px; }
+      .badge { font-size: 0.7rem; padding: 3px 8px; }
       
-      /* 统计优化 */
-      .stats {
-        gap: 16px;
-        margin: 24px 0 8px;
-      }
-      .stat-value {
-        font-size: 0.9rem;
-      }
-      .stat-label {
-        font-size: 0.7rem;
-      }
+      .stats { gap: 16px; margin: 24px 0 8px; }
+      .stat-value { font-size: 0.9rem; }
+      .stat-label { font-size: 0.7rem; }
     }
   
   /* ======== 价格 + CTA ======== */
@@ -364,12 +300,12 @@
     font-weight:800;
     letter-spacing:.02em;
     color:#fff;
-    background: linear-gradient(180deg, #1fb6cf 0%, #14b8a6 100%);
+    background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 100%); /* 青色渐变 */
     border:none;
     border-radius:14px;
     cursor:pointer;
     transition: transform .15s ease, filter .2s ease;
-    box-shadow:0 6px 14px rgba(14,165,233,.18);
+    box-shadow:0 6px 14px var(--brand-shadow-soft);
     animation: none;
   }
   .btn-buy:hover{ filter: brightness(1.05); transform: translateY(-2px); }
@@ -430,11 +366,11 @@
     margin:10px 0 4px;
     text-align:center;
     font-size:.82rem;
-    color:#cfeff6;
+    color:#ccfbf1;
     opacity:.95;
   }
   .note-link{
-    color:#bfdbfe;
+    color:#99f6e4;
     text-decoration:underline;
   }
   
@@ -456,14 +392,14 @@
   .cs-body p{ margin:10px 0; }
   .copy{
     margin-left:8px; padding:4px 8px; font-size:.78rem;
-    border-radius:8px; border:1px solid rgba(6,182,212,.45); background: rgba(6,182,212,.18); color:#0f172a; cursor:pointer;
+    border-radius:8px; border:1px solid var(--brand-outline); background: var(--brand-tint); color:#0f172a; cursor:pointer;
   }
   .qq-toggle-btn{
     width:100%; margin-top:8px; padding:6px 8px; font-size:.8rem;
-    border:1px solid rgba(6,182,212,.45); background: rgba(6,182,212,.18); border-radius:6px;
+    border:1px solid var(--brand-outline); background: var(--brand-tint); border-radius:6px;
     cursor:pointer; color:#0f172a; transition:background .2s;
   }
-  .qq-toggle-btn:hover{ background: rgba(6,182,212,.28); }
+  .qq-toggle-btn:hover{ background: var(--brand-tint-strong); }
   .qq-content{ margin-top:8px; }
   .qr{ display:block; width:100%; border-radius:10px; margin-top:8px; }
   
@@ -471,7 +407,6 @@
   /* ======== 首屏精简：隐藏激活码验证区 ======== */
   .form-area, .steps { display:none !important; }
   /* ===== CTA 强化 ===== */
-  /* 移除呼吸光晕动画，保持更克制的视觉 */
   @keyframes ctaPulse { 0%{opacity:1} 100%{opacity:1} }
 
   /* ===== 移动端浮窗 CTA ===== */
@@ -480,8 +415,8 @@
     display:none;
     text-align:center; font-weight:800; font-size:1.02rem; color:#fff;
     padding:14px 0; border-radius:14px; text-decoration:none;
-    background: linear-gradient(180deg, #1fb6cf 0%, #14b8a6 100%);
-    box-shadow:0 6px 14px rgba(14,165,233,.18);
+    background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 100%);
+    box-shadow:0 6px 14px var(--brand-shadow-soft);
   }
   @media (max-width: 640px){ .cta-sticky{ display:none; } }
   .steps-mini{
@@ -591,16 +526,16 @@
   }
   .flow-support .copy-btn {
     margin-left:8px; padding:2px 6px; font-size:0.78rem;
-    border:1px solid rgba(99,102,241,.45); background: rgba(99,102,241,.18); color:#fff; border-radius:6px;
+    border:1px solid rgba(20,184,166,.45); background: rgba(20,184,166,.12); color:#fff; border-radius:6px;
     cursor:pointer; transition:background .2s;
   }
-  .flow-support .copy-btn:hover { background: rgba(99,102,241,.28); }
+  .flow-support .copy-btn:hover { background: rgba(20,184,166,.22); }
   .flow-qq-toggle-btn{
     width:100%; margin-top:8px; padding:6px 8px; font-size:.8rem;
-    border:1px solid rgba(99,102,241,.45); background: rgba(99,102,241,.18); border-radius:6px;
+    border:1px solid rgba(20,184,166,.45); background: rgba(20,184,166,.12); border-radius:6px;
     cursor:pointer; color:#fff; transition:background .2s;
   }
-  .flow-qq-toggle-btn:hover{ background: rgba(99,102,241,.28); }
+  .flow-qq-toggle-btn:hover{ background: rgba(20,184,166,.22); }
   .flow-qq-content{ margin-top:8px; }
   /* 成本暴涨通知样式 */
   .cost-notice {
@@ -638,7 +573,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #dbfbff;
+    color: #ccfbf1;
   }
   .cost-notice-main {
     display: flex;
@@ -679,10 +614,8 @@
   }
 
 
-  /* 手机端：把客服浮窗提到置底 CTA 之上 */
+  /* 手机端 */
   @media (max-width: 640px) {
-    
-    /* 成本通知移动端优化 */
     .cost-notice {
       padding: 12px 16px;
       margin: 12px 0;
@@ -718,8 +651,6 @@
       font-size: 0.8rem;
       flex-shrink: 0;
     }
-    
-    /* 复制按钮移动端优化 */
     .copy-inline {
       margin-left: 4px;
       padding: 2px 4px;
@@ -755,8 +686,6 @@
     }
   }
 
-
-
 /* 压缩首屏：隐藏大公告卡片，仅保留细公告条 */
 .cost-notice{ display:none !important; }
   .notice-bar-top{
@@ -765,7 +694,7 @@
   max-width:520px;
   padding:0; border-radius:0;
   background: transparent;
-  color:#aef3ff; font-weight:700; border: 0;
+  color:#ccfbf1; font-weight:700; border: 0;
   box-shadow: none;
   font-size:.92rem;
 }
@@ -784,18 +713,18 @@
 }
   .sticky-note .cta-mini{
   all:unset; cursor:pointer; font-weight:800; padding:.45rem .8rem; border-radius:10px;
-  background: linear-gradient(180deg, #1fb6cf 0%, #14b8a6 100%);
-  color:#fff; border:1px solid rgba(14,165,233,.45);
+  background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 100%);
+  color:#fff; border:1px solid var(--brand-outline);
 }
   .sticky-note .cta-outline{
   all:unset; cursor:pointer; font-weight:700; padding:.42rem .75rem; border-radius:10px;
-  border:1px solid rgba(31,182,207,.45); color:#d1f4ff; background: rgba(31,182,207,.12);
+  border:1px solid var(--brand-outline); color:#ccfbf1; background: var(--brand-tint);
 }
 .modal-mask{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:50; padding:16px; }
 .modal-mask.show{ display:flex; }
 .modal-card{ width:min(680px,96vw); background: linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92)); color:#e6f7fb; border-radius:16px; padding:20px 20px 16px;
-  border:1px solid rgba(31,182,207,.35); box-shadow:0 20px 60px rgba(0,0,0,.35); backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative; }
-.modal-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(31,182,207,.85), rgba(20,184,166,.75), rgba(56,189,248,.75)); }
+  border:1px solid var(--brand-outline); box-shadow:0 20px 60px rgba(0,0,0,.35); backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative; }
+.modal-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .modal-card h3{ margin:.2rem 0 1rem; font-size:20px }
 .modal-card p{ line-height:1.7; margin:.4rem 0 1rem }
 .modal-footer{ display:flex; justify-content:flex-end; }
@@ -806,7 +735,7 @@
   margin: 6px auto 2px; display:flex; align-items:center; justify-content:center;
   max-width:520px; padding:0; border-radius:0;
   background: transparent;
-  color: #aef3ff; font-weight:700; border: 0;
+  color: #ccfbf1; font-weight:700; border: 0;
   box-shadow: none; font-size:.92rem;
 }
 .small-risk{ margin:8px 0 2px; text-align:center; color:rgba(255,255,255,.9); font-size:.9rem; }
@@ -820,11 +749,12 @@
 }
 .sticky-note .cta-mini{
   all:unset; cursor:pointer; font-weight:800; padding:.45rem .8rem; border-radius:10px;
-  border:1px solid rgba(255,255,255,.65); color:#fff;
+  background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 100%);
+  border:1px solid var(--brand-outline); color:#fff;
 }
 .sticky-note .cta-outline{
   all:unset; cursor:pointer; font-weight:700; padding:.42rem .75rem; border-radius:10px;
-  border:1px solid rgba(0,0,0,.25); color:#111; background:rgba(255,255,255,.5);
+  border:1px solid var(--brand-outline); color:#ccfbf1; background: var(--brand-tint);
 }
 /* 帮助中心 Modal */
 .help-mask{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:80; padding:16px; }
@@ -832,16 +762,16 @@
 .help-card{
   width:min(760px,96vw); max-height:min(88vh, 1200px); overflow:auto;
   background: linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92)); color:#e6f7fb; border-radius:16px; padding:16px 16px 12px;
-  border:1px solid rgba(31,182,207,.35); box-shadow:0 20px 60px rgba(0,0,0,.35); backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;
+  border:1px solid var(--brand-outline); box-shadow:0 20px 60px rgba(0,0,0,.35); backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;
 }
-.help-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(31,182,207,.85), rgba(20,184,166,.75), rgba(56,189,248,.75)); }
+.help-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .help-close{ position:sticky; top:0; float:right; background:#111827; color:#fff; border:none; padding:.35rem .55rem; border-radius:8px; cursor:pointer; }
 .help-tabs{ display:flex; gap:.5rem; margin:.25rem 0 .75rem; }
   .help-tabs .tab{
   all:unset; cursor:pointer; padding:.48rem .8rem; border-radius:10px; font-weight:700;
-  color:#e5e7eb; border:1px solid rgba(99,102,241,.45); background: rgba(99,102,241,.12);
+  color:#e5e7eb; border:1px solid rgba(20,184,166,.45); background: rgba(20,184,166,.12);
 }
-  .help-tabs .tab.active{ background: rgba(99,102,241,.24); border-color: rgba(99,102,241,.65); }
+  .help-tabs .tab.active{ background: rgba(20,184,166,.24); border-color: rgba(20,184,166,.65); }
 .help-panels .panel{ display:none; }
 .help-panels .panel.active{ display:block; }
 .flow-steps{ padding-left:1.2rem; line-height:1.8; }
@@ -874,11 +804,12 @@ body.modal-open{ overflow:hidden; }
 }
 .sticky-note .cta-mini{
   all:unset; cursor:pointer; font-weight:700; padding:.42rem .75rem; border-radius:10px;
-  border:1px solid rgba(255,255,255,.65); color:#fff;
+  background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 100%);
+  border:1px solid var(--brand-outline-strong); color:#fff;
 }
 .sticky-note .cta-outline{
   all:unset; cursor:pointer; font-weight:700; padding:.42rem .75rem; border-radius:10px;
-  border:1px solid rgba(99,102,241,.75); color:#fff;
+  border:1px solid var(--brand-outline); color:#fff; background: var(--brand-tint);
 }
 
 /* 价格·涨价说明 弹窗 */
@@ -889,10 +820,10 @@ body.modal-open{ overflow:hidden; }
 .modal-close{ position:absolute; transform:translate(670px,-10px); background:#111827; color:#fff; border:none; padding:.35rem .55rem; border-radius:8px; cursor:pointer; }
 .help-tabs{ display:flex; gap:.5rem; margin:.5rem 0 1rem; flex-wrap:wrap; }
 .help-tabs .tab-btn{
-  all:unset; cursor:pointer; padding:.35rem .7rem; border-radius:10px; font-weight:700; color:#cfeff6;
-  border:1px solid rgba(31,182,207,.35); background:rgba(31,182,207,.12);
+  all:unset; cursor:pointer; padding:.35rem .7rem; border-radius:10px; font-weight:700; color:#ccfbf1;
+  border:1px solid var(--brand-outline); background:var(--brand-tint);
 }
-.help-tabs .tab-btn.active{ color:#fff; background: rgba(31,182,207,.24); border-color: rgba(31,182,207,.55); }
+.help-tabs .tab-btn.active{ color:#fff; background: var(--brand-tint-strong); border-color: var(--brand-outline-strong); }
 .tab-panel[hidden]{ display:none !important; }
 .tab-panel.active{ display:block; }
 .flow-steps{ padding-left:1.2rem; margin:.2rem 0 1rem }
@@ -924,8 +855,8 @@ a#openWhyTop:hover{ color:#fff; }
 /* === Recharge Guide (rg-) minimal styles === */
 .rg-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:999;padding:16px;}
 .rg-mask.show{display:flex;}
-.rg-card{width:min(560px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid rgba(31,182,207,.35);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
-.rg-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(31,182,207,.85), rgba(20,184,166,.75), rgba(56,189,248,.75)); }
+.rg-card{width:min(560px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
+.rg-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .rg-title{margin:.2rem 0 1rem;font-size:1.1rem;font-weight:800;}
 .rg-close{position:absolute;transform:translate(500px,-10px);background:#111827;color:#fff;border:none;padding:.35rem .55rem;border-radius:8px;cursor:pointer;}
 .rg-body p{margin:.4rem 0;}
@@ -941,8 +872,8 @@ a#openWhyTop:hover{ color:#fff; }
 /* === 充值系统选择弹窗 (rs-) === */
 .rs-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:999;padding:16px;}
 .rs-mask.show{display:flex;}
-.rs-card{width:min(520px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid rgba(31,182,207,.35);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
-.rs-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(31,182,207,.85), rgba(20,184,166,.75), rgba(56,189,248,.75)); }
+.rs-card{width:min(520px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
+.rs-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .rs-title{margin:.2rem 0 1rem;font-size:1.1rem;font-weight:800;text-align:center;}
 .rs-close{position:absolute;transform:translate(470px,-10px);background:#111827;color:#fff;border:none;padding:.35rem .55rem;border-radius:8px;cursor:pointer;}
 .rs-body p{margin:.4rem 0;text-align:center;}
@@ -1005,35 +936,31 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 </head>
 <body>
 <main class="card">
-<!-- 顶部 -->
 <header class="card-header">
 <div class="hero">
 <div class="brand-badge" aria-label="光年升级计划 官方充值平台">
   <svg class="brand-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
     <defs>
       <linearGradient id="lg" x1="0" y1="1" x2="1" y2="0">
-        <stop offset="0" stop-color="#22D3EE"/>
-        <stop offset="1" stop-color="#14B8A6"/>
+        <stop offset="0" stop-color="#2dd4bf"/>
+        <stop offset="1" stop-color="#14b8a6"/>
       </linearGradient>
     </defs>
-    <!-- 上升箭头（升级感） -->
     <path d="M30 8 L40 8 L40 18" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
     <path d="M40 8 L25 23" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
-    <!-- "光"字抽象：竖 + 横 + 撇 -->
-    <path d="M14 10 L14 36" stroke="#aef3ff" stroke-width="4" stroke-linecap="round"/>
-    <path d="M8 22 L26 22" stroke="#aef3ff" stroke-width="4" stroke-linecap="round"/>
-    <path d="M10 36 C16 30, 22 28, 28 28" stroke="#aef3ff" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M14 10 L14 36" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M8 22 L26 22" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M10 36 C16 30, 22 28, 28 28" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round" fill="none"/>
   </svg>
   <div>
     <span class="brand-name">光年升级计划</span>
     <span class="brand-sub">· 官方充值平台</span>
   </div>
 </div>
-<h1>GPT Plus 安全充值❗</h1>
+<h1>GPT Plus 安全充值 🛡️</h1>
 <div class="notice-bar-top">📢 当前价 ¥188 ｜ 官方通道更稳</div>
 <div class="hero-divider"></div>
 </div>
-<!-- 成本暴涨通知 -->
 <div class="cost-notice">
 <div class="cost-notice-icon">📢</div>
 <div class="cost-notice-content">
@@ -1059,12 +986,10 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 </div>
 </div>
 </div>
-<!-- 🔥 价格 + CTA -->
 <div class="price">
 <span class="price-val">¥188</span>
 <span class="price-tag">月付·标准版</span>
 </div>
-<!-- 购买和充值按钮组 -->
 <div class="button-group">
   <button aria-label="立即购买卡密" class="btn-buy" id="buyBtn">🛒 立即购买 (¥188)</button>
   <button class="btn-recharge" id="rechargeBtn">💳 进入自动充值系统</button>
@@ -1102,7 +1027,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 </div>
 </div>
 </header>
-<!-- 表单 -->
 <section class="form-area">
 <ol class="steps">
 <li class="active">1</li>
@@ -1115,11 +1039,12 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 <button class="btn" onclick="submitCode()">验证激活码</button>
 </section>
 <footer>
-      面向国内用户的代充值通道，采用 iOS 官方渠道；自动化处理，三步完成。
+      <div style="margin-bottom:10px;">面向国内用户的代充值通道，采用 iOS 官方渠道；自动化处理，三步完成。</div>
+      <a href="/blog/" style="color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; border-bottom: 1px solid rgba(20, 184, 166, 0.4); padding-bottom: 2px; transition: all 0.2s;" onmouseover="this.style.color='#fff';this.style.borderColor='#14b8a6'" onmouseout="this.style.color='rgba(255,255,255,0.6)';this.style.borderColor='rgba(20, 184, 166, 0.4)'">
+        📚 GPT-4 新手教程 & 知识库
+      </a>
     </footer>
 </main>
-<!-- 客服浮窗 -->
-
 <div aria-hidden="true" class="cs-drawer" id="csDrawer">
 <div class="cs-head">
 <strong>联系人工</strong>
@@ -1135,8 +1060,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 <button class="copy" onclick="copyText('qq')">复制</button></p>
 </div>
 </div>
-<!-- 如有二维码可自行替换图片路径 -->
-<!-- <img src="/assets/wechat-qr.jpg" alt="微信二维码" class="qr"> -->
 </div>
 </div>
 <script>
@@ -1184,7 +1107,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
     }
     window.copyText = copyText;
   </script>
-<!-- 移动端底部浮窗 CTA -->
 <a aria-label="¥188 立即购买" class="cta-sticky" href="#" role="button" id="mobileBuyBtn">¥188 立即购买</a>
 <script>
     const openFlow = document.getElementById('openFlow');
@@ -1324,7 +1246,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   window.helpCenter = { open: openHelp, close: closeHelp, setTab: setTab };
 })();
 </script>
-<!-- 统一弹窗：为什么不是更便宜 -->
 <div class="modal-mask" id="whyModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-labelledby="whyTitle" tabindex="-1">
     <button class="modal-close" id="whyClose" aria-label="关闭">×</button>
@@ -1375,7 +1296,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   </div>
 </div>
 
-<!-- 充值网站指引（不依赖外部接口） -->
 <div class="rg-mask" id="rechargeGuide" aria-hidden="true">
   <div class="rg-card" role="dialog" aria-labelledby="rgTitle" tabindex="-1">
     <button class="rg-close" id="rgClose" aria-label="关闭">×</button>
@@ -1392,7 +1312,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   </div>
 </div>
 
-<!-- 充值系统选择弹窗 -->
 <div class="rs-mask" id="rechargeSystemModal" aria-hidden="true">
   <div class="rs-card" role="dialog" aria-labelledby="rsTitle" tabindex="-1">
     <button class="rs-close" id="rsClose" aria-label="关闭">×</button>
@@ -1425,7 +1344,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   </div>
 </div>
 
-<!-- 缺货公告弹窗 -->
 <div class="modal-mask" id="outOfStockModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-labelledby="outOfStockTitle" tabindex="-1">
     <button class="modal-close" id="outOfStockClose" aria-label="关闭">×</button>
@@ -1457,13 +1375,11 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   </div>
 </div>
 
-<!-- 官方价格通知 & 合规说明（完整版） -->
 <div class="proof-mask" id="officialProof" aria-hidden="true">
   <div class="proof-card" role="dialog" aria-labelledby="proofTitle" tabindex="-1">
     <button class="proof-close" id="proofClose" aria-label="关闭">×</button>
     <h3 class="proof-title" id="proofTitle">官方价格通知 & 合规说明</h3>
 
-    <!-- 官方价格通知（摘要） -->
     <section class="proof-sec" id="proof-official">
       <h4>官方价格通知（摘要）</h4>
       <ul class="proof-list">
@@ -1476,14 +1392,12 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
         <button class="proof-btn proof-btn-ghost" id="toggleProofImg">查看官方通知截图</button>
       </div>
 
-      <!-- 截图悬浮窗 -->
       <div class="proof-imgwrap" id="proofImgWrap">
         <button class="img-close" id="imgClose" aria-label="关闭图片">×</button>
         <img class="proof-img" id="proofImg" src="gpt 图片.png" alt="官方价格通知截图">
       </div>
     </section>
 
-    <!-- 关于"低汇率国家"的说明 -->
     <section class="proof-sec" id="proof-forex">
       <h4>关于"低汇率国家"的说明</h4>
       <ul class="proof-list">
@@ -1493,7 +1407,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
       <p class="proof-hint">目前没有 <strong>长期可复用</strong> 的低汇率方案；我们仅提供 <strong>官方通道</strong>，含 <strong>售后与风险处置</strong>。</p>
     </section>
 
-    <!-- 结尾 CTA -->
     <section class="proof-sec">
       <div class="proof-actions">
         <button class="proof-btn proof-btn-ghost" id="proofCopyWx">复制微信：<span class="wx">Jiage01888</span></button>
@@ -1776,7 +1689,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 })();
 </script>
 
-<!-- 缺货弹窗逻辑 -->
 <script>
 (function(){
   function $(s){ return document.querySelector(s); }
@@ -1841,7 +1753,6 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 })();
 </script>
 
-<!-- 充值系统选择弹窗逻辑 -->
 <script>
 (function(){
   function $(s){ return document.querySelector(s); }
