@@ -343,7 +343,7 @@
     padding: 14px 0;
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: .02em;
+    letter-spacing:.02em;
     color: #fff;
     background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, rgba(255,255,255,.08) 100%);
     border: 1px solid rgba(255,255,255,.25);
@@ -798,7 +798,7 @@ body.modal-open{ overflow:hidden; }
 .sticky-note{
   position:fixed; left:0; right:0; bottom:0; z-index:30;
   display:flex; align-items:center; justify-content:center; gap:.8rem; flex-wrap:wrap;
-  padding:.7rem 1rem; background: rgba(11,18,32,.90);
+  padding:.7rem 1rem; background:rgba(11,18,32,.90);
   border-top:1px solid var(--surface-glass); backdrop-filter:saturate(140%) blur(4px);
   font-size:14px; color:#fff;
 }
@@ -950,7 +950,7 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
     <path d="M40 8 L25 23" fill="none" stroke="url(#lg)" stroke-width="4" stroke-linecap="round"/>
     <path d="M14 10 L14 36" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
     <path d="M8 22 L26 22" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
-    <path d="M10 36 C16 30, 22 28, 28 28" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <path d="M10 36 C16 30, 22 28, 28 28" stroke="#ccfbf1" stroke-width="4" stroke-linecap="round"/>
   </svg>
   <div>
     <span class="brand-name">光年升级计划</span>
@@ -1062,6 +1062,15 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 </div>
 </div>
 </div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?707cb0fe41fad23ba42b49fef402f68b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <script>
     function submitCode() {
       const code = document.getElementById("code").value.trim();
@@ -1344,7 +1353,7 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
   </div>
 </div>
 
-<div class="modal-mask" id="outOfStockModal" aria-hidden="true">
+<div class="outOfStockModal" id="outOfStockModal" aria-hidden="true">
   <div class="modal-card" role="dialog" aria-labelledby="outOfStockTitle" tabindex="-1">
     <button class="modal-close" id="outOfStockClose" aria-label="关闭">×</button>
     <h3 id="outOfStockTitle" style="margin:.2rem 0 1rem">⚠️ 系统缺货通知</h3>
@@ -1686,6 +1695,61 @@ body.modal-open .sticky-note { opacity:.6; pointer-events:none; }
 
   // 导出函数（如需在别处触发）
   window.openOfficialProof = openProof;
+})();
+</script>
+
+<script>
+(function(){
+  // 常量：充值网址（可按需改）
+  var RG_URL = (["https://","chongzhi",".","pro"].join(""));
+
+  // 工具
+  function $(s){ return document.querySelector(s); }
+  function copyText(t){
+    if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
+    var ta = document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); return Promise.resolve();
+  }
+  function lockScroll(on){ document.body.classList[on?'add':'remove']('modal-open'); } // 不改变你站点样式，仅控制滚动
+
+  // 元素
+  var modal = $('#rechargeGuide');
+  var card  = modal ? modal.querySelector('.rg-card') : null;
+  var closeBtn = $('#rgClose');
+  var btnOpen  = $('#rgOpen');
+  var lastFocus = null;
+
+  // 打开/关闭
+  function openRechargeGuide(){
+    lastFocus = document.activeElement;
+    modal.classList.add('show'); modal.setAttribute('aria-hidden','false');
+    lockScroll(true);
+    (card||modal).focus({preventScroll:true});
+  }
+  function closeRechargeGuide(){
+    modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
+    lockScroll(false);
+    if(lastFocus && typeof lastFocus.focus==='function'){ try{ lastFocus.focus(); }catch(e){} }
+  }
+
+  // 事件
+  if(closeBtn) closeBtn.addEventListener('click', closeRechargeGuide);
+  if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeRechargeGuide(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) closeRechargeGuide(); });
+
+  if(btnOpen){
+    btnOpen.addEventListener('click', function(){
+      window.open(RG_URL, '_blank', 'noopener');
+    });
+  }
+
+  // 暴露全局函数，供你在现有按钮/链接上直接调用
+  window.openRechargeGuide = openRechargeGuide;
+
+  // （可选兜底）如果页面上本来就有某个元素想触发，可给它加 data-open="rechargeGuide"
+  var autoTriggers = document.querySelectorAll('[data-open="rechargeGuide"]');
+  autoTriggers.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); openRechargeGuide(); }); });
 })();
 </script>
 
