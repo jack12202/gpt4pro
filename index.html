@@ -308,7 +308,7 @@
     box-shadow:0 6px 14px var(--brand-shadow-soft);
     animation: none;
   }
-  .btn-buy:hover{ filter: brightness(1.05); transform: translateY(-2px); }
+  .btn-buy:hover{ filter: brightness(1.05); transform: translateY(-1px); }
   .btn-buy:active{ transform: translateY(0); }
   .btn-buy:focus-visible{ outline: 3px solid var(--brand-500); outline-offset: 2px; }
 
@@ -699,7 +699,7 @@
   font-size:.92rem;
 }
 .small-risk{
-  margin:8px 0 2px; text-align:center; color: rgba(255,255,255,.9);
+  margin:8px 0 2px; text-align:center; color:rgba(255,255,255,.9);
   font-size:.9rem;
 }
 
@@ -855,7 +855,7 @@ a#openWhyTop:hover{ color:#fff; }
 /* === Recharge Guide (rg-) minimal styles === */
 .rg-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:999;padding:16px;}
 .rg-mask.show{display:flex;}
-.rg-card{width:min(560px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
+.rg-card{width:min(560px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
 .rg-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .rg-title{margin:.2rem 0 1rem;font-size:1.1rem;font-weight:800;}
 .rg-close{position:absolute;transform:translate(500px,-10px);background:#111827;color:#fff;border:none;padding:.35rem .55rem;border-radius:8px;cursor:pointer;}
@@ -872,7 +872,7 @@ a#openWhyTop:hover{ color:#fff; }
 /* === 充值系统选择弹窗 (rs-) === */
 .rs-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:999;padding:16px;}
 .rs-mask.show{display:flex;}
-.rs-card{width:min(520px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border-radius:16px;padding:20px 20px 16px;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
+.rs-card{width:min(520px,96vw);background:linear-gradient(180deg, rgba(10,36,48,.92), rgba(9,30,40,.92));color:#e6f7fb;border:1px solid var(--brand-outline);box-shadow:0 20px 60px rgba(0,0,0,.35);outline:0; backdrop-filter: blur(8px) saturate(120%); -webkit-backdrop-filter: blur(8px) saturate(120%); position:relative;}
 .rs-card::after{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; padding:1px; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; background: linear-gradient(135deg, rgba(45,212,191,.85), rgba(20,184,166,.75), rgba(13,148,136,.75)); }
 .rs-title{margin:.2rem 0 1rem;font-size:1.1rem;font-weight:800;text-align:center;}
 .rs-close{position:absolute;transform:translate(470px,-10px);background:#111827;color:#fff;border:none;padding:.35rem .55rem;border-radius:8px;cursor:pointer;}
@@ -1353,37 +1353,6 @@ var _hmt = _hmt || [];
   </div>
 </div>
 
-<div class="outOfStockModal" id="outOfStockModal" aria-hidden="true">
-  <div class="modal-card" role="dialog" aria-labelledby="outOfStockTitle" tabindex="-1">
-    <button class="modal-close" id="outOfStockClose" aria-label="关闭">×</button>
-    <h3 id="outOfStockTitle" style="margin:.2rem 0 1rem">⚠️ 系统缺货通知</h3>
-    
-    <div style="text-align: center; margin: 20px 0;">
-      <div style="font-size: 3rem; margin-bottom: 16px;">📦</div>
-      <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">
-        很抱歉，目前全网充值系统缺货，无法自动充值。
-      </p>
-      <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 24px; color: #e5e7eb;">
-        为了不影响您的使用，我们提供<strong style="color: #f97316;">人工手动代充</strong>服务。
-      </p>
-    </div>
-    
-    <div style="background: var(--brand-glass); border: 1px solid var(--surface-glass); border-radius: 12px; padding: 16px; margin: 20px 0;">
-      <p style="margin: 0; font-weight: 600; text-align: center;">
-        💬 请添加微信：<strong style="color: #f97316;">Jiage01888</strong>
-      </p>
-      <p style="margin: 8px 0 0; font-size: 0.9rem; text-align: center; opacity: 0.8;">
-        人工在线：9:00–24:00
-      </p>
-    </div>
-    
-    <div class="modal-footer">
-      <button class="cta-mini" id="copyWeChatOutOfStock">复制微信</button>
-      <button class="cta-outline" id="closeOutOfStockModal">我知道了</button>
-    </div>
-  </div>
-</div>
-
 <div class="proof-mask" id="officialProof" aria-hidden="true">
   <div class="proof-card" role="dialog" aria-labelledby="proofTitle" tabindex="-1">
     <button class="proof-close" id="proofClose" aria-label="关闭">×</button>
@@ -1610,7 +1579,8 @@ var _hmt = _hmt || [];
   function copyText(t){
     if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
     var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
-    try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); return Promise.resolve();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); return Promise.resolve();
   }
   function lockScroll(on){ document.body.classList[on?'add':'remove']('modal-open'); }
 
@@ -1700,66 +1670,12 @@ var _hmt = _hmt || [];
 
 <script>
 (function(){
-  // 常量：充值网址（可按需改）
-  var RG_URL = (["https://","chongzhi",".","pro"].join(""));
-
-  // 工具
-  function $(s){ return document.querySelector(s); }
-  function copyText(t){
-    if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
-    var ta = document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
-    try{ document.execCommand('copy'); }catch(e){}
-    document.body.removeChild(ta); return Promise.resolve();
-  }
-  function lockScroll(on){ document.body.classList[on?'add':'remove']('modal-open'); } // 不改变你站点样式，仅控制滚动
-
-  // 元素
-  var modal = $('#rechargeGuide');
-  var card  = modal ? modal.querySelector('.rg-card') : null;
-  var closeBtn = $('#rgClose');
-  var btnOpen  = $('#rgOpen');
-  var lastFocus = null;
-
-  // 打开/关闭
-  function openRechargeGuide(){
-    lastFocus = document.activeElement;
-    modal.classList.add('show'); modal.setAttribute('aria-hidden','false');
-    lockScroll(true);
-    (card||modal).focus({preventScroll:true});
-  }
-  function closeRechargeGuide(){
-    modal.classList.remove('show'); modal.setAttribute('aria-hidden','true');
-    lockScroll(false);
-    if(lastFocus && typeof lastFocus.focus==='function'){ try{ lastFocus.focus(); }catch(e){} }
-  }
-
-  // 事件
-  if(closeBtn) closeBtn.addEventListener('click', closeRechargeGuide);
-  if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeRechargeGuide(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('show')) closeRechargeGuide(); });
-
-  if(btnOpen){
-    btnOpen.addEventListener('click', function(){
-      window.open(RG_URL, '_blank', 'noopener');
-    });
-  }
-
-  // 暴露全局函数，供你在现有按钮/链接上直接调用
-  window.openRechargeGuide = openRechargeGuide;
-
-  // （可选兜底）如果页面上本来就有某个元素想触发，可给它加 data-open="rechargeGuide"
-  var autoTriggers = document.querySelectorAll('[data-open="rechargeGuide"]');
-  autoTriggers.forEach(function(el){ el.addEventListener('click', function(e){ e.preventDefault(); openRechargeGuide(); }); });
-})();
-</script>
-
-<script>
-(function(){
   function $(s){ return document.querySelector(s); }
   function copyText(t){
     if(navigator.clipboard && navigator.clipboard.writeText){ return navigator.clipboard.writeText(t); }
     var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
-    try{ document.execCommand('copy'); }catch(e){} document.body.removeChild(ta); return Promise.resolve();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); return Promise.resolve();
   }
   function lockScroll(on){ document.body.classList[on?'add':'remove']('modal-open'); }
 
