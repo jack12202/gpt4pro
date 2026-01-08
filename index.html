@@ -50,8 +50,9 @@
         linear-gradient(135deg, #042f2e 0%, #0f172a 45%, #020617 100%);
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: flex-start;
+      padding: 26px 12px 120px; /* 底部留出空间，允许轻微滚动看到底部内容 */
       color: #fff;
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: transparent;
@@ -196,6 +197,35 @@
       .price-val { font-size: 2.2rem; }
       .price-tag { font-size: 0.75rem; padding: 3px 8px; }
       
+
+
+
+
+.actions-gap{ height: 18px; }
+.actions-gap-sm{ height: 12px; }
+.secondary-actions.secondary-between{
+  display:flex;
+  justify-content:center;
+}
+.secondary-actions.secondary-between .btn-ai{
+  width: min(460px, 100%);
+  padding: .62rem 1.0rem;
+  border-radius: 14px;
+  background: rgba(255,255,255,.04);
+  border: 1px dashed rgba(45,212,191,.40);
+  box-shadow: none;
+}
+.secondary-actions.secondary-between .btn-ai:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(45,212,191,.65);
+  transform: translateY(-1px);
+}
+.secondary-actions.secondary-between .btn-ai .sub{
+  font-size:.76rem;
+  opacity:.78;
+}
+
+
       .button-group { flex-direction: column; gap: 8px; margin: 20px 0 8px; }
       .button-group .btn-buy,
       .button-group .btn-recharge { margin: 0; padding: 16px 0; font-size: 1.05rem; }
@@ -863,6 +893,170 @@ a#openWhyTop:hover{ color:#fff; }
 #tab-price .open-proof-link{opacity:.85;text-decoration:underline;cursor:pointer;margin-left:.6rem;}
 @media (max-width:480px){ .proof-close{position:static;float:none;margin-left:auto;display:block;margin-bottom:.2rem;} }
 
+/* === 其他 AI 会员入口（极简一致） === */
+.secondary-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin: 10px 0 0;
+}
+.btn-ai{
+  all:unset;
+  cursor:pointer;
+  font-weight:900;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid var(--brand-outline-strong);
+  background: rgba(255,255,255,.08);
+  color:#fff;
+  text-align:center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.btn-ai:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(45,212,191,.80);
+  transform: translateY(-1px);
+}
+.btn-ai .sub{
+  display:block;
+  font-size:.78rem;
+  font-weight:800;
+  opacity:.86;
+  margin-top:2px;
+  color:#ccfbf1;
+}
+/* 弹窗内容 */
+
+.ai-section{ margin-top: 10px; }
+.ai-section:first-of-type{ margin-top: 6px; }
+.ai-section-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:900;
+  color: rgba(255,255,255,.92);
+  margin: 6px 0 8px;
+  font-size: .92rem;
+  opacity:.95;
+}
+.ai-section-title::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background: rgba(255,255,255,.10);
+  border-radius:1px;
+}
+.ai-items{ display:grid; gap:10px; margin: 12px 0 6px; }
+.ai-item{
+  position:relative;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  transition: transform .16s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+  outline: none;
+}
+.ai-item:hover,
+.ai-item:focus-within{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.085);
+  border-color: rgba(45,212,191,.35);
+  box-shadow: 0 10px 28px rgba(0,0,0,.28);
+}
+.ai-left{ min-width:0; }
+.ai-name{ font-weight:900; color:#fff; }
+.ai-meta{ margin-top:2px; font-size:.82rem; opacity:.85; color: rgba(255,255,255,.82); }
+
+.ai-pill{
+  display:inline-flex;
+  align-items:center;
+  margin-left:8px;
+  padding:2px 8px;
+  font-size:.72rem;
+  font-weight:900;
+  border-radius:9999px;
+  border:1px solid rgba(45,212,191,.55);
+  background: rgba(20,184,166,.16);
+  color:#ccfbf1;
+  white-space:nowrap;
+}
+.ai-note2{
+  opacity:.92;
+  color: rgba(204,251,241,.92);
+  font-weight:700;
+}
+.ai-item.featured{
+  border-color: rgba(45,212,191,.35);
+  background: linear-gradient(180deg, rgba(45,212,191,.12), rgba(255,255,255,.06));
+}
+.ai-item.featured:hover,
+.ai-item.featured:focus-within{
+  border-color: rgba(45,212,191,.60);
+  box-shadow: 0 14px 34px rgba(20,184,166,.18), 0 10px 28px rgba(0,0,0,.28);
+}
+.ai-actions{ display:flex; gap:8px; flex-shrink:0; }
+.ai-tag{
+  display:inline-flex;
+  align-items:center;
+  padding:.32rem .6rem;
+  border-radius:999px;
+  font-size:.78rem;
+  font-weight:800;
+  color:#ccfbf1;
+  border:1px solid rgba(45,212,191,.45);
+  background: rgba(20,184,166,.14);
+  white-space:nowrap;
+}
+
+.ai-actions{ position:relative; }
+.ai-buy{
+  all:unset; cursor:pointer;
+  padding:.42rem .72rem;
+  border-radius:10px;
+  font-weight:900;
+  border:1px solid rgba(45,212,191,.65);
+  color:#fff;
+  background: linear-gradient(180deg, var(--brand-600) 0%, var(--brand-500) 100%);
+}
+.ai-item:focus-within .ai-tag{
+  opacity:0;
+}
+.ai-tip{
+  margin: 10px 0 0;
+  font-size: .86rem;
+  opacity: .86;
+  color: rgba(255,255,255,.85);
+}
+.ai-btn{
+  all:unset; cursor:pointer;
+  padding:.42rem .72rem;
+  border-radius:10px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+  background: rgba(255,255,255,.06);
+  transition: transform .15s ease, filter .2s ease, background .2s ease;
+  white-space:nowrap;
+}
+.ai-btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+.ai-btn.primary{
+  background: linear-gradient(180deg, var(--brand-600) 0%, var(--brand-500) 100%);
+  border-color: rgba(45,212,191,.65);
+}
+.ai-hint{
+  margin: 10px 0 0;
+  font-size: .86rem;
+  opacity: .82;
+  color: rgba(255,255,255,.80);
+  line-height: 1.6;
+}
+
 </style>
 </head>
 <body>
@@ -901,7 +1095,15 @@ a#openWhyTop:hover{ color:#fff; }
   <button aria-label="立即购买卡密" class="btn-buy" id="buyBtn">🛒 立即购买 (¥188)</button>
   <button class="btn-recharge" id="rechargeBtn">💳 进入自动充值系统</button>
 </div>
-<a href="#" id="openWhyTop">为什么不是更便宜</a>
+
+<div class="actions-gap" aria-hidden="true"></div>
+<div class="secondary-actions secondary-between">
+  <button class="btn-ai" id="openAiModal" aria-label="查看其他 AI 官方会员充值">
+    🤖 其他 AI 官方会员（可选）
+    <span class="sub">ChatGPT Pro · Gemini · Claude · Super Grok</span>
+  </button>
+</div>
+<div class="actions-gap-sm" aria-hidden="true"></div>
 <p class="small-risk">⚠ 警惕低价黑卡，避免封号风险</p>
 <div class="steps-mini">
 <span class="step-pill">1 下单卡密</span>
@@ -1201,50 +1403,66 @@ var _hmt = _hmt || [];
   </div>
 </div>
 
-<div class="rg-mask" id="rechargeGuide" aria-hidden="true">
-  <div class="rg-card" role="dialog" aria-labelledby="rgTitle" tabindex="-1">
-    <button class="rg-close" id="rgClose" aria-label="关闭">×</button>
-    <h3 class="rg-title" id="rgTitle">充值网站指引</h3>
+<div class="modal-mask" id="aiModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-labelledby="aiTitle" tabindex="-1">
+    <button class="modal-close" id="aiClose" aria-label="关闭">×</button>
+    <h3 id="aiTitle" style="margin:.2rem 0 .6rem">其他 AI 官方会员充值</h3>
 
-    <div class="rg-body">
-      <p>已在发卡网完成购买并获得卡密后，请前往充值网站填写卡密，完成激活。</p>
-      <p class="rg-hint">通常约 <strong>5 分钟</strong>到账；如遇延迟，请先勿重复下单，加微信处理。</p>
+    <div class="ai-section">
+      <div class="ai-section-title">✨ 推荐方案</div>
+      <div class="ai-items" role="list">
+        <div class="ai-item featured" role="listitem" tabindex="0" aria-label="ChatGPT Pro ¥1780 热门推荐">
+          <div class="ai-left">
+            <div class="ai-name">🚀 ChatGPT Pro <span class="ai-pill">热门</span></div>
+            <div class="ai-meta">官方会员 · ¥1780 <span class="ai-note2">｜高阶用户推荐</span></div>
+          </div>
+          <div class="ai-actions">
+            <button class="ai-buy ai-btn primary" data-url="https://fe.dtyuedan.cn/shop/jiage">点击购买</button>
+          </div>
+        </div>
 
-      <div class="rg-actions">
-        <button class="rg-btn rg-btn-primary" id="rgOpen">打开充值网站</button>
+        <div class="ai-item featured" role="listitem" tabindex="0" aria-label="Gemini Pro 成品号 3个月 ¥388 推荐">
+          <div class="ai-left">
+            <div class="ai-name">💎 Gemini Pro（成品号） <span class="ai-pill">推荐</span></div>
+            <div class="ai-meta">3个月 · ¥388 · 官方通道 <span class="ai-note2">｜性价比更高</span></div>
+          </div>
+          <div class="ai-actions">
+            <button class="ai-buy ai-btn primary" data-url="https://fe.dtyuedan.cn/shop/jiage">点击购买</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div class="rs-mask" id="rechargeSystemModal" aria-hidden="true">
-  <div class="rs-card" role="dialog" aria-labelledby="rsTitle" tabindex="-1">
-    <button class="rs-close" id="rsClose" aria-label="关闭">×</button>
-    <h3 class="rs-title" id="rsTitle">选择充值网站激活</h3>
-
-    <div class="rs-body">
-      <p>说明：</p>
-      <ul style="margin: 8px 0; padding-left: 20px; line-height: 1.6;">
-        <li>购买了自动充值1卡密 → 进入网站1激活</li>
-        <li>购买了自动充值2卡密 → 进入网站2激活</li>
-      </ul>
-      
-      <div class="rs-options">
-        <div class="rs-option" data-url="https://www.ow800.com">
-          <div class="rs-option-title">自动充值1</div>
-          <div class="rs-option-desc">点击进入激活网站</div>
-          <div class="rs-option-url">www.ow800.com</div>
+    <div class="ai-section">
+      <div class="ai-section-title">更多选项</div>
+      <div class="ai-items" role="list">
+        <div class="ai-item" role="listitem" tabindex="0" aria-label="Claude Pro 1个月 ¥188">
+          <div class="ai-left">
+            <div class="ai-name">Claude Pro</div>
+            <div class="ai-meta">1个月 · ¥188 · 官方通道</div>
+          </div>
+          <div class="ai-actions">
+            <button class="ai-buy ai-btn primary" data-url="https://fe.dtyuedan.cn/shop/jiage">点击购买</button>
+          </div>
         </div>
-        <div class="rs-option" data-url="https://czgpt.plus/">
-          <div class="rs-option-title">自动充值2</div>
-          <div class="rs-option-desc">点击进入激活网站</div>
-          <div class="rs-option-url">czgpt.plus</div>
+
+        <div class="ai-item" role="listitem" tabindex="0" aria-label="Super Grok 1个月 ¥228">
+          <div class="ai-left">
+            <div class="ai-name">Super Grok</div>
+            <div class="ai-meta">1个月 · ¥228 · 官方通道</div>
+          </div>
+          <div class="ai-actions">
+            <button class="ai-buy ai-btn primary" data-url="https://fe.dtyuedan.cn/shop/jiage">点击购买</button>
+          </div>
         </div>
       </div>
-      
-      <div class="rs-actions">
-        <button class="rs-btn rs-btn-ghost" id="rsCancel">取消</button>
-      </div>
+    </div>
+
+    <div class="ai-tip">提示：如需人工协助，复制微信联系人工。</div>
+
+    <div class="modal-footer" style="margin-top:12px; gap:.6rem;">
+      <button class="cta-mini" id="aiCopyWx">复制微信：<span class="wx">Jiage01888</span></button>
+      <a href="#" class="cta-outline" id="aiGoGpt">我只想充 GPT Plus</a>
     </div>
   </div>
 </div>
@@ -1686,5 +1904,93 @@ var _hmt = _hmt || [];
   // 导出函数
   window.openRechargeSystemModal = openRechargeSystemModal;
 })();
-</script></body>
+</script><script>
+(function(){
+  function $(id){ return document.getElementById(id); }
+  function q(s, root){ return (root||document).querySelector(s); }
+  function qa(s, root){ return Array.prototype.slice.call((root||document).querySelectorAll(s)); }
+  function lockScroll(on){ document.body.classList[on?'add':'remove']('modal-open'); }
+
+  var modal = $('aiModal');
+  var openBtn = $('openAiModal');
+  var closeBtn = $('aiClose');
+  var copyBtn = $('aiCopyWx');
+  var goGpt = $('aiGoGpt');
+
+  function getWx(){
+    var wxEl = q('#wxid') || q('.wx');
+    return (wxEl && wxEl.textContent) ? wxEl.textContent.trim() : 'Jiage01888';
+  }
+  function copyText(t){
+    if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+    var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); return Promise.resolve();
+  }
+
+  var lastFocus = null;
+  function openModal(){
+    if(!modal) return;
+    lastFocus = document.activeElement;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    lockScroll(true);
+    var card = q('.modal-card', modal);
+    if(card) card.focus({preventScroll:true});
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    lockScroll(false);
+    if(lastFocus && typeof lastFocus.focus==='function') lastFocus.focus();
+  }
+
+  if(openBtn) openBtn.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal && modal.classList.contains('show')) closeModal(); });
+
+  // Copy WeChat
+  if(copyBtn) copyBtn.addEventListener('click', function(){
+    var wx = getWx();
+    var old = copyBtn.textContent;
+    copyText(wx).then(function(){
+      copyBtn.textContent = '已复制：' + wx;
+      setTimeout(function(){ copyBtn.textContent = old; }, 1600);
+    });
+  });
+
+  // Go GPT Plus (close modal and scroll to top CTA)
+  if(goGpt) goGpt.addEventListener('click', function(e){
+    e.preventDefault();
+    closeModal();
+    try{ window.scrollTo({ top: 0, behavior: 'smooth' }); }catch(err){}
+  });
+
+  // Per-item buy button
+  function openBuy(url){
+    window.open(url || 'https://fe.dtyuedan.cn/shop/jiage', '_blank', 'noopener');
+  }
+  qa('.ai-buy', modal).forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openBuy(btn.getAttribute('data-url'));
+    });
+  });
+
+  // Keyboard: Enter/Space triggers buy on focused item
+  qa('.ai-item', modal).forEach(function(item){
+    item.addEventListener('keydown', function(e){
+      if(e.key==='Enter' || e.key===' '){
+        e.preventDefault();
+        var btn = q('.ai-buy', item);
+        if(btn) btn.click();
+      }
+    });
+  });
+})();
+</script>
+</body>
 </html>
