@@ -1057,6 +1057,20 @@ a#openWhyTop:hover{ color:#fff; }
   line-height: 1.6;
 }
 
+
+/* === RS modal overrides (match screenshot style) === */
+.rs-card{
+  border-radius: 18px;
+  overflow: hidden;
+}
+.rs-title{ letter-spacing: .02em; }
+.rs-option-desc{ font-size:.9rem; opacity:.85; margin-bottom:10px; color:#d1f4ff; }
+.rs-option-url{ color:#a78bfa !important; } /* 紫色链接 */
+.rs-option{
+  padding: 22px 18px;
+  border-radius: 16px;
+}
+
 </style>
 </head>
 <body>
@@ -1862,6 +1876,7 @@ var _hmt = _hmt || [];
   var lastFocus = null;
 
   function openRechargeSystemModal(){
+    if(!modal) return;
     lastFocus = document.activeElement;
     modal.classList.add('show'); 
     modal.setAttribute('aria-hidden','false');
@@ -1992,5 +2007,102 @@ var _hmt = _hmt || [];
   });
 })();
 </script>
+
+<!-- === 自动充值系统选择弹窗（rechargeSystemModal）=== -->
+<div class="rs-mask" id="rechargeSystemModal" aria-hidden="true">
+  <div class="rs-card" role="dialog" aria-labelledby="rsTitle" tabindex="-1">
+    <button class="rs-close" id="rsClose" aria-label="关闭">×</button>
+
+    <h3 class="rs-title" id="rsTitle">选择充值网站激活</h3>
+
+    <div class="rs-body" style="margin: 6px 0 10px;">
+      <div style="font-weight:800; opacity:.9; margin-bottom:6px;">说明：</div>
+      <ul style="margin:0; padding-left: 1.15rem; line-height: 1.7; opacity:.88;">
+        <li>购买了自动充值1卡密 → 进入网站1激活</li>
+        <li>购买了自动充值2卡密 → 进入网站2激活</li>
+      </ul>
+    </div>
+
+    <div class="rs-options" role="list" style="margin-top:14px;">
+      <button type="button" class="rs-option" role="listitem" data-url="https://www.ow800.com/" aria-label="进入自动充值 1">
+        <div class="rs-option-title">自动充值1</div>
+        <div class="rs-option-desc">点击进入激活网站</div>
+        <div class="rs-option-url">https://www.ow800.com/</div>
+      </button>
+
+      <button type="button" class="rs-option" role="listitem" data-url="https://czgpt.plus/" aria-label="进入自动充值 2">
+        <div class="rs-option-title">自动充值2</div>
+        <div class="rs-option-desc">点击进入激活网站</div>
+        <div class="rs-option-url">https://czgpt.plus/</div>
+      </button>
+    </div>
+
+    <div class="rs-actions" style="margin-top:16px; justify-content:center;">
+      <button type="button" class="rs-btn rs-btn-ghost" id="rsCancel">取消</button>
+    </div>
+  </div>
+</div>
+<!-- === /自动充值系统选择弹窗 === -->
+
+<script>
+/* Late-bind recharge system modal (runs after modal HTML exists) */
+(function(){
+  var modal = document.getElementById('rechargeSystemModal');
+  var card = modal ? modal.querySelector('.rs-card') : null;
+  var rechargeBtn = document.getElementById('rechargeBtn');
+  var closeBtn = document.getElementById('rsClose');
+  var cancelBtn = document.getElementById('rsCancel');
+  var options = modal ? Array.prototype.slice.call(modal.querySelectorAll('.rs-option')) : [];
+  var lastFocus = null;
+
+  function lockScroll(on){
+    document.body.classList[on ? 'add' : 'remove']('modal-open');
+  }
+  function openModal(){
+    if(!modal) return;
+    lastFocus = document.activeElement;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden','false');
+    lockScroll(true);
+    try{ (card || modal).focus({preventScroll:true}); }catch(e){}
+  }
+  function closeModal(){
+    if(!modal) return;
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden','true');
+    lockScroll(false);
+    if(lastFocus && typeof lastFocus.focus === 'function'){
+      try{ lastFocus.focus(); }catch(e){}
+    }
+  }
+
+  if(rechargeBtn){
+    // Remove possible existing listeners by replacing node (cheap & safe)
+    var clone = rechargeBtn.cloneNode(true);
+    rechargeBtn.parentNode.replaceChild(clone, rechargeBtn);
+    clone.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  }
+
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+  if(modal){
+    modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('show')) closeModal(); });
+  }
+
+  options.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var url = btn.getAttribute('data-url');
+      if(!url) return;
+      window.open(url, '_blank', 'noopener');
+      closeModal();
+    });
+  });
+})();
+</script>
+
+
+
 </body>
 </html>
