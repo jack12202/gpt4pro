@@ -26,6 +26,7 @@ h1{font-size:clamp(44px,8vw,92px);line-height:1.02;letter-spacing:0;margin:18px 
 .price-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:16px 0 26px}
 .price{font-size:42px;font-weight:950;color:#9a3412}
 .price small{font-size:18px;color:#92400e}
+.price-note{max-width:720px;margin:-12px auto 18px;color:#475569;font-size:15px}
 .pay{display:flex;align-items:center;gap:8px;color:#334155;font-weight:900}
 .pay span{background:#eef2ff;color:#4f46e5;border-radius:999px;padding:5px 10px;font-size:13px}
 .actions{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;margin:24px 0 16px}
@@ -84,6 +85,7 @@ h1{font-size:clamp(44px,8vw,92px);line-height:1.02;letter-spacing:0;margin:18px 
         <div class="price">¥188<small>/月起</small></div>
         <div class="pay"><span>支付宝</span><span>微信支付</span><span>卡密自助</span></div>
       </div>
+      <p class="price-note">官方 Plus 是 20 美元/月，但自己准备虚拟卡、礼品卡或反复处理支付失败，常常会额外产生手续费和时间成本。这里把卡密、自助充值和异常协助打包好，正常情况约 5 分钟完成。</p>
       <div class="actions">
         <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage">立即购买 Plus 卡密</a>
         <a class="btn secondary" href="https://ow800.com/auto">已有卡密，去自助充值</a>
@@ -164,6 +166,7 @@ h1{font-size:clamp(44px,8vw,92px);line-height:1.02;letter-spacing:0;margin:18px 
         </div>
         <div class="faq">
           <details open><summary>Plus 和 Pro 是同一个流程吗？</summary><p>不是。Plus 可以购买卡密后进入自助充值系统；Pro 需要人工确认后开通。</p></details>
+          <details><summary>为什么是 ¥188/月起，不是按 20 美元直接换算？</summary><p>ChatGPT Plus 官方订阅价是 20 美元/月，折合人民币会随汇率变化。但国内用户自己开通常常还要解决海外支付、虚拟卡、礼品卡、通道手续费、支付失败重试和到账异常等问题，可能要折腾很久。GPT4.pro 的 ¥188/月起包含 Plus 卡密、支付宝 / 微信支付、自助充值系统和异常订单协助，核心是帮你节省准备支付方式和排查失败的时间。</p></details>
           <details><summary>购买卡密后去哪里使用？</summary><p>点击“已有卡密，去自助充值”，进入自助充值系统，按提示填写卡密。</p></details>
           <details><summary>自助充值失败怎么办？</summary><p>请保留卡密、支付凭证、账号状态截图和错误提示，联系人工协助，不要重复购买。</p></details>
           <details><summary>没有海外信用卡可以用吗？</summary><p>可以。该页面面向没有合适海外信用卡、希望用支付宝或微信完成 Plus 开通的用户。</p></details>
