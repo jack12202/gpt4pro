@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT Plus 充值订购页 | 购买卡密后自助充值 | GPT4.pro</title>
+<meta name="description" content="GPT4.pro ChatGPT Plus 专属订购页，购买 Plus 卡密后进入自助充值系统完成开通，支持支付宝和微信支付，适合无海外信用卡用户。">
+<link rel="canonical" href="https://www.gpt4.pro/order-chatgpt-plus/">
+<meta property="og:title" content="ChatGPT Plus 充值订购页 | GPT4.pro">
+<meta property="og:description" content="购买 Plus 卡密后进入自助充值系统完成开通，支持支付宝和微信支付。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gpt4.pro/order-chatgpt-plus/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ChatGPT Plus 怎么在这个页面开通？","acceptedAnswer":{"@type":"Answer","text":"先点击购买 Plus 卡密，付款后保存卡密；已有卡密后进入自助充值系统，按页面提示兑换到自己的 ChatGPT 账号。"}},{"@type":"Question","name":"需要提供 ChatGPT 密码吗？","acceptedAnswer":{"@type":"Answer","text":"Plus 卡密自助充值流程不建议用户把账号密码长期交给第三方。请按自助系统提示完成必要操作，并保管好自己的账号信息。"}},{"@type":"Question","name":"Pro 可以自助充值吗？","acceptedAnswer":{"@type":"Answer","text":"Pro 不走 Plus 卡密自助充值流程。Pro 100 美元和 200 美元方案需要先联系人工确认账号状态后处理。"}},{"@type":"Question","name":"自助充值失败怎么办？","acceptedAnswer":{"@type":"Answer","text":"请保留卡密、支付凭证、账号状态截图和错误提示，联系人工协助排查，不要反复重复购买。"}}]}</script>
+<style>
+:root{--ink:#111827;--muted:#4b5563;--soft:#f8fafc;--line:#e5e7eb;--purple:#6246ea;--purple2:#7c3aed;--green:#10b981;--navy:#0f172a;--warn:#fff7ed}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff;color:var(--ink);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.hero{min-height:92vh;display:grid;place-items:center;text-align:center;padding:52px 0 34px;background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#ecfdf5;color:#047857;border-radius:999px;padding:6px 12px;font-size:14px;font-weight:900}
+h1{font-size:clamp(44px,8vw,92px);line-height:1.02;letter-spacing:0;margin:18px auto 12px;max-width:960px}
+.highlight{display:block;color:var(--purple);font-size:clamp(34px,6vw,66px);font-weight:950;margin-bottom:16px}
+.lead{font-size:clamp(18px,2.4vw,24px);color:var(--muted);max-width:780px;margin:0 auto 28px}
+.price-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin:16px 0 26px}
+.price{font-size:42px;font-weight:950;color:#9a3412}
+.price small{font-size:18px;color:#92400e}
+.pay{display:flex;align-items:center;gap:8px;color:#334155;font-weight:900}
+.pay span{background:#eef2ff;color:#4f46e5;border-radius:999px;padding:5px 10px;font-size:13px}
+.actions{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;margin:24px 0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;border-radius:12px;padding:13px 22px;font-weight:950;border:1px solid transparent}
+.btn.primary{background:linear-gradient(180deg,var(--purple),var(--purple2));color:#fff;box-shadow:0 18px 36px rgba(98,70,234,.25);min-width:210px}
+.btn.secondary{background:#fff;color:#1f2937;border-color:#cbd5e1;min-width:210px}
+.micro{color:#64748b;font-size:14px;margin:0}
+.proof-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:860px;margin:44px auto 0}
+.proof{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;text-align:left;box-shadow:0 10px 24px rgba(15,23,42,.04)}
+.proof strong{display:block;font-size:18px}
+.proof span{color:var(--muted);font-size:14px}
+.down{display:inline-flex;margin-top:38px;color:#2563eb;border:1px solid #bfdbfe;background:#fff;border-radius:999px;padding:8px 15px;font-weight:900}
+.section{padding:58px 0}
+.section.alt{background:var(--soft)}
+.head{max-width:760px;margin-bottom:24px}
+.head h2{font-size:clamp(30px,4vw,46px);line-height:1.16;margin:0 0 10px}
+.head p{margin:0;color:var(--muted);font-size:17px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:step}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:8px;padding:52px 18px 18px;box-shadow:0 10px 24px rgba(15,23,42,.04)}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:16px;left:18px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:950}
+.step strong{display:block;margin-bottom:6px;font-size:18px}
+.step p{margin:0;color:#475569}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 10px 24px rgba(15,23,42,.04)}
+.card strong{display:block;font-size:20px;margin-bottom:8px}
+.card p{margin:0;color:#475569}
+.screens{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px}
+.shot{flex:0 0 min(78%,300px);height:560px;overflow:hidden;scroll-snap-align:start;background:#eef2f7;border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(15,23,42,.12)}
+.shot img{display:block;width:100%;min-height:100%;height:auto;object-fit:cover;object-position:top center}
+.hint{text-align:center;color:#64748b;font-size:14px}
+.faq{display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.faq summary{cursor:pointer;font-weight:950}
+.faq p{margin:10px 0 0;color:#475569}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+.warn{background:var(--warn);border-color:#fed7aa}
+.cta{background:linear-gradient(135deg,#0f172a,#134e4a);color:#fff;border-radius:8px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.cta h2{margin:0;font-size:clamp(28px,4vw,42px)}
+.cta p{margin:6px 0 0;color:#d1fae5}
+.cta .btn.secondary{background:#fff;color:#0f172a}
+.footer{padding:26px 0;color:#64748b;font-size:14px;text-align:center;background:#fff}
+.footer a{color:#4f46e5}
+@media(max-width:900px){.proof-row,.steps,.grid,.split{grid-template-columns:1fr}.hero{min-height:auto;text-align:left}.actions,.price-line{justify-content:flex-start}.proof-row{margin-top:28px}.cta{align-items:flex-start;flex-direction:column}.shot{flex-basis:82%;height:500px}}
+@media(max-width:560px){.wrap{padding:0 16px}.section{padding:44px 0}.btn{width:100%}.shot{flex-basis:86%;height:460px}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">ChatGPT Plus 专属订购页</span>
+      <h1>ChatGPT Plus 充值</h1>
+      <span class="highlight">购买卡密后自助开通</span>
+      <p class="lead">无需海外信用卡，支持支付宝 / 微信支付。先购买 Plus 卡密，再进入自助充值系统，按提示兑换到自己的 ChatGPT 账号。</p>
+      <div class="price-line">
+        <div class="price">¥188<small>/月起</small></div>
+        <div class="pay"><span>支付宝</span><span>微信支付</span><span>卡密自助</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage">立即购买 Plus 卡密</a>
+        <a class="btn secondary" href="https://ow800.com/auto">已有卡密，去自助充值</a>
+      </div>
+      <p class="micro">Pro 不支持自助充值，如需 Pro 100 / 200 美元方案，请联系人工确认后开通。</p>
+      <div class="proof-row" aria-label="核心承诺">
+        <div class="proof"><strong>5 分钟内即可完成</strong><span>正常卡密订单按指引处理</span></div>
+        <div class="proof"><strong>官方直充</strong><span>充值到自己的 ChatGPT 账号</span></div>
+        <div class="proof"><strong>支付宝 / 微信</strong><span>国内用户付款更方便</span></div>
+        <div class="proof"><strong>异常可协助</strong><span>保存卡密和截图后处理</span></div>
+      </div>
+      <a class="down" href="#flow">下滑查看开通流程</a>
+    </div>
+  </section>
+
+  <section class="section alt" id="flow">
+    <div class="wrap">
+      <div class="head">
+        <h2>Plus 卡密自助充值流程</h2>
+        <p>页面只处理 ChatGPT Plus 自助开通这一个动作。已经购买卡密的用户，可以直接进入自助充值系统。</p>
+      </div>
+      <div class="steps">
+        <div class="step"><strong>购买卡密</strong><p>点击购买按钮，进入卡网选择 ChatGPT Plus 卡密并完成付款。</p></div>
+        <div class="step"><strong>保存卡密</strong><p>付款后保存卡密信息，后续自助充值需要使用。</p></div>
+        <div class="step"><strong>自助兑换</strong><p>进入自助充值系统，按页面提示填写卡密并完成开通。</p></div>
+        <div class="step"><strong>验证到账</strong><p>登录 ChatGPT 查看 Plus 状态和模型入口，异常时联系人工协助。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <h2>为什么这个页面只放 Plus</h2>
+        <p>高意图用户不需要复杂目录。这里把 Plus 卡密购买、自助充值、异常处理三件事讲清楚。</p>
+      </div>
+      <div class="grid">
+        <div class="card"><strong>不混卖 Pro</strong><p>Pro 100 / 200 美元方案需要人工确认，不能和 Plus 自助充值混在一个按钮里。</p></div>
+        <div class="card"><strong>路径更短</strong><p>想开 Plus 的用户不需要先看博客和复杂产品目录，直接购买卡密即可。</p></div>
+        <div class="card"><strong>步骤可验证</strong><p>购买、卡密、自助兑换、到账确认，每一步都有明确的下一步动作。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="head">
+        <h2>部分交付记录</h2>
+        <p>以下为部分已遮挡隐私信息的交付记录。左右滑动可以查看更多片段。</p>
+      </div>
+      <div class="screens" aria-label="交付记录截图，可横向滑动">
+        <div class="shot"><img src="/客户案例 1.jpg" alt="GPT4.pro Plus 充值交付记录"></div>
+        <div class="shot"><img src="/客户案例 2.jpg" alt="GPT4.pro Plus 充值交付记录"></div>
+        <div class="shot"><img src="/客户案例 3.jpg" alt="GPT4.pro Plus 充值交付记录"></div>
+        <div class="shot"><img src="/客户案例 4.jpg" alt="GPT4.pro Plus 充值交付记录"></div>
+        <div class="shot"><img src="/客户案例 5.jpg" alt="GPT4.pro Plus 充值交付记录"></div>
+      </div>
+      <p class="hint">截图只用于展示交付沟通和处理状态，账号和订单隐私已遮挡。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <div class="head">
+          <h2>购买前确认</h2>
+          <p>下单前先确认自己要开通的是 ChatGPT Plus，而不是 Pro、Team 或 API 额度。</p>
+        </div>
+        <div class="grid" style="grid-template-columns:1fr">
+          <div class="card"><strong>适合购买 Plus 卡密</strong><p>日常办公、学习、写作、翻译、轻中度编程、图片生成，大多数个人用户优先 Plus。</p></div>
+          <div class="card warn"><strong>不适合自助购买 Plus 的情况</strong><p>你明确要 Pro 100 / 200 美元方案、账号存在异常提示、已经重复支付但没到账，建议先联系人工确认。</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="head">
+          <h2>常见问题</h2>
+          <p>把下单前最容易卡住的问题先说清楚。</p>
+        </div>
+        <div class="faq">
+          <details open><summary>Plus 和 Pro 是同一个流程吗？</summary><p>不是。Plus 可以购买卡密后进入自助充值系统；Pro 需要人工确认后开通。</p></details>
+          <details><summary>购买卡密后去哪里使用？</summary><p>点击“已有卡密，去自助充值”，进入自助充值系统，按提示填写卡密。</p></details>
+          <details><summary>自助充值失败怎么办？</summary><p>请保留卡密、支付凭证、账号状态截图和错误提示，联系人工协助，不要重复购买。</p></details>
+          <details><summary>没有海外信用卡可以用吗？</summary><p>可以。该页面面向没有合适海外信用卡、希望用支付宝或微信完成 Plus 开通的用户。</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>准备开通 ChatGPT Plus？</h2>
+          <p>先购买 Plus 卡密；已有卡密的用户，直接进入自助充值系统。</p>
+        </div>
+        <div class="actions" style="margin:0">
+          <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage">购买 Plus 卡密</a>
+          <a class="btn secondary" href="https://ow800.com/auto">去自助充值</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <p>GPT4.pro 是第三方数字服务平台，与 OpenAI 或 ChatGPT 官方无隶属关系。需要比较 Plus / Pro，可返回 <a href="/">GPT4.pro 首页</a>。</p>
+  </div>
+</footer>
+</body>
+</html>
