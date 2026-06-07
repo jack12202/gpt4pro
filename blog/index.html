@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChatGPT Plus 充值 / 支付失败状态判断｜GPT4.pro 充值指南</title>
-<meta name="description" content="GPT4.pro 充值指南，把 ChatGPT Plus 支付失败、银行卡被拒、已扣款没生效、激活码不会用、Pro / 发票 / 对公需求按状态分流，帮助用户选择购买、激活或人工确认。">
+<title>ChatGPT Plus / Pro 开通与支付问题排查中心｜嘉哥AI</title>
+<meta name="description" content="ChatGPT Plus / Pro 开通与支付问题排查中心：按支付失败、扣款没到账、无海外信用卡、Plus / Pro 怎么选等场景快速找到下一步。">
 <link rel="canonical" href="https://www.gpt4.pro/blog/">
 <style>
   :root {
@@ -292,8 +292,8 @@
       <a class="nav-link" href="/" data-track="blog_to_home_click">首页</a>
       <a class="nav-link primary" href="/purchase-notice/?target=plus" data-track="blog_buy_click">Plus 充值</a>
       <a class="nav-link" href="/activate/" data-track="home_activate_click">已购买去激活</a>
-      <a class="nav-link" href="#triage">充值指南</a>
-      <button class="nav-copy" type="button" data-copy-wx>复制微信</button>
+      <a class="nav-link" href="#triage">先判断</a>
+      <button class="nav-copy" type="button" data-copy-wx>Pro / 异常订单咨询</button>
     </div>
   </nav>
 </header>
@@ -301,111 +301,65 @@
 <main>
   <section class="wrap hero">
     <div class="hero-copy">
-      <span class="eyebrow">GPT 充值问题分诊台</span>
-      <h1>ChatGPT Plus 充值 / 支付失败，先按状态选下一步</h1>
-      <p class="intro">官网支付失败、银行卡被拒、续费失败、买了激活码不会用，都不要急着重复付款。先确认扣款状态、订单状态和 ChatGPT 账号，再选择购买激活码、站内激活或联系人工确认。</p>
+      <span class="eyebrow">问题排查中心</span>
+      <h1>ChatGPT Plus / Pro 开通与支付问题排查中心</h1>
+      <p class="intro">先判断你是支付失败、扣款没到账、无海外信用卡，还是不知道 Plus / Pro 怎么选。看完再决定自助充值、继续排查，或联系人工确认。</p>
       <div class="hero-actions">
-        <a class="btn" href="/purchase-notice/?target=plus" data-track="blog_hero_buy_click">立即购买 Plus 激活码</a>
-        <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？去站内激活</a>
-        <button class="btn ghost" type="button" data-copy-wx>不确定？复制微信咨询</button>
-      </div>
-      <div class="status-grid" aria-label="按状态选择下一步">
-        <a class="status-card safe" href="#not-paid">
-          <span class="label">没有扣款</span>
-          <strong>页面支付失败，想用支付宝 / 微信开通</strong>
-          <p>适合没有任何扣款记录、官方支付一直失败、没有海外信用卡的用户。</p>
-          <span class="route">查看排查方法或购买激活码</span>
-        </a>
-        <a class="status-card warn" href="#paid-pending">
-          <span class="label">已扣款 / 处理中</span>
-          <strong>钱扣了，但 Plus 还没生效</strong>
-          <p>先不要重复下单，保存扣款记录、订单页面和账号状态截图。</p>
-          <span class="route">查看不到账处理方法</span>
-        </a>
-        <a class="status-card" href="#activation-code">
-          <span class="label">已购买激活码</span>
-          <strong>已经付款拿到 Plus 激活码</strong>
-          <p>进入站内充值中心，先验证激活码，再确认账号并提交充值。</p>
-          <span class="route">去站内充值中心</span>
-        </a>
-        <a class="status-card" href="#pro-consult">
-          <span class="label">Pro / 发票 / 对公</span>
-          <strong>想开 Pro，或有企业采购需求</strong>
-          <p>账号状态、订阅冲突、发票和对公方式建议先人工确认。</p>
-          <span class="route">复制微信咨询</span>
-        </a>
+        <a class="btn" href="#triage" data-track="blog_triage_click">先判断我是哪种情况</a>
+        <a class="btn secondary" href="/purchase-notice/?target=plus" data-track="blog_hero_buy_click">直接购买 Plus 激活码</a>
+        <a class="btn text" href="/activate/" data-track="home_activate_click">已购买？查看自助充值说明</a>
       </div>
     </div>
 
-    <aside class="price-card" aria-label="ChatGPT Plus 月度充值">
-      <h2>ChatGPT Plus 月度充值</h2>
-      <div class="price"><strong>¥188</strong><span>/ 月</span></div>
-      <p class="fit">适合：官网支付失败、没有海外信用卡、想用支付宝 / 微信付款的用户。</p>
+    <aside class="price-card" aria-label="Plus 开通入口">
+      <h2>准备开通 Plus？</h2>
+      <p class="fit">用自己的 ChatGPT 账号，无需提交密码。</p>
       <ul class="checks">
-        <li>充值到自己的 ChatGPT 账号</li>
-        <li>无需提供账号密码</li>
         <li>支持支付宝 / 微信付款</li>
-        <li>购买激活码后回到站内充值中心</li>
-        <li>异常订单人工协助处理</li>
+        <li>常规订单约 5 分钟完成</li>
+        <li>异常订单可人工协助排查</li>
       </ul>
       <div class="card-actions">
-        <a class="btn" href="/purchase-notice/?target=plus" data-track="pricing_buy_click">立即购买 Plus 激活码</a>
-        <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？去站内激活</a>
+        <a class="btn" href="/purchase-notice/?target=plus" data-track="pricing_buy_click">购买 Plus 激活码</a>
+        <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？去自助激活</a>
+        <button class="btn ghost" type="button" data-copy-wx>Pro / 异常订单咨询微信</button>
       </div>
     </aside>
   </section>
 
   <section class="wrap section" id="triage">
     <div class="section-head">
-      <h2>你现在遇到的是哪种情况？</h2>
-      <p>博客不只用来读文章，先把状态分清楚，才知道下一步该购买、等待、激活还是咨询。</p>
+      <h2>你现在卡在哪一步？</h2>
+      <p>先按问题进入，不用在文章列表里自己猜。已扣款或处理中时，优先保存证据，不要重复下单。</p>
     </div>
     <div class="scenario-grid">
-      <article class="scenario safe" id="not-paid">
-        <span class="label">A. 我还没付款成功</span>
-        <h3>支付失败 / 银行卡被拒 / 没有扣款记录</h3>
-        <p class="meta">适合：页面提示 payment failed、Your card was declined、官方付款没有成功、不想继续试海外卡。</p>
-        <div class="mini-list">
-          <a href="/blog/chatgpt-plus-recharge-failed.html">ChatGPT Plus 支付失败完整排查</a>
-          <a href="/blog/chatgpt-plus-card-declined.html">银行卡被拒 / declined 怎么处理</a>
-          <a href="/blog/chatgpt-plus-no-foreign-card.html">没有海外信用卡怎么开通 Plus</a>
-        </div>
-        <a class="btn" href="/purchase-notice/?target=plus" data-track="blog_scenario_buy_click">没有扣款？购买 Plus 激活码</a>
-      </article>
+      <a class="scenario safe" id="not-paid" href="/blog/chatgpt-plus-no-foreign-card.html">
+        <span class="label">情况 1</span>
+        <h3>我没有海外信用卡</h3>
+        <p class="meta">适合：官网付不了、想用支付宝 / 微信</p>
+        <span class="route">下一步：看开通方式</span>
+      </a>
 
-      <article class="scenario warn" id="paid-pending">
-        <span class="label">B. 我已经扣款 / 订单处理中</span>
-        <h3>已扣款但 Plus 没生效，先不要重复下单</h3>
-        <p class="meta">适合：银行 App 有扣款、预授权、待处理或订单记录，但 ChatGPT 账号仍显示 Free。</p>
-        <div class="mini-list">
-          <a href="/blog/chatgpt-plus-paid-but-not-active.html">已扣款但没到账怎么办</a>
-          <a href="/blog/chatgpt-plus-renewal-failed.html">Plus 续费失败怎么处理</a>
-          <a href="/blog/chatgpt-plus-official-support-template.html">联系官方客服英文模板</a>
-        </div>
-        <button class="btn ghost" type="button" data-copy-wx>已扣款？先复制微信咨询</button>
-      </article>
+      <a class="scenario" id="paid-pending" href="/blog/chatgpt-plus-card-declined.html">
+        <span class="label">情况 2</span>
+        <h3>我付款失败 / card declined</h3>
+        <p class="meta">适合：银行卡被拒、支付页面报错</p>
+        <span class="route">下一步：先排查失败原因</span>
+      </a>
 
-      <article class="scenario" id="activation-code">
-        <span class="label">C. 我已经买了激活码</span>
-        <h3>去站内充值中心完成激活闭环</h3>
-        <p class="meta">已经付款拿到 Plus 激活码后，先验证激活码，再登录自己的 ChatGPT 账号获取充值密钥 JSON，最后确认账号提交充值。</p>
-        <div class="mini-list">
-          <a href="/activate/">进入 GPT4.pro 站内充值中心</a>
-          <a href="#activation-flow">先看购买后的开通流程</a>
-        </div>
-        <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？去站内激活</a>
-      </article>
+      <a class="scenario" href="/blog/chatgpt-plus-paid-but-not-active.html">
+        <span class="label">情况 3</span>
+        <h3>我扣款了但没到账</h3>
+        <p class="meta">适合：钱扣了，账号还是 Free</p>
+        <span class="route">下一步：先别重复付款</span>
+      </a>
 
-      <article class="scenario" id="pro-consult">
-        <span class="label">D. Pro / 发票 / 对公需求</span>
-        <h3>账号状态和交付方式先人工确认</h3>
-        <p class="meta">想开 Pro 100 / Pro 200，或需要企业采购、发票、对公付款，建议先确认账号状态、订阅冲突和交付方式。</p>
-        <div class="mini-list">
-          <a href="/chatgpt-pro-recharge/">了解 Pro 充值方案</a>
-          <a href="/blog/gptpro-plus-pro-qubie.html">Plus 和 Pro 区别怎么选</a>
-        </div>
-        <button class="btn ghost" type="button" data-copy-wx>复制微信咨询</button>
-      </article>
+      <a class="scenario safe" id="pro-consult" href="/blog/gptpro-plus-pro-qubie.html">
+        <span class="label">情况 4</span>
+        <h3>我不知道 Plus / Pro 怎么选</h3>
+        <p class="meta">适合：纠结月费、额度、使用场景</p>
+        <span class="route">下一步：看套餐选择</span>
+      </a>
     </div>
   </section>
 
@@ -584,7 +538,7 @@
     </div>
     <div class="bottom-actions">
       <a class="btn secondary" href="/purchase-notice/?target=plus" data-track="blog_bottom_buy_click">购买 Plus 激活码</a>
-      <button class="btn ghost" type="button" data-copy-wx>不确定？复制微信咨询</button>
+      <button class="btn ghost" type="button" data-copy-wx>咨询 Pro / 异常订单</button>
     </div>
   </section>
 
