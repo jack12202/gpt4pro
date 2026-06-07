@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>即将跳转到合作发卡 / 自助系统 | 嘉哥AI</title>
+<meta name="description" content="嘉哥AI 购买前跳转说明：即将进入合作发卡或自助充值系统，请确认商品名称、保存订单号和激活码，售后联系嘉哥AI。">
+<link rel="canonical" href="https://www.gpt4.pro/purchase-notice/">
+<style>
+:root{--bg:#f8fafc;--ink:#0f172a;--muted:#64748b;--line:#dbe4ee;--brand:#6246ea;--green:#0f766e;--warn:#fff7ed}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#ffffff,#eef7f5);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.72}
+a{text-decoration:none;color:var(--brand)}
+.wrap{width:min(860px,calc(100% - 32px));margin:0 auto;padding:34px 0 60px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:28px}
+.brand{font-weight:950;color:var(--ink)}
+.back{font-weight:850;color:#334155}
+.panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:28px;box-shadow:0 18px 50px rgba(15,23,42,.08)}
+.eyebrow{display:inline-flex;background:#ecfdf5;color:#047857;border:1px solid #bbf7d0;border-radius:999px;padding:5px 11px;font-weight:900;font-size:13px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.08;letter-spacing:0;margin:16px 0 12px}
+.lead{font-size:18px;color:#475569;margin:0 0 20px;max-width:720px}
+.notice{background:var(--warn);border:1px solid #fed7aa;border-radius:8px;padding:16px;margin:18px 0}
+.notice strong{display:block;margin-bottom:8px}
+ul{margin:0;padding-left:22px;color:#334155}
+li{margin:8px 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;padding:12px 18px;font-weight:950}
+.btn.primary{background:linear-gradient(180deg,#6d5df4,#5b35e6);color:#fff;box-shadow:0 16px 34px rgba(91,53,230,.22)}
+.btn.secondary{background:#fff;color:#334155;border:1px solid var(--line)}
+.fine{margin-top:18px;color:var(--muted);font-size:14px}
+.support{margin-top:18px;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:14px;color:#334155}
+.support b{color:#0f172a}
+@media(max-width:600px){.nav{align-items:flex-start;flex-direction:column}.panel{padding:22px}.btn{width:100%}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="nav">
+    <a class="brand" href="/">嘉哥AI</a>
+    <a class="back" href="/">返回首页</a>
+  </nav>
+
+  <section class="panel">
+    <span class="eyebrow" data-eyebrow>跳转前确认</span>
+    <h1 data-title>即将跳转到嘉哥AI合作发卡系统</h1>
+    <p class="lead" data-lead>你将进入合作发卡页面购买 ChatGPT Plus 激活码。请确认商品名称为 ChatGPT Plus 激活码，付款后保存订单号和激活码。</p>
+
+    <div class="notice">
+      <strong>下单前请确认</strong>
+      <ul data-list>
+        <li>请确认商品名称为：ChatGPT Plus 激活码。</li>
+        <li>付款后请保存订单号、激活码和付款记录。</li>
+        <li>拿到激活码后，进入自助充值系统按提示操作。</li>
+        <li>售后请联系嘉哥AI：微信 jiage01888。</li>
+      </ul>
+    </div>
+
+    <div class="support">
+      <b>重要说明：</b>这不是 OpenAI 官方支付页面。嘉哥AI / 嘉哥GPT 是第三方数字服务平台，与 OpenAI 或 ChatGPT 官方无隶属关系；实际权益以 ChatGPT 账号内显示为准。
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" rel="noopener nofollow" data-continue>我知道了，继续购买</a>
+      <a class="btn secondary" href="/">先返回首页</a>
+    </div>
+    <p class="fine">如果你已经扣款但没到账，建议先看 <a href="/help/">充值失败排查</a>，不要重复付款。</p>
+  </section>
+</main>
+<script>
+(function(){
+  const targets = {
+    plus: {
+      eyebrow: '购买 Plus 前确认',
+      title: '即将跳转到嘉哥AI合作发卡系统',
+      lead: '你将进入合作发卡页面购买 ChatGPT Plus 激活码。请确认商品名称为 ChatGPT Plus 激活码，付款后保存订单号和激活码。',
+      href: 'https://fe.dtyuedan.cn/shop/jiage',
+      button: '我知道了，继续购买',
+      event: 'buy_external_jump',
+      list: [
+        '请确认商品名称为：ChatGPT Plus 激活码。',
+        '付款后请保存订单号、激活码和付款记录。',
+        '拿到激活码后，进入自助充值系统按提示操作。',
+        '售后请联系嘉哥AI：微信 jiage01888。'
+      ]
+    },
+    auto: {
+      eyebrow: '自助充值前确认',
+      title: '即将跳转到嘉哥AI合作自助系统',
+      lead: '你将进入自助充值系统使用已购买的激活码。请先准备好激活码，并确认你的 ChatGPT 账号可以正常登录。',
+      href: 'https://ow800.com/auto',
+      button: '我知道了，去自助充值',
+      event: 'home_activate_click',
+      list: [
+        '请准备好 Plus 激活码、订单号和可登录的 ChatGPT 账号。',
+        '不要把 ChatGPT 密码、邮箱验证码或短信验证码发给任何人。',
+        '提交前请再次核对账号邮箱，避免充到错误账号。',
+        '遇到异常请保存错误截图，联系嘉哥AI：微信 jiage01888。'
+      ]
+    }
+  };
+  const params = new URLSearchParams(window.location.search);
+  const target = targets[params.get('target')] || targets.plus;
+  document.querySelector('[data-eyebrow]').textContent = target.eyebrow;
+  document.querySelector('[data-title]').textContent = target.title;
+  document.querySelector('[data-lead]').textContent = target.lead;
+  const list = document.querySelector('[data-list]');
+  list.innerHTML = target.list.map((item) => '<li>' + item + '</li>').join('');
+  const continueLink = document.querySelector('[data-continue]');
+  continueLink.href = target.href;
+  continueLink.textContent = target.button;
+  continueLink.addEventListener('click', () => {
+    const payload = {event: target.event, target: params.get('target') || 'plus'};
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    if(typeof window.gtag === 'function') window.gtag('event', target.event, {target: payload.target});
+    window.dispatchEvent(new CustomEvent('gptc:track', {detail: payload}));
+  });
+})();
+</script>
+</body>
+</html>

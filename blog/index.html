@@ -19,19 +19,24 @@
   h1 { font-size:clamp(34px, 6vw, 56px); line-height:1.08; margin:0 0 14px; letter-spacing:0; }
   .intro { color:#475569; max-width:760px; margin:0 0 22px; font-size:18px; }
   .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-  .quick { display:inline-flex; color:#fff; background:var(--accent); text-decoration:none; padding:10px 15px; border-radius:8px; font-weight:850; }
+  .quick { display:inline-flex; align-items:center; justify-content:center; color:#fff; background:var(--accent); text-decoration:none; padding:10px 15px; border-radius:8px; font-weight:850; border:0; cursor:pointer; font:inherit; }
   .quick.secondary { color:#0f766e; background:#fff; border:1px solid #99f6e4; }
   .section-head { display:flex; justify-content:space-between; align-items:flex-end; gap:18px; margin:34px 0 14px; border-bottom:1px solid var(--line); padding-bottom:12px; }
   .section-head h2 { margin:0; font-size:24px; }
   .section-head p { margin:0; color:var(--muted); max-width:520px; }
   .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
   .card { display:block; text-decoration:none; color:inherit; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px; box-shadow:0 12px 34px rgba(15,23,42,.06); }
+  button.card { width:100%; text-align:left; font:inherit; cursor:pointer; }
   .card:hover { border-color:#0f766e; transform:translateY(-1px); }
   .card.featured { background:linear-gradient(135deg,#ffffff,#ecfdf5); border-color:#99f6e4; }
+  .card.warn { background:var(--warn); border-color:#fed7aa; }
   .tag { color:var(--accent); font-size:13px; font-weight:800; }
   .title { font-size:20px; line-height:1.42; font-weight:850; margin:7px 0; }
   .desc { color:#475569; margin:0; }
+  .route { display:inline-flex; margin-top:12px; color:#0f766e; font-weight:850; }
   .note { margin-top:28px; color:var(--muted); font-size:14px; border-top:1px solid var(--line); padding-top:18px; }
+  .toast { position:fixed; left:50%; bottom:28px; transform:translateX(-50%); background:rgba(15,23,42,.94); color:#fff; border-radius:12px; padding:10px 13px; z-index:100; opacity:0; pointer-events:none; transition:opacity .18s ease; }
+  .toast.show { opacity:1; }
   @media(max-width:760px){.wrap{width:min(100% - 28px, 1040px)}.grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:6px}.quick{width:100%;justify-content:center}}
 </style>
 </head>
@@ -46,9 +51,41 @@
     <h1>ChatGPT Plus / Pro 开通前，先把问题查清楚</h1>
     <p class="intro">这里整理国内用户开通 ChatGPT Plus、Pro 时最常见的支付、到账、续费和套餐选择问题。先判断卡在哪里，再决定是否继续自助开通。</p>
     <div class="actions">
-      <a class="quick" href="/order-chatgpt-plus/">Plus 激活码自助充值</a>
-      <a class="quick secondary" href="/blog/chatgpt-plus-recharge-failed.html">查看充值失败总指南</a>
+      <a class="quick" href="/purchase-notice/?target=plus" data-track="blog_to_home_click">立即购买 Plus 激活码</a>
+      <a class="quick secondary" href="/activate/" data-track="home_activate_click">已购买？先看自助充值说明</a>
+      <button class="quick secondary" type="button" data-copy-wx>复制微信咨询</button>
     </div>
+  </section>
+
+  <section class="section-head">
+    <h2>你现在卡在哪一步？</h2>
+    <p>先按问题进入，不用在文章列表里自己猜。已扣款或处理中时，优先保存证据，不要重复下单。</p>
+  </section>
+  <section class="grid" aria-label="GPT 充值问题分流">
+    <a class="card featured" href="/blog/chatgpt-plus-no-foreign-card.html">
+      <div class="tag">无海外卡</div>
+      <div class="title">我没有海外信用卡</div>
+      <p class="desc">看支付宝 / 微信开通方式，先确认自己的账号和适合的套餐。</p>
+      <span class="route">查看无海外卡开通方案</span>
+    </a>
+    <a class="card warn" href="/blog/chatgpt-plus-card-declined.html">
+      <div class="tag">支付失败</div>
+      <div class="title">我支付失败 / card declined</div>
+      <p class="desc">先判断是卡片、账单地址、银行风控还是账号问题。</p>
+      <span class="route">查看支付失败排查</span>
+    </a>
+    <a class="card" href="/blog/chatgpt-plus-paid-but-not-active.html">
+      <div class="tag">没到账</div>
+      <div class="title">我扣款了但没到账</div>
+      <p class="desc">先确认账号、收据、订阅状态，别急着重复付款。</p>
+      <span class="route">查看不到账排查</span>
+    </a>
+    <a class="card featured" href="/blog/gptpro-plus-pro-qubie.html">
+      <div class="tag">套餐选择</div>
+      <div class="title">我不知道 Plus / Pro 怎么选</div>
+      <p class="desc">日常用户优先 Plus，高频研究 / 编程再看 Pro。</p>
+      <span class="route">查看套餐选择</span>
+    </a>
   </section>
 
   <section class="section-head">
@@ -105,8 +142,8 @@
     </a>
     <a class="card" href="/blog/chatgpt-daichong-plus-pro.html">
       <div class="tag">代充选择 · 2026-05-13</div>
-      <div class="title">chatGPT代充下单前怎么选：Plus、Pro 和成品号区别</div>
-      <p class="desc">chatGPT代充下单前，先看 Plus、Pro 100 美元档、Pro 200 美元档和成品号的区别，再看价格、流程和售后规则。</p>
+      <div class="title">Plus / Pro 下单前怎么选：价格、流程和售后规则</div>
+      <p class="desc">下单前先看 Plus、Pro 100 美元档和 Pro 200 美元档的区别，再看价格、流程和售后边界。</p>
     </a>
     <a class="card" href="/blog/gptpro-plus-pro-qubie.html">
       <div class="tag">套餐对比 · 2026-05-10</div>
@@ -127,5 +164,42 @@
 
   <p class="note">GPT4.pro 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。页面中提及的产品名称仅用于说明适配对象。</p>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  const WX_ID = 'jiage01888';
+  const toast = document.getElementById('toast');
+  function showToast(message){
+    if(!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    window.clearTimeout(showToast.timer);
+    showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+  function track(eventName, detail){
+    if(!eventName) return;
+    const payload = Object.assign({event: eventName}, detail || {});
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    if(typeof window.gtag === 'function') window.gtag('event', eventName, detail || {});
+    window.dispatchEvent(new CustomEvent('gptc:track', {detail: payload}));
+  }
+  document.querySelectorAll('[data-track]').forEach((element) => {
+    element.addEventListener('click', () => track(element.getAttribute('data-track')));
+  });
+  document.querySelectorAll('[data-copy-wx]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      try{
+        await navigator.clipboard.writeText(WX_ID);
+        track('blog_wechat_copy');
+        showToast('已复制微信：' + WX_ID);
+      }catch(error){
+        track('blog_wechat_copy', {fallback: true});
+        showToast('微信号：' + WX_ID);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
