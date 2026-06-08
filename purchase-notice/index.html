@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>即将跳转到合作发卡 / 自助系统 | 嘉哥AI</title>
-<meta name="description" content="嘉哥AI 购买前跳转说明：即将进入合作发卡或自助充值系统，请确认商品名称、保存订单号和激活码，售后联系嘉哥AI。">
+<title>即将进入合作发卡页 | 嘉哥AI</title>
+<meta name="description" content="嘉哥AI 购买前跳转说明：即将进入合作发卡页，请确认商品名称、保存订单号和 Plus 激活码，售后联系嘉哥AI。">
 <link rel="canonical" href="https://www.gpt4.pro/purchase-notice/">
 <style>
 :root{--bg:#f8fafc;--ink:#0f172a;--muted:#64748b;--line:#dbe4ee;--brand:#6246ea;--green:#0f766e;--warn:#fff7ed}
@@ -37,7 +37,7 @@ li{margin:8px 0}
 <main class="wrap">
   <nav class="nav">
     <a class="brand" href="/">嘉哥AI</a>
-    <a class="back" href="/">返回首页</a>
+    <a class="back" href="/activate/">已购买？去站内激活</a>
   </nav>
 
   <section class="panel">
@@ -49,8 +49,8 @@ li{margin:8px 0}
       <strong>下单前请确认</strong>
       <ul data-list>
         <li>请确认商品名称为：ChatGPT Plus 激活码。</li>
-        <li>付款后请保存订单号、激活码和付款记录。</li>
-        <li>拿到激活码后，进入自助充值系统按提示操作。</li>
+        <li>付款后请保存订单号、Plus 激活码和付款记录。</li>
+        <li>拿到 Plus 激活码后，回到站内充值中心按提示操作。</li>
         <li>售后请联系嘉哥AI：微信 jiage01888。</li>
       </ul>
     </div>
@@ -61,7 +61,7 @@ li{margin:8px 0}
 
     <div class="actions">
       <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" rel="noopener nofollow" data-continue>我知道了，继续购买</a>
-      <a class="btn secondary" href="/">先返回首页</a>
+      <a class="btn secondary" href="/activate/">已购买？去站内激活</a>
     </div>
     <p class="fine">如果你已经扣款但没到账，建议先看 <a href="/help/">充值失败排查</a>，不要重复付款。</p>
   </section>
@@ -72,23 +72,23 @@ li{margin:8px 0}
     plus: {
       eyebrow: '购买 Plus 前确认',
       title: '即将跳转到嘉哥AI合作发卡系统',
-      lead: '你将进入合作发卡页面购买 ChatGPT Plus 激活码。请确认商品名称为 ChatGPT Plus 激活码，付款后保存订单号和激活码。',
+      lead: '你将进入合作发卡页面购买 ChatGPT Plus 激活码。请确认商品名称为 ChatGPT Plus 激活码，付款后保存订单号和 Plus 激活码。',
       href: 'https://fe.dtyuedan.cn/shop/jiage',
       button: '我知道了，继续购买',
       event: 'buy_external_jump',
       list: [
         '请确认商品名称为：ChatGPT Plus 激活码。',
-        '付款后请保存订单号、激活码和付款记录。',
-        '拿到激活码后，进入自助充值系统按提示操作。',
+        '付款后请保存订单号、Plus 激活码和付款记录。',
+        '拿到 Plus 激活码后，回到站内充值中心按提示操作。',
         '售后请联系嘉哥AI：微信 jiage01888。'
       ]
     },
     auto: {
-      eyebrow: '自助充值前确认',
-      title: '即将跳转到嘉哥AI合作自助系统',
-      lead: '你将进入自助充值系统使用已购买的激活码。请先准备好激活码，并确认你的 ChatGPT 账号可以正常登录。',
+      eyebrow: '站内激活前确认',
+      title: '即将进入嘉哥AI站内充值中心',
+      lead: '你将进入站内充值中心使用已购买的 Plus 激活码。请先准备好 Plus 激活码，并确认你的 ChatGPT 账号可以正常登录。',
       href: 'https://ow800.com/auto',
-      button: '我知道了，去自助充值',
+      button: '我知道了，去站内激活',
       event: 'home_activate_click',
       list: [
         '请准备好 Plus 激活码、订单号和可登录的 ChatGPT 账号。',

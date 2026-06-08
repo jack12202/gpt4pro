@@ -3,592 +3,142 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChatGPT Plus / Pro 开通与支付问题排查中心｜嘉哥AI</title>
-<meta name="description" content="ChatGPT Plus / Pro 开通与支付问题排查中心：按支付失败、扣款没到账、无海外信用卡、Plus / Pro 怎么选等场景快速找到下一步。">
+<title>ChatGPT Plus 充值 / 支付失败状态判断｜GPT4.pro 充值指南</title>
+<meta name="description" content="GPT4.pro 充值指南，把 ChatGPT Plus 支付失败、银行卡被拒、已扣款没生效、激活码不会用、Pro / 发票 / 对公需求按状态分流，帮助用户选择购买、激活或人工确认。">
 <link rel="canonical" href="https://www.gpt4.pro/blog/">
-<style>
-  :root {
-    --bg:#f8fafc;
-    --band:#eef7f5;
-    --panel:#ffffff;
-    --text:#17202a;
-    --muted:#64748b;
-    --line:#dbe4ee;
-    --accent:#0f766e;
-    --accentDark:#0a514c;
-    --soft:#ecfdf5;
-    --softLine:#99f6e4;
-    --warn:#fff7ed;
-    --warnLine:#fed7aa;
-    --ink:#0f172a;
-  }
-  * { box-sizing:border-box; }
-  body {
-    margin:0;
-    background:linear-gradient(180deg,#f8fafc 0%,#eef7f5 58%,#f8fafc 100%);
-    color:var(--text);
-    font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    line-height:1.68;
-  }
-  a { color:inherit; }
-  .wrap { width:min(1120px, calc(100% - 32px)); margin:0 auto; }
-  .nav {
-    display:flex;
-    justify-content:space-between;
-    gap:18px;
-    align-items:center;
-    padding:22px 0 16px;
-    border-bottom:1px solid var(--line);
-  }
-  .brand { color:var(--ink); text-decoration:none; font-size:18px; font-weight:900; white-space:nowrap; }
-  .nav-links { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; align-items:center; }
-  .nav-link, .nav-copy {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:36px;
-    padding:0 12px;
-    border:1px solid transparent;
-    border-radius:8px;
-    background:transparent;
-    color:#334155;
-    text-decoration:none;
-    font:inherit;
-    font-size:14px;
-    font-weight:800;
-    cursor:pointer;
-    white-space:nowrap;
-  }
-  .nav-link:hover, .nav-copy:hover { background:#ffffff; border-color:var(--line); color:var(--accentDark); }
-  .nav-link.primary { color:#fff; background:var(--accent); border-color:var(--accent); }
-  .hero {
-    display:grid;
-    grid-template-columns:minmax(0,1.35fr) minmax(310px,.65fr);
-    gap:22px;
-    align-items:stretch;
-    padding:38px 0 26px;
-  }
-  .eyebrow {
-    display:inline-flex;
-    color:#047857;
-    background:var(--soft);
-    border:1px solid #bbf7d0;
-    border-radius:999px;
-    padding:6px 12px;
-    font-size:14px;
-    font-weight:900;
-    margin-bottom:14px;
-  }
-  h1 { font-size:clamp(34px,5.5vw,58px); line-height:1.08; margin:0 0 14px; letter-spacing:0; }
-  .intro { color:#475569; max-width:780px; margin:0 0 20px; font-size:18px; }
-  .hero-actions, .card-actions, .bottom-actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-  .btn {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:44px;
-    padding:0 16px;
-    border-radius:8px;
-    border:1px solid var(--accent);
-    background:var(--accent);
-    color:#fff;
-    text-decoration:none;
-    font:inherit;
-    font-weight:900;
-    cursor:pointer;
-  }
-  .btn.secondary { color:var(--accentDark); background:#fff; border-color:var(--softLine); }
-  .btn.ghost { color:#334155; background:#fff; border-color:var(--line); }
-  .btn.text { min-height:0; padding:0; border:0; background:transparent; color:var(--accentDark); }
-  .status-grid {
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-    margin-top:22px;
-  }
-  .status-card, .price-card, .scenario, .article-card, .flow-step, .faq-item {
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:8px;
-    box-shadow:0 12px 34px rgba(15,23,42,.06);
-  }
-  .status-card {
-    display:block;
-    min-height:138px;
-    padding:16px;
-    text-decoration:none;
-    transition:transform .16s ease, border-color .16s ease;
-  }
-  .status-card:hover, .article-card:hover { transform:translateY(-1px); border-color:var(--accent); }
-  .status-card.warn { background:var(--warn); border-color:var(--warnLine); }
-  .status-card.safe { background:linear-gradient(135deg,#ffffff,#ecfdf5); border-color:var(--softLine); }
-  .label { color:var(--accent); font-size:13px; font-weight:900; }
-  .status-card strong, .scenario h3, .article-card h3 { display:block; margin:6px 0; color:var(--ink); font-size:19px; line-height:1.35; }
-  .status-card p, .scenario p, .article-card p, .flow-step p, .faq-item p { margin:0; color:#475569; }
-  .route { display:inline-flex; margin-top:11px; color:var(--accentDark); font-weight:900; }
-  .price-card { padding:20px; position:sticky; top:18px; align-self:start; }
-  .price-card h2 { margin:0 0 6px; font-size:23px; line-height:1.25; }
-  .price { display:flex; align-items:flex-end; gap:8px; margin:10px 0 8px; color:var(--ink); }
-  .price strong { font-size:42px; line-height:1; }
-  .price span { color:var(--muted); font-weight:850; padding-bottom:4px; }
-  .fit { margin:0 0 14px; color:#475569; }
-  .checks { display:grid; gap:8px; padding:0; margin:14px 0 18px; list-style:none; }
-  .checks li { display:flex; gap:8px; color:#334155; }
-  .checks li::before { content:""; width:7px; height:7px; border-radius:999px; background:var(--accent); margin-top:10px; flex:0 0 auto; }
-  .section { padding:28px 0; }
-  .section-head {
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:18px;
-    margin:0 0 16px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:12px;
-  }
-  .section-head h2 { margin:0; font-size:26px; line-height:1.25; }
-  .section-head p { margin:0; color:var(--muted); max-width:600px; }
-  .scenario-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
-  .scenario { display:block; padding:18px; text-decoration:none; }
-  .scenario .meta { color:var(--muted); margin:0 0 12px; }
-  .mini-list { display:grid; gap:8px; margin:14px 0; }
-  .mini-list a {
-    display:block;
-    color:var(--accentDark);
-    background:#f8fafc;
-    border:1px solid var(--line);
-    border-radius:8px;
-    padding:10px 12px;
-    text-decoration:none;
-    font-weight:850;
-  }
-  .scenario.warn { background:var(--warn); border-color:var(--warnLine); }
-  .scenario.safe { background:linear-gradient(135deg,#ffffff,#ecfdf5); border-color:var(--softLine); }
-  .flow {
-    background:#ffffff;
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    margin:14px 0;
-    padding:30px 0;
-  }
-  .flow-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
-  .flow-step { padding:16px; min-height:148px; }
-  .step-num {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:30px;
-    height:30px;
-    border-radius:999px;
-    background:var(--accent);
-    color:#fff;
-    font-weight:900;
-    margin-bottom:10px;
-  }
-  .flow-step strong { display:block; margin-bottom:5px; color:var(--ink); }
-  .safety {
-    margin-top:14px;
-    border:1px solid var(--warnLine);
-    background:var(--warn);
-    border-radius:8px;
-    padding:14px 16px;
-    color:#7c2d12;
-    font-weight:850;
-  }
-  .article-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
-  .article-card { display:block; padding:17px; text-decoration:none; transition:transform .16s ease, border-color .16s ease; }
-  .article-card.lead { grid-column:1/-1; padding:24px; background:linear-gradient(135deg,#ffffff,#ecfdf5); border-color:var(--softLine); }
-  .article-card.lead h3 { font-size:27px; line-height:1.25; max-width:760px; }
-  .article-card .scene { color:var(--accent); font-size:13px; font-weight:900; }
-  .answer { margin-top:10px; color:#334155; }
-  .next { color:var(--accentDark); font-weight:900; margin-top:12px; }
-  .faq-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .faq-item { padding:17px; }
-  .faq-item h3 { margin:0 0 8px; font-size:18px; line-height:1.35; color:var(--ink); }
-  .bottom-cta {
-    margin:30px 0 54px;
-    padding:20px;
-    background:var(--ink);
-    color:#fff;
-    border-radius:8px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:18px;
-  }
-  .bottom-cta p { margin:0; color:#cbd5e1; }
-  .bottom-cta strong { display:block; font-size:22px; margin-bottom:4px; color:#fff; }
-  .bottom-cta .btn.secondary { border-color:#ffffff; color:#0f172a; }
-  .next-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 14px; margin-top:12px; color:#dbeafe; font-size:14px; }
-  .note { color:var(--muted); font-size:14px; padding:18px 0 26px; border-top:1px solid var(--line); }
-  .toast {
-    position:fixed;
-    left:50%;
-    bottom:82px;
-    transform:translateX(-50%);
-    background:rgba(15,23,42,.94);
-    color:#fff;
-    border-radius:8px;
-    padding:10px 13px;
-    z-index:100;
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .18s ease;
-  }
-  .toast.show { opacity:1; }
-  .mobile-sticky {
-    display:none;
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index:80;
-    background:rgba(255,255,255,.96);
-    border-top:1px solid var(--line);
-    box-shadow:0 -12px 30px rgba(15,23,42,.10);
-    padding:9px 12px;
-  }
-  .sticky-inner { display:grid; grid-template-columns:1fr auto auto; gap:8px; align-items:center; }
-  .sticky-text { color:#334155; font-size:13px; font-weight:900; line-height:1.25; }
-  .sticky-btn {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:36px;
-    padding:0 10px;
-    border-radius:8px;
-    background:var(--accent);
-    color:#fff;
-    text-decoration:none;
-    font-size:13px;
-    font-weight:900;
-    white-space:nowrap;
-  }
-  .sticky-btn.secondary { background:#fff; color:var(--accentDark); border:1px solid var(--softLine); }
-  @media(max-width:920px){
-    .hero { grid-template-columns:1fr; }
-    .price-card { position:static; }
-    .article-grid, .flow-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  }
-  @media(max-width:680px){
-    .wrap { width:min(100% - 28px, 1120px); }
-    .nav { align-items:flex-start; }
-    .nav-links { gap:6px; }
-    .nav-link, .nav-copy { min-height:34px; padding:0 9px; font-size:13px; }
-    .status-grid, .scenario-grid, .article-grid, .flow-grid, .faq-grid { grid-template-columns:1fr; }
-    .section-head { display:block; }
-    .section-head p { margin-top:6px; }
-    .btn { width:100%; }
-    .bottom-cta { display:block; margin-bottom:86px; }
-    .bottom-actions { margin-top:14px; }
-    .mobile-sticky { display:block; }
-  }
-</style>
+<link rel="stylesheet" href="/assets/gptc.css">
+<script src="/assets/gptc-components.js" defer></script>
 </head>
 <body>
-<header class="wrap">
-  <nav class="nav" aria-label="主导航">
-    <a class="brand" href="/">嘉哥AI</a>
-    <div class="nav-links">
-      <a class="nav-link" href="/" data-track="blog_to_home_click">首页</a>
-      <a class="nav-link primary" href="/purchase-notice/?target=plus" data-track="blog_buy_click">Plus 充值</a>
-      <a class="nav-link" href="/activate/" data-track="home_activate_click">已购买去激活</a>
-      <a class="nav-link" href="#triage">先判断</a>
-      <button class="nav-copy" type="button" data-copy-wx>Pro / 异常订单咨询</button>
+<header class="site-header">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="site-brand" href="/">嘉哥AI</a>
+    <div class="site-links">
+      <a href="/chatgpt-plus-recharge/">Plus充值</a>
+      <a href="/guide/">充值流程</a>
+      <a href="/blog/">充值指南</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/activate/?from=blog_nav" data-track="blog_nav_activate">已购买？去站内激活</a>
+      <a class="nav-buy" href="/buy/plus/?from=blog_nav" data-track="blog_nav_buy">立即购买 Plus 激活码</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <section class="wrap hero">
-    <div class="hero-copy">
-      <span class="eyebrow">问题排查中心</span>
-      <h1>ChatGPT Plus / Pro 开通与支付问题排查中心</h1>
-      <p class="intro">先判断你是支付失败、扣款没到账、无海外信用卡，还是不知道 Plus / Pro 怎么选。看完再决定自助充值、继续排查，或联系人工确认。</p>
-      <div class="hero-actions">
-        <a class="btn" href="#triage" data-track="blog_triage_click">先判断我是哪种情况</a>
-        <a class="btn secondary" href="/purchase-notice/?target=plus" data-track="blog_hero_buy_click">直接购买 Plus 激活码</a>
-        <a class="btn text" href="/activate/" data-track="home_activate_click">已购买？查看自助充值说明</a>
+  <section class="article-hero">
+    <div class="article-container hero-grid">
+      <div>
+        <span class="article-kicker">GPT 充值问题分诊台</span>
+        <h1>ChatGPT Plus 充值 / 支付失败，先按状态选下一步</h1>
+        <p class="article-dek">官网支付失败、银行卡被拒、续费失败、买了 Plus 激活码不会用，都不要急着重复付款。先确认扣款状态、订单状态和 ChatGPT 账号，再选择购买 Plus 激活码、站内激活或联系人工确认。</p>
+        <div class="button-row">
+          <a class="button button-primary" href="/buy/plus/?from=blog_hero" data-track="blog_hero_buy">立即购买 Plus 激活码</a>
+          <a class="button button-secondary" href="/activate/?from=blog_hero" data-track="blog_hero_activate">已购买？去站内激活</a>
+          <button class="button button-ghost" type="button" data-copy-wx data-track="blog_hero_consult">不确定？复制微信咨询</button>
+        </div>
       </div>
-    </div>
-
-    <aside class="price-card" aria-label="Plus 开通入口">
-      <h2>准备开通 Plus？</h2>
-      <p class="fit">用自己的 ChatGPT 账号，无需提交密码。</p>
-      <ul class="checks">
-        <li>支持支付宝 / 微信付款</li>
-        <li>常规订单约 5 分钟完成</li>
-        <li>异常订单可人工协助排查</li>
-      </ul>
-      <div class="card-actions">
-        <a class="btn" href="/purchase-notice/?target=plus" data-track="pricing_buy_click">购买 Plus 激活码</a>
-        <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？去自助激活</a>
-        <button class="btn ghost" type="button" data-copy-wx>Pro / 异常订单咨询微信</button>
-      </div>
-    </aside>
-  </section>
-
-  <section class="wrap section" id="triage">
-    <div class="section-head">
-      <h2>你现在卡在哪一步？</h2>
-      <p>先按问题进入，不用在文章列表里自己猜。已扣款或处理中时，优先保存证据，不要重复下单。</p>
-    </div>
-    <div class="scenario-grid">
-      <a class="scenario safe" id="not-paid" href="/blog/chatgpt-plus-no-foreign-card.html">
-        <span class="label">情况 1</span>
-        <h3>我没有海外信用卡</h3>
-        <p class="meta">适合：官网付不了、想用支付宝 / 微信</p>
-        <span class="route">下一步：看开通方式</span>
-      </a>
-
-      <a class="scenario" id="paid-pending" href="/blog/chatgpt-plus-card-declined.html">
-        <span class="label">情况 2</span>
-        <h3>我付款失败 / card declined</h3>
-        <p class="meta">适合：银行卡被拒、支付页面报错</p>
-        <span class="route">下一步：先排查失败原因</span>
-      </a>
-
-      <a class="scenario" href="/blog/chatgpt-plus-paid-but-not-active.html">
-        <span class="label">情况 3</span>
-        <h3>我扣款了但没到账</h3>
-        <p class="meta">适合：钱扣了，账号还是 Free</p>
-        <span class="route">下一步：先别重复付款</span>
-      </a>
-
-      <a class="scenario safe" id="pro-consult" href="/blog/gptpro-plus-pro-qubie.html">
-        <span class="label">情况 4</span>
-        <h3>我不知道 Plus / Pro 怎么选</h3>
-        <p class="meta">适合：纠结月费、额度、使用场景</p>
-        <span class="route">下一步：看套餐选择</span>
-      </a>
+      <aside class="purchase-card compact">
+        <span class="card-kicker">ChatGPT Plus 月度充值</span>
+        <p class="price">¥188 / 月</p>
+        <p>适合官网支付失败、没有海外信用卡、想用支付宝 / 微信付款的用户。购买后回到站内充值中心激活。</p>
+        <ul>
+          <li>充值到自己的 ChatGPT 账号</li>
+          <li>无需提供账号密码</li>
+          <li>异常订单人工协助处理</li>
+        </ul>
+        <div class="button-row">
+          <a class="button button-primary" href="/buy/plus/?from=blog_price" data-track="blog_price_buy">立即购买 Plus 激活码</a>
+          <a class="button button-secondary" href="/activate/?from=blog_price" data-track="blog_price_activate">已购买？去站内激活</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="wrap section" aria-label="Plus 充值急救专题">
-    <div class="section-head">
-      <h2>Plus 充值急救专题</h2>
-      <p>如果你不知道问题出在哪里，先看总指南，再按具体场景进入。</p>
-    </div>
-    <div class="article-grid">
-      <a class="article-card lead" href="/blog/chatgpt-plus-recharge-failed.html">
-        <span class="scene">推荐先看</span>
-        <h3>ChatGPT Plus 支付失败怎么办？</h3>
-        <p>支付失败、扣款没到账、Plus 没生效、无法续费，先从这篇排查。</p>
-        <p class="answer">适合：不知道问题出在哪里的用户。</p>
-        <div class="next">开始排查</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-card-declined.html">
-        <span class="scene">支付被拒</span>
-        <h3>Your card has been declined 怎么处理？</h3>
-        <p>适合：信用卡、虚拟卡、账单地址或 3DS 校验失败。</p>
-        <p class="answer">看完你会知道：该继续换卡，还是停止重复尝试。</p>
-        <div class="next">查看 declined 排查</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-paid-but-not-active.html">
-        <span class="scene">扣款没到账</span>
-        <h3>扣款成功但 Plus 没到账怎么办？</h3>
-        <p>适合：已经扣款，但账号里还没看到 Plus。</p>
-        <p class="answer">看完你会知道：先查哪个账号和订阅状态。</p>
-        <div class="next">查看不到账处理</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-renewal-failed.html">
-        <span class="scene">续费失败</span>
-        <h3>ChatGPT Plus 自动续费失败怎么办？</h3>
-        <p>适合：Plus 到期、续费失败、账号回到 Free。</p>
-        <p class="answer">看完你会知道：原订阅怎么处理，是否重新开通。</p>
-        <div class="next">查看续费排查</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-no-foreign-card.html">
-        <span class="scene">无海外卡</span>
-        <h3>没有海外信用卡怎么开通 Plus？</h3>
-        <p>适合：想用支付宝 / 微信付款，不想反复研究海外卡。</p>
-        <p class="answer">看完你会知道：站内激活前要确认什么。</p>
-        <div class="next">查看开通方式</div>
-      </a>
+  <section class="article-shell">
+    <div class="article-container">
+      <section class="diagnosis-card" id="triage">
+        <strong>你现在遇到的是哪种情况？</strong>
+        <div class="diagnosis-grid">
+          <a href="/blog/chatgpt-plus-recharge-failed.html"><span>A</span><b>没有扣款 / 官网支付失败</b><p>先看支付失败和银行卡被拒排查；确认没有扣款后可购买 Plus 激活码。</p></a>
+          <a href="/blog/chatgpt-plus-paid-but-not-active.html"><span>B</span><b>已扣款但 Plus 没生效</b><p>先不要重复下单，保存扣款记录、订单页面和账号状态截图。</p></a>
+          <a href="/activate/?from=blog_triage" data-track="blog_triage_activate"><span>C</span><b>已经买了 Plus 激活码</b><p>直接进入站内充值中心，验证激活码并确认账号。</p></a>
+          <button class="diagnosis-item" type="button" data-copy-wx data-track="blog_triage_consult"><span>D</span><b>Pro / 发票 / 对公</b><p>先联系人工确认账号状态、订阅冲突和交付方式。</p></button>
+        </div>
+      </section>
+
+      <section>
+        <span class="gptc-pill">支付失败 / 银行卡被拒</span>
+        <div class="tag-grid">
+          <a class="tag-card" href="/blog/chatgpt-plus-recharge-failed.html"><strong>ChatGPT Plus 支付失败怎么办？</strong><p>支付失败、扣款没到账、Plus 没生效、无法续费，先从这篇排查。</p><div class="next">查看排查方法</div></a>
+          <a class="tag-card" href="/blog/chatgpt-plus-card-declined.html"><strong>Your card has been declined 怎么处理？</strong><p>信用卡、虚拟卡、账单地址或 3DS 校验失败时先停下来排查。</p><div class="next">查看 declined 排查</div></a>
+          <a class="tag-card" href="/blog/chatgpt-plus-no-foreign-card.html"><strong>没有海外信用卡怎么开通 Plus？</strong><p>适合想用支付宝 / 微信付款，不想继续研究海外卡的用户。</p><div class="next">查看开通方式</div></a>
+          <a class="tag-card" href="/buy/plus/?from=blog_card" data-track="blog_card_buy"><strong>确认没有扣款，想直接开通？</strong><p>购买 Plus 激活码后回到站内充值中心激活，充值到自己的 ChatGPT 账号。</p><div class="next">立即购买 Plus 激活码</div></a>
+        </div>
+      </section>
+
+      <section>
+        <span class="gptc-pill">已扣款 / 续费 / 官方客服</span>
+        <div class="tag-grid">
+          <a class="tag-card" href="/blog/chatgpt-plus-paid-but-not-active.html"><strong>扣款成功但 Plus 没到账怎么办？</strong><p>先确认登录账号、收据和订阅状态，避免重复付款。</p><div class="next">查看不到账处理</div></a>
+          <a class="tag-card" href="/blog/chatgpt-plus-renewal-failed.html"><strong>ChatGPT Plus 自动续费失败怎么办？</strong><p>Plus 到期、续费失败、账号回到 Free 时，先看原支付方式。</p><div class="next">查看续费排查</div></a>
+          <a class="tag-card" href="/blog/chatgpt-plus-official-support-template.html"><strong>如何联系官方客服？附英文模板</strong><p>已扣款、订单异常、需要向官方说明问题时先准备材料。</p><div class="next">查看模板</div></a>
+          <button class="tag-card" type="button" data-copy-wx data-track="blog_paid_consult"><strong>已扣款或状态不确定？</strong><p>先不要重复下单，复制微信咨询后再判断下一步。</p><div class="next">不确定？复制微信咨询</div></button>
+        </div>
+      </section>
+
+      <section>
+        <span class="gptc-pill">套餐价格与新手准备</span>
+        <div class="tag-grid">
+          <a class="tag-card" href="/blog/gptpro-plus-pro-qubie.html"><strong>Plus / Pro 怎么选？</strong><p>日常用户优先 Plus，高频办公、研究、编程再看 Pro。</p><div class="next">查看套餐选择</div></a>
+          <a class="tag-card" href="/blog/gptpro-duoshaoqian-yiyue.html"><strong>GPT Pro 多少钱一月？</strong><p>Pro 是否值得升级，要和使用强度、任务复杂度一起看。</p><div class="next">查看 Pro 价格</div></a>
+          <a class="tag-card" href="/blog/chatgpt-yigeyue-duoshaoyuan.html"><strong>ChatGPT 一个月多少元？</strong><p>先看 Plus、Pro 和国内实际开通成本，再决定怎么选。</p><div class="next">查看月费说明</div></a>
+          <a class="tag-card" href="/blog/how-to-use-gpt.html"><strong>国内用户使用 ChatGPT Plus 前要准备什么？</strong><p>账号归属、付款失败处理方式和安全边界先确认清楚。</p><div class="next">查看准备清单</div></a>
+        </div>
+      </section>
+
+      <section class="purchase-card inline-card" id="activation-flow">
+        <span class="card-kicker">购买后怎么开通？</span>
+        <h2>购买 Plus 激活码 → 回到站内充值中心 → 确认账号并提交充值</h2>
+        <p>付款后拿到 Plus 激活码。打开站内充值中心，输入激活码验证，登录自己的 ChatGPT 账号，复制充值密钥 JSON，确认账号邮箱后提交充值。</p>
+        <p class="card-note">不会要求你提供 ChatGPT 密码、邮箱验证码、短信验证码或银行卡验证码。看不懂 JSON 可以先联系客服，不要重复提交。</p>
+        <div class="button-row">
+          <a class="button button-primary" href="/buy/plus/?from=blog_flow" data-track="blog_flow_buy">立即购买 Plus 激活码</a>
+          <a class="button button-secondary" href="/activate/?from=blog_flow" data-track="blog_flow_activate">已购买？去站内激活</a>
+        </div>
+      </section>
+
+      <section class="next-step-card">
+        <h2>能买的去买，已买的去激活，不确定的先咨询。</h2>
+        <div class="next-step-list">
+          <div><b>没有扣款 / 官网支付失败</b><span>可以购买 Plus 激活码，使用支付宝 / 微信付款后回到站内充值中心激活。</span></div>
+          <div><b>已购买 Plus 激活码</b><span>直接进入站内充值中心验证激活码并确认账号。</span></div>
+          <div><b>已扣款但没到账</b><span>先不要重复付款，保存截图后按文章排查。</span></div>
+          <div><b>Pro / 发票 / 对公</b><span>先复制微信咨询，确认账号状态和交付方式。</span></div>
+        </div>
+        <div class="button-row">
+          <a class="button button-primary" href="/buy/plus/?from=blog_bottom" data-track="blog_bottom_buy">立即购买 Plus 激活码</a>
+          <a class="button button-secondary" href="/activate/?from=blog_bottom" data-track="blog_bottom_activate">已购买？去站内激活</a>
+          <button class="button button-ghost" type="button" data-copy-wx data-track="blog_bottom_consult">不确定？复制微信咨询</button>
+        </div>
+      </section>
     </div>
   </section>
-
-  <section class="wrap section" aria-label="套餐价格与选择">
-    <div class="section-head">
-      <h2>套餐价格与选择</h2>
-      <p>Plus、Pro 和实际开通成本，适合下单前做对比。</p>
-    </div>
-    <div class="article-grid">
-      <a class="article-card" href="/blog/gptpro-plus-pro-qubie.html">
-        <span class="scene">套餐对比</span>
-        <h3>Plus / Pro 怎么选？</h3>
-        <p>适合：不确定自己该买 Plus 还是 Pro。</p>
-        <p class="answer">看完你会知道：日常用户、高频办公、重度研究分别怎么选。</p>
-        <div class="next">查看套餐选择</div>
-      </a>
-      <a class="article-card" href="/blog/gptpro-duoshaoqian-yiyue.html">
-        <span class="scene">Pro 价格</span>
-        <h3>GPT Pro 多少钱一月？</h3>
-        <p>适合：考虑 Pro 100 / 200 美元方案。</p>
-        <p class="answer">看完你会知道：什么时候值得升级 Pro。</p>
-        <div class="next">查看 Pro 价格</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-yigeyue-duoshaoyuan.html">
-        <span class="scene">开通成本</span>
-        <h3>ChatGPT 一个月多少元？</h3>
-        <p>适合：想先确认 Plus、Pro 和实际开通成本。</p>
-        <p class="answer">看完你会知道：不要只按美元标价判断。</p>
-        <div class="next">查看月费说明</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-daichong-plus-pro.html">
-        <span class="scene">下单前看</span>
-        <h3>Plus / Pro 下单前怎么选？</h3>
-        <p>适合：想先了解流程、交付和售后边界。</p>
-        <p class="answer">看完你会知道：什么情况自助，什么情况找人工。</p>
-        <div class="next">查看下单建议</div>
-      </a>
-    </div>
-  </section>
-
-  <section class="wrap section" aria-label="新手开通前准备">
-    <div class="section-head">
-      <h2>新手开通前准备</h2>
-      <p>账号、付款、官方客服和售后边界，适合第一次处理 Plus / Pro 的用户。</p>
-    </div>
-    <div class="article-grid">
-      <a class="article-card" href="/blog/how-to-use-gpt.html">
-        <span class="scene">新手准备</span>
-        <h3>国内用户使用 ChatGPT Plus 前，要先准备什么？</h3>
-        <p>适合：第一次注册、升级或处理账号问题。</p>
-        <p class="answer">看完你会知道：账号、订阅位置和安全边界。</p>
-        <div class="next">查看准备清单</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-alipay-recharge.html">
-        <span class="scene">支付宝 / 微信</span>
-        <h3>ChatGPT Plus 支付宝充值可以吗？</h3>
-        <p>适合：想用国内付款方式开通 Plus。</p>
-        <p class="answer">看完你会知道：站内激活前后要注意什么。</p>
-        <div class="next">查看付款说明</div>
-      </a>
-      <a class="article-card" href="/blog/chatgpt-plus-official-support-template.html">
-        <span class="scene">官方客服</span>
-        <h3>充值失败如何联系官方客服？</h3>
-        <p>适合：扣款没到账或订阅异常，需要官方介入。</p>
-        <p class="answer">看完你会知道：要准备哪些截图和英文说明。</p>
-        <div class="next">查看客服模板</div>
-      </a>
-    </div>
-  </section>
-
-  <section class="flow" id="activation-flow">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>购买后怎么开通？</h2>
-        <p>先买 Plus 激活码，再回到站内充值中心操作。流程里会用到充值密钥 JSON，但它不是你的 ChatGPT 密码。</p>
-      </div>
-      <div class="flow-grid" aria-label="Plus 激活流程">
-        <div class="flow-step"><span class="step-num">1</span><strong>付款购买 Plus 激活码</strong><p>在合作发卡页完成支付宝 / 微信付款，付款后获得 Plus 激活码。</p></div>
-        <div class="flow-step"><span class="step-num">2</span><strong>回到站内充值中心</strong><p>打开 GPT4.pro/activate，输入激活码并先验证是否可用。</p></div>
-        <div class="flow-step"><span class="step-num">3</span><strong>登录自己的 ChatGPT 账号</strong><p>按页面提示登录 GPT，确认要充值的是你自己的账号。</p></div>
-        <div class="flow-step"><span class="step-num">4</span><strong>复制充值密钥 JSON</strong><p>完整复制页面给出的 JSON，不删字段，不改内容。</p></div>
-        <div class="flow-step"><span class="step-num">5</span><strong>确认账号邮箱</strong><p>提交前再次核对邮箱、账号状态和激活码信息。</p></div>
-        <div class="flow-step"><span class="step-num">6</span><strong>提交充值并等待处理</strong><p>正常订单约 5 分钟完成，异常订单保留截图后联系客服。</p></div>
-      </div>
-      <div class="safety">不会要求你提供 ChatGPT 密码、邮箱验证码、短信验证码、银行卡验证码或支付密码。看不懂 JSON 可以先联系客服，不要重复提交。</div>
-    </div>
-  </section>
-
-  <section class="wrap section" aria-label="常见问题">
-    <div class="section-head">
-      <h2>常见问题</h2>
-      <p>下单前先把售后边界、安全信息和适合场景看清楚。</p>
-    </div>
-    <div class="faq-grid">
-      <article class="faq-item">
-        <h3>GPT4.pro 是官网吗？</h3>
-        <p>不是。GPT4.pro 是第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。页面中提到的产品名称只用于说明适配对象。</p>
-      </article>
-      <article class="faq-item">
-        <h3>需要提供 ChatGPT 密码吗？</h3>
-        <p>不需要。站内流程不会索要 ChatGPT 密码、邮箱验证码、短信验证码或银行卡验证码。</p>
-      </article>
-      <article class="faq-item">
-        <h3>付款后拿到什么？</h3>
-        <p>付款后拿到 Plus 激活码。之后回到 GPT4.pro 站内充值中心，验证激活码并按提示完成充值。</p>
-      </article>
-      <article class="faq-item">
-        <h3>已扣款但没生效怎么办？</h3>
-        <p>先不要重复付款。保存扣款记录、订单页面、账号邮箱和订阅状态截图，再按文章排查或联系客服确认。</p>
-      </article>
-      <article class="faq-item">
-        <h3>激活码不会用怎么办？</h3>
-        <p>进入站内充值中心，按验证激活码、登录 GPT、复制充值密钥 JSON、确认账号的顺序操作。看不懂先联系人工。</p>
-      </article>
-      <article class="faq-item">
-        <h3>Pro / 发票 / 对公怎么处理？</h3>
-        <p>Pro 100 / Pro 200、企业采购、发票和对公付款建议先复制微信咨询，确认账号状态和交付方式后再处理。</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="wrap bottom-cta">
-    <div>
-      <strong>还是不知道该怎么处理？</strong>
-      <p>按你现在的状态选下一步，别在扣款或异常订单处理中重复付款。</p>
-      <div class="next-grid">
-        <span>已经支付失败：先看支付失败排查</span>
-        <span>已经扣款没到账：先看不到账排查</span>
-        <span>只是没有海外信用卡：可以购买 Plus 激活码</span>
-        <span>想开 Pro：建议先联系人工确认</span>
-      </div>
-    </div>
-    <div class="bottom-actions">
-      <a class="btn secondary" href="/purchase-notice/?target=plus" data-track="blog_bottom_buy_click">购买 Plus 激活码</a>
-      <button class="btn ghost" type="button" data-copy-wx>咨询 Pro / 异常订单</button>
-    </div>
-  </section>
-
-  <footer class="wrap note">GPT4.pro 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。官方套餐、额度和使用限制以账号内显示及官方说明为准。</footer>
 </main>
 
-<div class="mobile-sticky" aria-label="移动端快速操作">
-  <div class="sticky-inner">
-    <div class="sticky-text">Plus ¥188/月｜支付宝/微信｜无需密码</div>
-    <a class="sticky-btn" href="/purchase-notice/?target=plus" data-track="blog_mobile_buy_click">购买激活码</a>
-    <a class="sticky-btn secondary" href="/activate/" data-track="home_activate_click">去激活</a>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/">嘉哥AI</a> ·
+    <a href="/buy/plus/">立即购买 Plus 激活码</a> ·
+    <a href="/activate/">已购买？去站内激活</a> ·
+    <a href="/blog/chatgpt-plus-recharge-failed.html">充值失败排查</a> ·
+    <a href="/blog/">博客</a>
+    <p>声明：嘉哥AI 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。官方套餐、额度和使用限制以账号内显示及官方说明为准。</p>
   </div>
-</div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</footer>
 
-<script>
-(function(){
-  const WX_ID = 'jiage01888';
-  const toast = document.getElementById('toast');
-  function showToast(message){
-    if(!toast) return;
-    toast.textContent = message;
-    toast.classList.add('show');
-    window.clearTimeout(showToast.timer);
-    showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1600);
-  }
-  function track(eventName, detail){
-    if(!eventName) return;
-    const payload = Object.assign({event:eventName}, detail || {});
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(payload);
-    if(typeof window.gtag === 'function') window.gtag('event', eventName, detail || {});
-    window.dispatchEvent(new CustomEvent('gptc:track', {detail:payload}));
-  }
-  document.querySelectorAll('[data-track]').forEach((element) => {
-    element.addEventListener('click', () => track(element.getAttribute('data-track')));
-  });
-  document.querySelectorAll('[data-copy-wx]').forEach((button) => {
-    button.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(WX_ID);
-        track('blog_wechat_copy');
-        showToast('已复制微信：' + WX_ID);
-      } catch(error) {
-        track('blog_wechat_copy', {fallback:true});
-        showToast('微信号：' + WX_ID);
-      }
-    });
-  });
-})();
-</script>
+<div class="mobile-sticky" aria-label="移动端快捷操作">
+  <a class="button button-primary" href="/buy/plus/?from=blog_mobile" data-track="blog_mobile_buy">立即购买 Plus 激活码</a>
+  <a class="button button-secondary" href="/activate/?from=blog_mobile" data-track="blog_mobile_activate">去激活</a>
+</div>
 </body>
 </html>
