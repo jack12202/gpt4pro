@@ -381,6 +381,56 @@ h1{
   gap:10px;
   margin-top:18px;
 }
+.codex-entry{
+  margin-top:-38px;
+  padding:0 20px 34px;
+  position:relative;
+  z-index:2;
+}
+.codex-entry-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  border:1px solid #dbe4ee;
+  border-radius:8px;
+  background:#fff;
+  box-shadow:0 18px 50px rgba(15,23,42,.08);
+  padding:22px 24px;
+}
+.codex-entry-text{
+  min-width:0;
+}
+.codex-entry-kicker{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 10px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#5b35e6;
+  font-size:13px;
+  font-weight:950;
+}
+.codex-entry h2{
+  margin:10px 0 6px;
+  font-size:clamp(22px,3vw,30px);
+  line-height:1.25;
+}
+.codex-entry p{
+  margin:0;
+  color:#475569;
+  font-size:16px;
+  line-height:1.65;
+}
+.codex-entry-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
+}
 .hero-benefits{
   margin:48px auto 0;
   max-width:820px;
@@ -871,6 +921,8 @@ h2{
   .hero-inner,.hero-benefits,.grid-4,.grid-3,.grid-2,.flow,.audience,.reviews,.blog-grid,.footer-inner{
     grid-template-columns:1fr;
   }
+  .codex-entry-inner{align-items:flex-start;flex-direction:column}
+  .codex-entry-actions{justify-content:flex-start}
   .preflight ol{grid-template-columns:1fr}
   .hero{padding-top:46px}
   .hero-benefits{gap:14px;max-width:520px}
@@ -883,6 +935,9 @@ h2{
   .nav{align-items:flex-start;flex-direction:column}
   .nav-links{gap:10px}
   .section{padding:42px 0}
+  .codex-entry{margin-top:-28px;padding-bottom:28px}
+  .codex-entry-inner{padding:18px}
+  .codex-entry-actions,.codex-entry-actions .btn{width:100%}
   .hero-actions .btn{width:100%}
   .hero-title-line{white-space:normal}
   .compare{font-size:14px}
@@ -899,6 +954,7 @@ h2{
     <a class="brand" href="/">嘉哥AI</a>
     <div class="nav-links">
       <a href="#plans">套餐价格</a>
+      <a href="/codex/">Codex专题</a>
       <a href="#flow">充值流程</a>
       <a href="/reviews/">用户评价</a>
       <a href="/faq/">FAQ</a>
@@ -921,6 +977,7 @@ h2{
         <div class="hero-actions">
           <a class="btn primary" href="/purchase-notice/?target=plus" data-track="home_hero_buy_click">立即购买 Plus 激活码 ¥198/月起</a>
           <button class="btn secondary" data-contact type="button">咨询 Pro 100 / 200 美元方案</button>
+          <a class="btn secondary" href="/codex/" data-track="home_hero_codex_click">开发者 / Codex 专题</a>
         </div>
         <p class="hero-trustline">已服务 2300+ 用户 · 常规约 5 分钟完成 · 异常订单人工协助</p>
         <p class="hero-microcopy">已支付失败或不到账？<a href="/help/">先看排查</a>，不要连续重复付款。实际权益以账号内显示为准。</p>
@@ -943,6 +1000,20 @@ h2{
           <a class="btn secondary" href="/activate/" data-track="home_activate_click">已购买？先看自助充值说明</a>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <section class="codex-entry" aria-label="Codex 和 Pro 套餐选择入口">
+    <div class="codex-entry-inner">
+      <div class="codex-entry-text">
+        <span class="codex-entry-kicker">开发者 / Codex 用户入口</span>
+        <h2>Codex 到底开 Plus 还是 Pro？先按使用强度判断</h2>
+        <p>适合写代码、跑项目、担心 Codex 额度不够或想开 Pro 100 / 200 的用户。先看专题，再决定 Plus 激活码、Pro 咨询或继续排查。</p>
+      </div>
+      <div class="codex-entry-actions">
+        <a class="btn primary" href="/codex/" data-track="home_codex_entry_click">进入 Codex 专题</a>
+        <a class="btn secondary" href="/blog/codex-plus-or-pro.html" data-track="home_codex_compare_click">先看 Plus / Pro 怎么选</a>
+      </div>
     </div>
   </section>
 
