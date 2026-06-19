@@ -940,6 +940,7 @@ h2{
   box-shadow:0 28px 80px rgba(15,23,42,.28);
   padding:24px;
 }
+.modal-card:focus{outline:none}
 .modal-card h2{
   margin:0 0 8px;
   font-size:28px;
@@ -958,6 +959,42 @@ h2{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
+}
+.wechat-id-card{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:center;
+  margin:16px 0;
+  padding:14px;
+  border:1px solid #99f6e4;
+  border-radius:8px;
+  background:#f0fdfa;
+}
+.wechat-id-card span{
+  display:block;
+  color:#64748b;
+  font-size:13px;
+  line-height:1.4;
+}
+.wechat-id-card strong{
+  display:block;
+  margin-top:2px;
+  color:#0f172a;
+  font-size:24px;
+  line-height:1.2;
+}
+.wechat-tip{
+  border:1px solid #dbe4ee;
+  border-radius:8px;
+  background:#f8fafc;
+  padding:12px 14px;
+  color:#475569;
+  font-size:14px;
+  line-height:1.6;
+}
+.wechat-tip strong{
+  color:#0f172a;
 }
 .modal-close{
   margin-top:14px;
@@ -1011,6 +1048,8 @@ h2{
   .compare{font-size:14px}
   .sticky{left:10px;right:10px}
   .sticky span{display:none}
+  .wechat-id-card{grid-template-columns:1fr}
+  .wechat-id-card .btn{width:100%}
 }
 </style>
 </head>
@@ -1236,7 +1275,7 @@ h2{
       </div>
       <div class="audience">
         <div class="item"><strong>适合直接购买 Plus 激活码</strong><p>你已有可登录的 ChatGPT 账号，需要 Plus 月度充值，没有海外信用卡，官网付款失败，或想用支付宝 / 微信付款并尽快完成升级。</p></div>
-        <div class="item"><strong>不适合直接下单</strong><p>账号无法登录、已扣款但 Plus 未生效、已有 iOS 订阅、账号状态不确定、想升 Pro 或需要发票/对公，这几类建议先复制微信咨询。</p></div>
+        <div class="item"><strong>不适合直接下单</strong><p>账号无法登录、已扣款但 Plus 未生效、已有 iOS 订阅、账号状态不确定、想升 Pro 或需要发票/对公，这几类建议先添加微信咨询。</p></div>
       </div>
     </div>
   </section>
@@ -1285,7 +1324,7 @@ h2{
         <details><summary>ChatGPT Plus 充值失败怎么办？</summary><p>先区分支付失败、扣款没到账、无法续费还是账号异常。不要连续重复提交付款，保存截图后查看 <a href="/help/">充值失败排查页</a>。</p></details>
         <details><summary>付款后拿到什么？</summary><p>付款后拿到 Plus 激活码。请先查看自助充值说明，再按页面提示验证激活码、核对账号邮箱并提交充值。</p></details>
         <details><summary>激活码没用可以退吗？</summary><p>按购买页和售后规则处理；未使用、已验证、已提交充值或已完成充值的处理方式不同。下单前请先确认账号能登录，已扣款未生效的情况不要重复购买。</p></details>
-        <details><summary>什么情况不要直接下单？</summary><p>账号无法登录、已有 iOS 订阅、已扣款但未生效、想升级 Pro、需要发票或对公付款，建议先复制微信咨询，确认账号状态和交付方式。</p></details>
+        <details><summary>什么情况不要直接下单？</summary><p>账号无法登录、已有 iOS 订阅、已扣款但未生效、想升级 Pro、需要发票或对公付款，建议先添加微信咨询，确认账号状态和交付方式。</p></details>
         <details><summary>Plus 和 Pro 哪个更适合我？</summary><p>大多数用户优先 Plus；如果你每天高强度做研究、代码、复杂分析，并明确需要更高额度，再考虑 Pro。</p></details>
         <details><summary>嘉哥AI / 嘉哥GPT 是 OpenAI 官方吗？</summary><p>不是。嘉哥AI / 嘉哥GPT 是第三方数字服务平台，与 OpenAI 或 ChatGPT 官方无隶属关系。</p></details>
       </div>
@@ -1312,7 +1351,7 @@ h2{
       <div class="cta-band">
         <div>
           <h2>准备选择 Plus 或 Pro？</h2>
-          <p>Plus 用户可以先购买激活码；Pro 或账号状态不确定的用户，先复制微信咨询人工。</p>
+          <p>Plus 用户可以先购买激活码；Pro 或账号状态不确定的用户，先添加微信咨询人工。</p>
         </div>
         <div class="hero-actions" style="margin:0">
           <a class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" data-track-event="pricing_buy_click">立即购买 Plus 激活码</a>
@@ -1355,12 +1394,39 @@ h2{
   <button class="btn secondary" data-contact type="button">Pro咨询</button>
 </div>
 
+<div class="modal-backdrop" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle" hidden>
+  <div class="modal-card wechat-modal" tabindex="-1">
+    <span class="tag">人工咨询</span>
+    <h2 id="wechatModalTitle">添加微信咨询 Pro / 异常订单</h2>
+    <p>如果你想开 Pro 100 / 200、账号状态不确定、已有扣款未生效、需要发票或对公，建议先加微信确认后再下单。</p>
+    <div class="wechat-id-card">
+      <div>
+        <span>嘉哥AI 微信号</span>
+        <strong id="wechatIdText">jiage01888</strong>
+      </div>
+      <button class="btn primary" type="button" data-copy-wx>复制微信号</button>
+    </div>
+    <ol class="modal-steps">
+      <li>复制微信号后，打开微信搜索并添加好友。</li>
+      <li>备注你的需求：例如“想开 Pro 100”“账号扣款没到账”“需要发票”。</li>
+      <li>发送账号状态截图或错误提示前，请先遮挡敏感信息；不要发送密码或验证码。</li>
+    </ol>
+    <div class="wechat-tip"><strong>建议先说清楚：</strong>你要开 Plus 还是 Pro、账号是否能登录、是否已经扣款、是否有 iOS 订阅或发票/对公需求。</div>
+    <div class="modal-actions">
+      <button class="btn secondary" type="button" data-modal-close>我知道了</button>
+    </div>
+    <button class="modal-close" type="button" data-modal-close>关闭弹窗</button>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
   const WX_ID = 'jiage01888';
   const toast = document.getElementById('toast');
+  const wechatModal = document.getElementById('wechatModal');
+  let lastContactTrigger = null;
   const reviewMarquee = document.querySelector('.review-marquee');
 
   if(reviewMarquee && !reviewMarquee.dataset.cloned){
@@ -1410,13 +1476,48 @@ h2{
     }
   }
 
+  function openWechatModal(trigger){
+    if(!wechatModal) return;
+    lastContactTrigger = trigger || document.activeElement;
+    wechatModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    track('home_wechat_modal_open');
+    const modalCard = wechatModal.querySelector('.modal-card');
+    if(modalCard) modalCard.focus();
+  }
+
+  function closeWechatModal(){
+    if(!wechatModal || wechatModal.hidden) return;
+    wechatModal.hidden = true;
+    document.body.style.overflow = '';
+    if(lastContactTrigger && typeof lastContactTrigger.focus === 'function'){
+      lastContactTrigger.focus();
+    }
+  }
+
   document.querySelectorAll('[data-contact]').forEach((button) => {
-    button.addEventListener('click', copyWx);
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      openWechatModal(button);
+    });
   });
 
   document.querySelectorAll('[data-copy-wx]').forEach((button) => {
     button.addEventListener('click', copyWx);
   });
+
+  document.querySelectorAll('[data-modal-close]').forEach((button) => {
+    button.addEventListener('click', closeWechatModal);
+  });
+
+  if(wechatModal){
+    wechatModal.addEventListener('click', (event) => {
+      if(event.target === wechatModal) closeWechatModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape') closeWechatModal();
+    });
+  }
 
   document.querySelectorAll('[data-track-event]').forEach((element) => {
     element.addEventListener('click', () => {
