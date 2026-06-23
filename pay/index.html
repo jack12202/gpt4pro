@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChatGPT 支付失败怎么办｜Plus / Pro 充值失败排查入口｜GPT4.pro</title>
+<meta name="description" content="ChatGPT Plus / Pro 支付失败、card declined、扣款没到账、无法续费或 iOS 订阅异常时，先确认付款、订阅和账号状态，再决定购买、激活或人工排查。">
+<link rel="canonical" href="https://www.gpt4.pro/pay/">
+<link rel="stylesheet" href="/assets/article-system.css">
+<meta property="og:title" content="ChatGPT 支付失败排查入口">
+<meta property="og:description" content="支付失败、扣款没到账、无法续费、iOS 订阅异常，先排查状态再处理。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gpt4.pro/pay/">
+<style>
+.status-grid,.route-grid,.proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 30px}
+.status-card,.route-card,.proof-card{border:1px solid var(--color-border);border-radius:8px;background:#fff;padding:18px}
+.route-card{text-decoration:none}
+.status-card strong,.route-card strong,.proof-card strong{display:block;color:var(--color-text-main);font-size:18px;margin-bottom:6px}
+.status-card p,.route-card p,.proof-card p{margin:0;color:var(--color-text-muted);font-size:15px;line-height:1.7}
+.danger-line{border-color:#fecdd3;background:#fff1f2}
+.safe-line{border-color:#bbf7d0;background:#f0fdf4}
+@media(max-width:880px){.status-grid,.route-grid,.proof-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="site-brand" href="/">嘉哥AI</a>
+    <div class="site-links">
+      <a href="/">首页</a>
+      <a href="/pay/">支付失败</a>
+      <a href="/pro/">Pro 5X / 20X</a>
+      <a href="/stable/">稳妥开通</a>
+      <a href="/safe/">账号安全</a>
+      <button type="button" data-copy-wx data-track="pay_nav_consult">异常订单咨询</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="article-hero">
+    <div class="article-container hero-grid">
+      <div>
+        <nav class="breadcrumbs" aria-label="面包屑">
+          <a href="/">首页</a><span>/</span><span>支付失败</span>
+        </nav>
+        <span class="article-kicker">ChatGPT 支付失败排查入口</span>
+        <h1>ChatGPT 支付失败、扣款没到账或无法续费，先别重复付款。</h1>
+        <p class="article-dek">如果你遇到 GPT 信用卡付不了、支付宝付款失败、礼品卡失败、Pro 无法开通或 Plus 续费异常，先确认是否扣款、当前订阅状态和账号状态，再决定下一步。</p>
+        <div class="button-row">
+          <button class="button button-primary" type="button" data-copy-wx data-track="pay_hero_consult">异常订单咨询</button>
+          <a rel="noopener" target="_blank" class="button button-secondary" href="https://fe.dtyuedan.cn/shop/jiage" data-track="pay_hero_buy">没有扣款？看 Plus 激活码</a>
+          <a class="button button-ghost" href="/pro/" data-track="pay_hero_pro">Pro 5X / 20X 入口</a>
+        </div>
+      </div>
+      <aside class="purchase-card compact">
+        <span class="card-kicker">先看状态</span>
+        <h2>支付失败分三类</h2>
+        <ul>
+          <li>没扣款，只是官网支付失败</li>
+          <li>已扣款，但 ChatGPT 没生效</li>
+          <li>已有订阅、续费或 iOS 状态冲突</li>
+        </ul>
+        <p class="card-note">不同状态处理方式不同，连续重复提交可能让排查更复杂。</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="article-shell">
+    <div class="article-container article-grid">
+      <article class="article-main">
+        <section class="diagnosis-card">
+          <strong>先判断你是哪一种支付问题</strong>
+          <div class="diagnosis-grid">
+            <a href="/blog/chatgpt-plus-card-declined.html"><span>A</span><b>信用卡被拒 / card declined</b><p>先看卡组织、账单地址、风控和扣款状态。</p></a>
+            <a href="/blog/chatgpt-plus-paid-but-not-active.html"><span>B</span><b>扣款了但没到账</b><p>先保留订单和支付凭证，不要重复付款。</p></a>
+            <a href="/blog/chatgpt-plus-renewal-failed.html"><span>C</span><b>Plus 无法续费</b><p>确认原订阅、支付方式和到期状态。</p></a>
+            <button class="diagnosis-item" type="button" data-copy-wx data-track="pay_diag_pro"><span>D</span><b>Pro / Codex 付款异常</b><p>先人工确认账号状态、套餐和付款记录。</p></button>
+          </div>
+        </section>
+
+        <section class="notice-card">
+          <strong>排查原则</strong>
+          <p>如果已经扣款或有不明订单，先暂停重复购买，保存支付凭证、订单截图、ChatGPT 订阅页面和错误提示，再确认下一步。</p>
+        </section>
+
+        <h2>支付失败后的第一步</h2>
+        <div class="status-grid">
+          <div class="status-card safe-line"><strong>没有扣款</strong><p>只是官网支付失败、没有海外卡或 card declined，没有实际扣款时，可以考虑 Plus 激活码或人工确认 Pro。</p></div>
+          <div class="status-card danger-line"><strong>已经扣款</strong><p>先不要重复付款。确认收据、支付渠道、账号邮箱和订阅页面，必要时联系人工协助排查。</p></div>
+          <div class="status-card"><strong>已有 Plus / Pro</strong><p>先确认当前套餐、到期时间、是否自动续费，以及是否从 iOS / App Store 订阅。</p></div>
+          <div class="status-card"><strong>账号无法登录</strong><p>登录问题应先解决。账号打不开时，不适合直接继续开通或充值。</p></div>
+        </div>
+
+        <h2>按问题去对应页面</h2>
+        <div class="route-grid">
+          <a class="route-card" href="/blog/chatgpt-plus-card-declined.html"><strong>信用卡付不了</strong><p>适合 GPT 信用卡被拒、card declined、账单地址和风控问题。</p></a>
+          <a class="route-card" href="/blog/chatgpt-plus-paid-but-not-active.html"><strong>支付成功但没到账</strong><p>适合扣款后 ChatGPT 仍显示 Free、Plus 未同步的情况。</p></a>
+          <a class="route-card" href="/blog/chatgpt-plus-recharge-failed.html"><strong>充值失败总排查</strong><p>适合错误提示不明确、订单状态和账号状态都需要核对。</p></a>
+          <a class="route-card" href="/blog/gpt-pro-codex-recharge-failed.html"><strong>Pro / Codex 充值失败</strong><p>适合 Pro、Codex 高频、额度或套餐相关的付款异常。</p></a>
+        </div>
+
+        <section class="purchase-card inline-card">
+          <span class="card-kicker">下一步建议</span>
+          <h2>没扣款和已扣款，路径不一样。</h2>
+          <p>没有扣款，只是官网支付失败或没有海外卡，可以看 Plus 激活码。已经扣款、订阅异常、账号无法登录或要开 Pro，先人工确认。</p>
+          <div class="button-row">
+            <a rel="noopener" target="_blank" class="button button-primary" href="https://fe.dtyuedan.cn/shop/jiage" data-track="pay_inline_buy">没有扣款？看 Plus 激活码</a>
+            <button class="button button-secondary" type="button" data-copy-wx data-track="pay_inline_consult">已扣款/异常订单咨询</button>
+          </div>
+        </section>
+
+        <h2>联系排查前准备什么</h2>
+        <div class="proof-grid">
+          <div class="proof-card"><strong>订单和付款截图</strong><p>包括支付时间、金额、渠道、订单号或银行/平台记录。</p></div>
+          <div class="proof-card"><strong>ChatGPT 订阅页面</strong><p>截取当前 Plan、Manage subscription、到期时间或错误提示。</p></div>
+          <div class="proof-card"><strong>账号邮箱</strong><p>确认是否登录了正确账号，避免把 A 账号的订单查到 B 账号。</p></div>
+          <div class="proof-card"><strong>错误提示原文</strong><p>保留 card declined、payment failed、unable to renew 等提示。</p></div>
+        </div>
+
+        <section class="notice-card">
+          <strong>质保与退款边界</strong>
+          <p>正常个人使用、遵守平台规则，通常不容易出现账号限制；真正需要避免的是共享转卖、异常高频、自动化滥用、违规内容或其他高风险操作。如果出现掉订阅、订阅未生效，或账号被限制/封禁等异常，先保留订单、账号状态和错误提示截图，我们会协助向卡台/支付通道申请对应的官方退款。</p>
+          <p>退款以 ChatGPT 官方或卡台实际退回为前提；退款到账后，会按剩余服务时间或实际可退金额比例退给用户。若因用户滥用、违规使用、共享转卖、异常高风险操作等原因导致官方/卡台拒退，则不承诺退款。</p>
+        </section>
+
+        <section class="faq-box">
+          <strong>FAQ</strong>
+          <details open><summary>支付失败后可以马上再试一次吗？</summary><p>如果没有扣款，可以先确认错误原因再决定。若已经扣款或出现订阅异常，不建议连续重复提交。</p></details>
+          <details><summary>支付宝付款失败怎么办？</summary><p>先确认是否实际扣款、订单是否生成、账号是否已经有订阅，再按支付失败或人工排查处理。</p></details>
+          <details><summary>苹果礼品卡或 iOS 订阅异常怎么办？</summary><p>先确认 App Store 订阅状态、到期时间和是否仍在续费周期内，再决定是否继续处理网页端订阅。</p></details>
+          <details><summary>Pro 无法开通怎么办？</summary><p>先确认账号能否登录、当前订阅、付款记录和 Codex 使用需求。Pro 5X / 20X 建议先人工确认。</p></details>
+        </section>
+      </article>
+
+      <aside class="article-aside">
+        <div class="purchase-card">
+          <span class="card-kicker">异常订单</span>
+          <h2>先整理凭证</h2>
+          <p>支付失败、扣款未到账、续费异常或 Pro 无法开通，都先看状态再处理。</p>
+          <ul>
+            <li>是否已经扣款</li>
+            <li>当前订阅是什么</li>
+            <li>账号能否登录</li>
+            <li>是否已有 iOS 订阅</li>
+          </ul>
+          <div class="button-row">
+            <button class="button button-primary" type="button" data-copy-wx data-track="pay_side_consult">复制微信咨询</button>
+          </div>
+        </div>
+        <nav class="toc" aria-label="页面目录">
+          <strong>页面目录</strong>
+          <a href="/blog/chatgpt-plus-card-declined.html">信用卡被拒</a>
+          <a href="/blog/chatgpt-plus-paid-but-not-active.html">扣款没到账</a>
+          <a href="/blog/chatgpt-plus-renewal-failed.html">续费失败</a>
+          <a href="/pro/">Pro 5X / 20X</a>
+        </nav>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/">嘉哥AI</a> · <a href="/pay/">支付失败</a> · <a href="/pro/">Pro 5X / 20X</a> · <a href="/stable/">稳妥开通</a> · <a href="/safe/">账号安全</a>
+    <p>声明：GPT4.pro / 嘉哥AI 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。官方套餐、权益、额度和使用限制以账号内显示及官方说明为准。</p>
+  </div>
+</footer>
+
+<div class="mobile-sticky" aria-label="移动端快捷操作">
+  <button class="button button-primary" type="button" data-copy-wx data-track="pay_mobile_consult">异常订单咨询</button>
+  <a class="button button-secondary" href="/pro/" data-track="pay_mobile_pro">Pro 5X / 20X</a>
+</div>
+
+<script src="/assets/gptc-components.js"></script>
+</body>
+</html>
