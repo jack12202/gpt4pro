@@ -859,6 +859,23 @@ h2{
   margin:0;
   color:#475569;
 }
+.entry-link{
+  display:block;
+  color:var(--ink);
+}
+.entry-link:hover{
+  text-decoration:none;
+  border-color:#99f6e4;
+  background:#f8fffd;
+}
+.entry-link .tag{
+  margin-bottom:10px;
+}
+.entry-link h3{
+  margin:0 0 8px;
+  font-size:20px;
+  line-height:1.35;
+}
 .cta-band{
   background:linear-gradient(135deg,#0f172a,#134e4a);
   color:#fff;
@@ -1044,7 +1061,10 @@ h2{
     <a class="brand" href="/">嘉哥AI</a>
     <div class="nav-links">
       <a href="#plans">套餐价格</a>
+      <a href="/pro/">Pro 5X / 20X</a>
       <a href="/codex/">Codex专题</a>
+      <a href="/pay/">支付失败</a>
+      <a href="/safe/">账号安全</a>
       <a href="#flow">充值流程</a>
       <a href="/reviews/">用户评价</a>
       <a href="/faq/">FAQ</a>
@@ -1068,11 +1088,11 @@ h2{
         <div class="hero-actions">
           <a rel="noopener" target="_blank" class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" data-track="home_hero_buy_click">立即购买 Plus 激活码 ¥198/月起</a>
           <a rel="noopener" target="_blank" class="btn secondary" href="https://987ai.vip/recharge" data-track="home_hero_activate_click">已购卡密，进入激活系统</a>
-          <button class="btn secondary" data-contact type="button">咨询 Pro 100 / 200 美元方案</button>
+          <a class="btn secondary" href="/pro/" data-track="home_hero_pro_click">查看 Pro 5X / 20X</a>
           <a class="btn secondary" href="/codex/" data-track="home_hero_codex_click">开发者 / Codex 专题</a>
         </div>
         <p class="hero-trustline">已服务 2300+ 用户 · 常规约 5 分钟完成 · 异常订单人工协助</p>
-        <p class="hero-microcopy">已支付失败或不到账？<a href="/help/">先看排查</a>，不要连续重复付款。实际权益以账号内显示为准。</p>
+        <p class="hero-microcopy">已支付失败或不到账？<a href="/pay/">先看支付失败排查</a>，不要连续重复付款。实际权益以账号内显示为准。</p>
       </div>
       <aside class="hero-card" aria-label="ChatGPT Plus 月度充值决策卡">
         <span class="tag">推荐</span>
@@ -1110,16 +1130,48 @@ h2{
       <div class="codex-entry-text">
         <span class="codex-entry-kicker">开发者 / Codex 用户入口</span>
         <h2>Codex 到底开 Plus 还是 Pro？先按使用强度判断</h2>
-        <p>适合写代码、跑项目、担心 Codex 额度不够或想开 Pro 100 / 200 的用户。先看专题，再决定 Plus 激活码、Pro 咨询或继续排查。</p>
+        <p>适合写代码、跑项目、担心 Codex 额度不够或想开 Pro 5X / 20X 的用户。先看专题，再决定 Plus 激活码、Pro 咨询或继续排查。</p>
       </div>
       <div class="codex-entry-actions">
         <a class="btn primary" href="/codex/" data-track="home_codex_entry_click">进入 Codex 专题</a>
         <a class="btn secondary" href="/blog/codex-plus-or-pro.html" data-track="home_codex_compare_click">先看 Plus / Pro 怎么选</a>
+        <a class="btn secondary" href="/pro/" data-track="home_codex_pro_click">查看 Pro 5X / 20X</a>
       </div>
     </div>
   </section>
 
   <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>开通前先看这几个入口</h2>
+        <p>如果你不确定该买 Plus、咨询 Pro，还是先排查账号和付款状态，可以先按下面四个场景判断下一步。</p>
+      </div>
+      <div class="grid-4">
+        <a class="item entry-link" href="/pro/" data-track="home_entry_pro">
+          <span class="tag">Pro 高频用户</span>
+          <h3>Pro 5X / 20X 怎么选</h3>
+          <p>适合 Codex 高频、AI 重度用户、发票/对公或账号状态不确定的人。</p>
+        </a>
+        <a class="item entry-link" href="/pay/" data-track="home_entry_pay">
+          <span class="tag">支付失败</span>
+          <h3>扣款、不到账、续费失败</h3>
+          <p>已经支付失败或扣款异常时，先排查状态，不要连续重复付款。</p>
+        </a>
+        <a class="item entry-link" href="/stable/" data-track="home_entry_stable">
+          <span class="tag">稳妥开通</span>
+          <h3>低价之外先看边界</h3>
+          <p>比较低价充值、平台卡密或代充时，先看账号归属、售后和退款边界。</p>
+        </a>
+        <a class="item entry-link" href="/safe/" data-track="home_entry_safe">
+          <span class="tag">账号安全</span>
+          <h3>密码、共享号、自助激活</h3>
+          <p>担心账号密码、共享号、平台代充或封禁风险，先看安全边界。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
       <div class="section-head">
         <h2>为什么选择嘉哥充值？</h2>
@@ -1134,11 +1186,11 @@ h2{
     </div>
   </section>
 
-  <section class="section" id="plans">
+  <section class="section alt" id="plans">
     <div class="wrap">
       <div class="section-head">
         <h2>ChatGPT Plus / Pro 价格与套餐选择</h2>
-        <p>官方为美元月费，本站价格包含支付通道、汇率、系统处理和售后协助成本。Pro 100 / 200 的核心能力接近，主要差异是用量；大多数用户优先 Plus，Pro、发票或对公先联系人工确认。</p>
+        <p>官方为美元月费，本站价格包含支付通道、汇率、系统处理和售后协助成本。Pro 5X / 20X（也就是常说的 100 / 200 美元层级）主要差异是用量；大多数用户优先 Plus，Pro、发票或对公先联系人工确认。</p>
       </div>
       <div class="grid-3">
         <article class="item product">
@@ -1176,8 +1228,8 @@ h2{
         </article>
         <article class="item product">
           <div class="product-top"><span class="tag">高频用户</span><span class="amount">¥880/月</span></div>
-          <h3>ChatGPT Pro 100 美元</h3>
-          <p>适合每天高频办公、编程、研究，但想控制预算的用户。核心能力与 Pro 200 接近，主要差异是用量。</p>
+          <h3>ChatGPT Pro 5X</h3>
+          <p>适合每天高频办公、编程、研究，但想控制预算的用户。可理解为常说的 Pro 100 美元层级，和 20X 的主要差异是用量。</p>
           <ul class="check-list">
             <li>价格：¥880/月</li>
             <li>适合：高频办公、编程、研究</li>
@@ -1186,14 +1238,15 @@ h2{
           </ul>
           <div class="not-fit"><strong>不适合</strong><p>只是偶尔使用 ChatGPT，或还没形成稳定使用习惯的用户。</p></div>
           <div class="link-row">
+            <a class="btn secondary" href="/pro/" data-track="home_plan_pro100">查看 Pro 5X / 20X</a>
             <button class="btn secondary" data-contact type="button">咨询 Pro 是否适合我</button>
             <a href="/blog/gptpro-plus-pro-qubie.html">Plus 和 Pro 怎么选</a>
           </div>
         </article>
         <article class="item product">
           <div class="product-top"><span class="tag">重度专业用户</span><span class="amount">¥1650/月</span></div>
-          <h3>ChatGPT Pro 200 美元</h3>
-          <p>适合长期高强度研究、复杂代码、深度工作流和多任务并行的用户。Pro 200 是更高用量层级。</p>
+          <h3>ChatGPT Pro 20X</h3>
+          <p>适合长期高强度研究、复杂代码、深度工作流和多任务并行的用户。可理解为常说的 Pro 200 美元层级，是更高用量层级。</p>
           <ul class="check-list">
             <li>价格：¥1650/月</li>
             <li>适合：重度研究、复杂代码、深度工作流</li>
@@ -1202,8 +1255,9 @@ h2{
           </ul>
           <div class="not-fit"><strong>不适合</strong><p>只想体验高级套餐的新手，或实际使用强度还不明确的用户。</p></div>
           <div class="link-row">
-            <button class="btn secondary" data-contact type="button">咨询 Pro 200 开通</button>
-            <a href="/help/">充值失败先排查</a>
+            <a class="btn secondary" href="/pro/" data-track="home_plan_pro200">查看 Pro 5X / 20X</a>
+            <button class="btn secondary" data-contact type="button">咨询 Pro 20X 开通</button>
+            <a href="/pay/">充值失败先排查</a>
           </div>
         </article>
       </div>
@@ -1243,9 +1297,10 @@ h2{
       </div>
       <table class="compare">
         <tr><th>情况</th><th>建议</th><th>相关入口</th></tr>
-        <tr><td>已有 ChatGPT 账号，只是付款失败</td><td>优先使用自己的账号开通，保留历史记录和账号归属。</td><td><a href="#plans">Plus / Pro 套餐</a></td></tr>
+        <tr><td>已有 ChatGPT 账号，只是付款失败</td><td>优先使用自己的账号开通，保留历史记录和账号归属。</td><td><a href="/pay/">支付失败排查</a></td></tr>
         <tr><td>没有海外信用卡</td><td>先了解官方价格和国内实际开通成本，再选择支付宝或微信付款方式。</td><td><a href="/blog/chatgpt-plus-no-foreign-card.html">开通教程</a></td></tr>
-        <tr><td>已经扣款但没到账</td><td>不要连续重复下单，先保存凭证并按错误类型排查。</td><td><a href="/help/">充值失败排查</a></td></tr>
+        <tr><td>已经扣款但没到账</td><td>不要连续重复下单，先保存凭证并按错误类型排查。</td><td><a href="/pay/">充值失败排查</a></td></tr>
+        <tr><td>担心低价平台、共享号或账号安全</td><td>先确认账号归属、密码边界、质保和退款规则，再决定是否下单。</td><td><a href="/safe/">账号安全</a> · <a href="/stable/">稳妥开通</a></td></tr>
       </table>
     </div>
   </section>
@@ -1304,7 +1359,7 @@ h2{
       </div>
       <div class="faq-list">
         <details open><summary>没有海外信用卡可以充值 ChatGPT Plus 吗？</summary><p>可以考虑通过支持支付宝或微信付款的第三方数字服务平台协助开通。建议优先使用自己的账号，并确认服务流程、信息边界和售后规则。</p></details>
-        <details><summary>ChatGPT Plus 充值失败怎么办？</summary><p>先区分支付失败、扣款没到账、无法续费还是账号异常。不要连续重复提交付款，保存截图后查看 <a href="/help/">充值失败排查页</a>。</p></details>
+        <details><summary>ChatGPT Plus 充值失败怎么办？</summary><p>先区分支付失败、扣款没到账、无法续费还是账号异常。不要连续重复提交付款，保存截图后查看 <a href="/pay/">支付失败排查页</a>。</p></details>
         <details><summary>付款后拿到什么？</summary><p>付款后拿到 Plus 激活码。请先查看自助充值说明，再按页面提示验证激活码、核对账号邮箱并提交充值。</p></details>
         <details><summary>激活码没用可以退吗？</summary><p>按购买页和售后规则处理；未使用、已验证、已提交充值或已完成充值的处理方式不同。下单前请先确认账号能登录，已扣款未生效的情况不要重复购买。</p></details>
         <details><summary>什么情况不要直接下单？</summary><p>账号无法登录、已有 iOS 订阅、已扣款但未生效、想升级 Pro、需要发票或对公付款，建议先添加微信咨询，确认账号状态和交付方式。</p></details>
@@ -1339,6 +1394,7 @@ h2{
         <div class="hero-actions" style="margin:0">
           <a rel="noopener" target="_blank" class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" data-track-event="pricing_buy_click">立即购买 Plus 激活码</a>
           <a rel="noopener" target="_blank" class="btn secondary" href="https://987ai.vip/recharge" data-track="bottom_activate_click">进入激活系统</a>
+          <a class="btn secondary" href="/pro/" data-track="bottom_pro_click">查看 Pro 5X / 20X</a>
           <button class="btn secondary" data-contact type="button">Pro 咨询微信</button>
         </div>
       </div>
@@ -1355,9 +1411,11 @@ h2{
     </div>
     <div class="footer-links">
       <a href="#plans">ChatGPT Plus 充值</a>
-      <a href="#plans">ChatGPT Pro 充值</a>
+      <a href="/pro/">ChatGPT Pro 5X / 20X</a>
+      <a href="/pay/">支付失败排查</a>
+      <a href="/stable/">稳妥开通</a>
+      <a href="/safe/">账号安全</a>
       <a href="/chatgpt-plus-price/">ChatGPT Plus 价格</a>
-      <a href="/help/">充值失败排查</a>
       <a href="/faq/">常见问题</a>
       <a href="/guide/">开通教程</a>
       <a href="/reviews/">用户评价</a>
@@ -1381,7 +1439,7 @@ h2{
   <div class="modal-card wechat-modal" tabindex="-1">
     <span class="tag">人工咨询</span>
     <h2 id="wechatModalTitle">加微信，先确认再下单</h2>
-    <p>想开 Pro 100 / 200，或遇到账号异常、已有订阅、发票/对公需求，先加微信说明情况，确认方案后再下单。</p>
+    <p>想开 Pro 5X / 20X，或遇到账号异常、已有订阅、发票/对公需求，先加微信说明情况，确认方案后再下单。</p>
     <div class="wechat-id-card">
       <div>
         <span>嘉哥AI 微信号</span>
@@ -1391,7 +1449,7 @@ h2{
     </div>
     <ol class="modal-steps">
       <li>复制微信号，打开微信搜索并添加好友。</li>
-      <li>添加后备注需求：例如“Pro 100”“账号有订阅”“需要发票”。</li>
+      <li>添加后备注需求：例如“Pro 5X”“账号有订阅”“需要发票”。</li>
     </ol>
     <button class="modal-close" type="button" data-modal-close>关闭弹窗</button>
   </div>
