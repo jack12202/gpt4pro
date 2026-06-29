@@ -121,5 +121,33 @@
   <a rel="noopener" target="_blank" class="button button-primary" href="https://fe.dtyuedan.cn/shop/jiage" data-track="codex_mobile_buy">立即购买 Plus 激活码</a>
   <button class="button button-secondary" type="button" data-copy-wx data-track="codex_mobile_consult">咨询 Pro</button>
 </div>
+
+<style>
+.recharge-preflight-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(15,23,42,.62);backdrop-filter:blur(10px)}
+.recharge-preflight-modal.is-open{display:flex}
+.recharge-preflight-dialog{width:min(420px,100%);box-sizing:border-box;padding:22px;border-radius:18px;background:#fff;color:#0f172a;box-shadow:0 28px 80px rgba(15,23,42,.28);text-align:center;border:1px solid rgba(15,23,42,.08)}
+.recharge-preflight-dialog h2{margin:0 0 10px;font-size:21px;line-height:1.35;color:#0f172a}
+.recharge-preflight-dialog p{margin:0;color:#475569;line-height:1.75;font-size:14px}
+.recharge-preflight-countdown{margin-top:12px;color:var(--brand,#0d9488);font-weight:900;font-size:14px}
+.recharge-preflight-actions{display:grid;gap:10px;margin-top:18px}
+.recharge-preflight-actions button{min-height:44px;border-radius:10px;border:1px solid rgba(15,23,42,.14);font-weight:900;cursor:pointer;font:inherit}
+.recharge-preflight-primary{background:linear-gradient(180deg,var(--brand,#0d9488),var(--brand-2,#14b8a6));color:#fff}
+.recharge-preflight-secondary{background:#fff;color:#334155}
+</style>
+<div class="recharge-preflight-modal" id="rechargePreflightModal" role="dialog" aria-modal="true" aria-labelledby="rechargePreflightTitle" aria-hidden="true">
+  <div class="recharge-preflight-dialog" tabindex="-1">
+    <h2 id="rechargePreflightTitle">即将进入 Plus 自助充值通道</h2>
+    <p>进入通道后，请按页面提示完成充值。充值成功前，请不要关闭已登录的 ChatGPT 网页，以免充值失败。</p>
+    <div class="recharge-preflight-countdown" id="rechargePreflightCountdown">8 秒后自动进入充值通道</div>
+    <div class="recharge-preflight-actions">
+      <button class="recharge-preflight-primary" id="rechargePreflightConfirm" type="button">我知道了，进入充值通道</button>
+      <button class="recharge-preflight-secondary" id="rechargePreflightCancel" type="button">暂不进入</button>
+    </div>
+  </div>
+</div>
+<script>
+(()=>{const defaultUrl='https://987ai.vip/recharge';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.open(targetUrl,'_blank','noopener');close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.open(targetUrl,'_blank','noopener');return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://987ai.vip/recharge"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
+</script>
+
 </body>
 </html>

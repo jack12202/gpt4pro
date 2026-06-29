@@ -1006,6 +1006,22 @@ h2{
   font:inherit;
   font-weight:850;
 }
+.recharge-modal-card {
+  text-align: center;
+}
+.recharge-countdown {
+  margin: 12px 0 0;
+  color: var(--brand);
+  font-weight: 900;
+}
+.recharge-modal-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+.recharge-modal-actions .btn {
+  width: 100%;
+}
 .toast{
   position:fixed;
   left:50%;
@@ -1455,6 +1471,18 @@ h2{
   </div>
 </div>
 
+<div class="modal-backdrop" id="rechargePreflightModal" role="dialog" aria-modal="true" aria-labelledby="rechargePreflightTitle" hidden>
+  <div class="modal-card recharge-modal-card" tabindex="-1">
+    <h2 id="rechargePreflightTitle">即将进入 Plus 自助充值通道</h2>
+    <p>进入通道后，请按页面提示完成充值。充值成功前，请不要关闭已登录的 ChatGPT 网页，以免充值失败。</p>
+    <div class="recharge-countdown" id="rechargePreflightCountdown">8 秒后自动进入充值通道</div>
+    <div class="recharge-modal-actions">
+      <button class="btn primary" id="rechargePreflightConfirm" type="button">我知道了，进入充值通道</button>
+      <button class="btn secondary" id="rechargePreflightCancel" type="button">暂不进入</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -1462,7 +1490,18 @@ h2{
   const WX_ID = 'jiage01888';
   const toast = document.getElementById('toast');
   const wechatModal = document.getElementById('wechatModal');
+  const rechargePreflightModal = document.getElementById('rechargePreflightModal');
+  const rechargePreflightConfirm = document.getElementById('rechargePreflightConfirm');
+  const rechargePreflightCancel = document.getElementById('rechargePreflightCancel');
+  const rechargePreflightCountdown = document.getElementById('rechargePreflightCountdown');
+  const RECHARGE_URL = 'https://987ai.vip/recharge';
+  const RECHARGE_COUNTDOWN_SECONDS = 8;
   let lastContactTrigger = null;
+  let lastRechargeTrigger = null;
+  let rechargeTargetUrl = RECHARGE_URL;
+  let rechargeRemaining = RECHARGE_COUNTDOWN_SECONDS;
+  let rechargeTimer = null;
+  let rechargeNavigated = false;
   const reviewMarquee = document.querySelector('.review-marquee');
 
   if(reviewMarquee && !reviewMarquee.dataset.cloned){
@@ -1531,6 +1570,66 @@ h2{
     }
   }
 
+  function updateRechargeCountdown(){
+    if(rechargePreflightCountdown){
+      rechargePreflightCountdown.textContent = rechargeRemaining + ' 秒后自动进入充值通道';
+    }
+  }
+
+  function stopRechargeCountdown(){
+    if(rechargeTimer){
+      window.clearInterval(rechargeTimer);
+      rechargeTimer = null;
+    }
+  }
+
+  function closeRechargePreflight(){
+    if(!rechargePreflightModal || rechargePreflightModal.hidden) return;
+    stopRechargeCountdown();
+    rechargePreflightModal.hidden = true;
+    document.body.style.overflow = '';
+    if(lastRechargeTrigger && typeof lastRechargeTrigger.focus === 'function'){
+      lastRechargeTrigger.focus();
+    }
+  }
+
+  function enterRecharge(){
+    if(rechargeNavigated) return;
+    rechargeNavigated = true;
+    stopRechargeCountdown();
+    window.open(rechargeTargetUrl, '_blank', 'noopener');
+    closeRechargePreflight();
+  }
+
+  function startRechargeCountdown(){
+    stopRechargeCountdown();
+    rechargeNavigated = false;
+    rechargeRemaining = RECHARGE_COUNTDOWN_SECONDS;
+    updateRechargeCountdown();
+    rechargeTimer = window.setInterval(() => {
+      rechargeRemaining -= 1;
+      if(rechargeRemaining <= 0){
+        enterRecharge();
+        return;
+      }
+      updateRechargeCountdown();
+    }, 1000);
+  }
+
+  function openRechargePreflight(url, trigger){
+    if(!rechargePreflightModal){
+      window.open(url || RECHARGE_URL, '_blank', 'noopener');
+      return;
+    }
+    rechargeTargetUrl = url || RECHARGE_URL;
+    lastRechargeTrigger = trigger || document.activeElement;
+    rechargePreflightModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    const modalCard = rechargePreflightModal.querySelector('.modal-card');
+    if(modalCard) modalCard.focus();
+    startRechargeCountdown();
+  }
+
   document.querySelectorAll('[data-contact]').forEach((button) => {
     button.addEventListener('click', (event) => {
       event.preventDefault();
@@ -1552,6 +1651,30 @@ h2{
     });
     document.addEventListener('keydown', (event) => {
       if(event.key === 'Escape') closeWechatModal();
+    });
+  }
+
+  document.querySelectorAll('a[href="https://987ai.vip/recharge"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      openRechargePreflight(link.href, link);
+    });
+  });
+
+  if(rechargePreflightConfirm){
+    rechargePreflightConfirm.addEventListener('click', enterRecharge);
+  }
+  if(rechargePreflightCancel){
+    rechargePreflightCancel.addEventListener('click', closeRechargePreflight);
+  }
+  if(rechargePreflightModal){
+    rechargePreflightModal.addEventListener('click', (event) => {
+      if(event.target === rechargePreflightModal) closeRechargePreflight();
+    });
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape' && !rechargePreflightModal.hidden){
+        closeRechargePreflight();
+      }
     });
   }
 
