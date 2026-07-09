@@ -3,24 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChatGPT Pro 5X / 20X 怎么选｜Codex 高频用户开通前确认｜GPT4.pro</title>
-<meta name="description" content="ChatGPT Pro 5X / 20X 开通前判断入口。适合 Codex 高频用户、AI 重度用户、需要发票/对公或账号状态不确定的用户，先确认账号状态和使用强度。">
+<title>ChatGPT Pro 要不要开？1分钟判断｜GPT4.pro</title>
+<meta name="description" content="用 1 分钟判断你该继续用 ChatGPT Plus，还是升级 ChatGPT Pro。先判断使用强度，再决定 Pro 5X / 20X 或支付失败排查。">
 <link rel="canonical" href="https://www.gpt4.pro/pro/">
-<link rel="stylesheet" href="/assets/article-system.css">
-<meta property="og:title" content="ChatGPT Pro 5X / 20X 怎么选">
-<meta property="og:description" content="Codex 高频用户先确认账号状态、当前订阅、使用强度和发票/对公需求，再判断 Pro 5X 或 20X。">
+<link rel="stylesheet" href="../assets/article-system.css">
+<meta property="og:title" content="ChatGPT Pro 要不要开？1分钟判断">
+<meta property="og:description" content="先判断继续用 Plus 还是升级 Pro，再看 5X / 20X。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.gpt4.pro/pro/">
 <style>
-.route-grid,.quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 30px}
-.route-card,.quick-card{border:1px solid var(--color-border);border-radius:8px;background:#fff;padding:18px;text-decoration:none}
-.route-card strong,.quick-card strong{display:block;color:var(--color-text-main);font-size:18px;margin-bottom:6px}
-.route-card p,.quick-card p{margin:0;color:var(--color-text-muted);font-size:15px;line-height:1.7}
-.compare-table td:first-child,.compare-table th:first-child{width:130px}
-.mini-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
-.mini-flow div{border:1px solid var(--color-border);border-radius:8px;background:#fff;padding:14px}
-.mini-flow b{display:block;margin-bottom:4px}
-@media(max-width:880px){.route-grid,.quick-grid,.mini-flow{grid-template-columns:1fr}}
+.article-hero{padding:46px 0 30px}
+.decision-shell{max-width:900px;margin:0 auto}
+.hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr)}
+.article-dek{max-width:680px}
+.signal-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.signal-row span{border:1px solid var(--color-border);border-radius:999px;background:#fff;color:var(--color-text-muted);font-size:13px;font-weight:750;padding:5px 10px}
+.decision-card{border:1px solid var(--color-border);border-radius:8px;background:#fff;box-shadow:0 12px 34px rgba(15,23,42,.06);padding:22px;margin-bottom:18px}
+.decision-card h2{margin:0 0 6px;font-size:24px;line-height:1.25}
+.decision-card>p{margin:0;color:var(--color-text-muted);font-size:15px;line-height:1.7}
+.question{border:0;border-top:1px solid var(--color-border);padding:18px 0 0;margin:18px 0 0}
+.question legend{padding:0;color:var(--color-text-main);font-size:16px;font-weight:850}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.option{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:start;border:1px solid var(--color-border);border-radius:8px;background:#f8fafc;padding:12px;cursor:pointer}
+.option input{margin-top:5px;accent-color:var(--color-primary)}
+.option strong{display:block;color:var(--color-text-main);font-size:15px;line-height:1.35}
+.option span span{display:block;color:var(--color-text-muted);font-size:13px;line-height:1.5;margin-top:2px}
+.result-card{border:1px solid #c7d2fe;border-radius:8px;background:#eef2ff;padding:16px;margin-top:18px}
+.result-card.is-plus{border-color:#bbf7d0;background:#f0fdf4}
+.result-card.is-pro20{border-color:#fed7aa;background:#fff7ed}
+.result-card strong{display:block;color:var(--color-text-main);font-size:22px;margin-bottom:4px}
+.result-card p{margin:0;color:var(--color-text-muted)}
+.pro-options-panel{border:1px solid var(--color-border);border-radius:8px;background:#fff;padding:20px;margin-top:18px}
+.pro-options-panel h2{margin:0 0 6px;font-size:24px}
+.pro-options-panel>p{margin:0 0 14px;color:var(--color-text-muted)}
+.plan-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.plan-card{border:1px solid var(--color-border);border-radius:8px;background:#f8fafc;padding:16px}
+.plan-card.is-focus{border-color:#c7d2fe;background:#eef2ff}
+.plan-card span{display:inline-flex;border-radius:999px;background:#fff;color:var(--color-primary-dark);font-size:13px;font-weight:850;padding:3px 9px;margin-bottom:10px}
+.plan-card h3{margin:0 0 6px;font-size:20px;line-height:1.25}
+.plan-card p{margin:0 0 12px;color:var(--color-text-muted);font-size:14px;line-height:1.65}
+.compact-note{border:1px solid var(--color-border);border-radius:8px;background:#fff;padding:14px;margin-top:14px;color:var(--color-text-muted);font-size:14px;line-height:1.7}
+.compact-note strong{color:var(--color-text-main)}
+@media(max-width:880px){.hero-grid,.options,.plan-row{grid-template-columns:1fr}.article-hero{padding-top:34px}.decision-card{padding:18px}}
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V36H9QT9GK"></script>
@@ -30,19 +54,18 @@
   gtag('js', new Date());
   gtag('config', 'G-V36H9QT9GK');
 </script>
-<script src="/assets/gptc-tracking.js" defer></script>
+<script src="../assets/gptc-tracking.js" defer></script>
 </head>
 <body>
 <header class="site-header">
   <nav class="site-nav" aria-label="主导航">
-    <a class="site-brand" href="/">嘉哥AI</a>
+    <a class="site-brand" href="/">嘉哥GPT</a>
     <div class="site-links">
       <a href="/">首页</a>
-      <a href="/pro/">Pro 5X / 20X</a>
+      <a href="/pro/">Pro 判断</a>
       <a href="/codex/">Codex专题</a>
       <a href="/pay/">支付失败</a>
-      <a href="/stable/">稳妥开通</a>
-      <button type="button" data-copy-wx data-track="pro_short_nav_consult">咨询 Pro 5X / 20X</button>
+      <a href="#decision" data-track="pro_short_nav_start">开始判断</a>
     </div>
   </nav>
 </header>
@@ -52,142 +75,232 @@
     <div class="article-container hero-grid">
       <div>
         <nav class="breadcrumbs" aria-label="面包屑">
-          <a href="/">首页</a><span>/</span><span>Pro 5X / 20X</span>
+          <a href="/">首页</a><span>/</span><span>Pro 判断</span>
         </nav>
-        <span class="article-kicker">ChatGPT Pro / Codex 高频入口</span>
-        <h1>ChatGPT Pro 5X / 20X 怎么选？先确认账号状态和使用强度。</h1>
-        <p class="article-dek">如果你正在比较 GPT Pro、Codex 高频使用、AI 重度工作流或发票/对公需求，先判断自己适合 Pro、Codex 专题、支付失败排查，还是回到 Plus 方案。</p>
-        <div class="article-meta"><span>Pro 5X / 20X</span><span>·</span><span>Codex 高频</span><span>·</span><span>先确认再处理</span></div>
+        <span class="article-kicker">ChatGPT Pro 升级判断</span>
+        <h1>还在犹豫要不要开 ChatGPT Pro？<br>1分钟判断：你该继续用 Plus，还是升级 Pro。</h1>
+        <p class="article-dek">先别急着选 5X / 20X。这个页面只帮你做一件事：按使用强度、额度中断和任务成本，给出下一步。</p>
         <div class="button-row">
-          <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_hero_consult">咨询 Pro 5X / 20X</button>
-          <a class="button button-secondary" href="/chatgpt-pro-recharge/" data-track="pro_short_hero_detail">查看 Pro 开通前确认页</a>
-          <a class="button button-ghost" href="/codex/" data-track="pro_short_hero_codex">先看 Codex 专题</a>
+          <a class="button button-primary" href="#decision" data-track="pro_short_hero_start">开始判断</a>
+          <a class="button button-secondary" href="/pay/" data-track="pro_short_hero_pay">官方支付卡住先排查</a>
+        </div>
+        <div class="signal-row" aria-label="判断依据">
+          <span>使用频率</span>
+          <span>额度中断</span>
+          <span>Codex 强度</span>
+          <span>真实交付成本</span>
         </div>
       </div>
       <aside class="purchase-card compact">
-        <span class="card-kicker">先确认，后下单</span>
-        <h2>先判断是否真的需要 Pro</h2>
-        <p>Pro 更适合高频任务。轻度使用、账号异常、已有扣款异常或 iOS 订阅未确认时，先排查比直接开通更稳。</p>
-        <ul>
-          <li>确认账号能否登录</li>
-          <li>确认当前订阅状态</li>
-          <li>确认 5X / 20X 使用强度</li>
-          <li>不需要提交账号密码</li>
-        </ul>
+        <span class="card-kicker">承接页目标</span>
+        <h2>不讲长教程，只做分流。</h2>
+        <p>轻度用户回 Plus；高频用户看 Pro；支付异常先排查。只有建议升级时，再展开 5X / 20X。</p>
       </aside>
     </div>
   </section>
 
   <section class="article-shell">
-    <div class="article-container article-grid">
-      <article class="article-main">
-        <section class="diagnosis-card">
-          <strong>你现在应该点哪一个？</strong>
-          <div class="diagnosis-grid">
-            <button class="diagnosis-item" type="button" data-copy-wx data-track="pro_short_diag_pro"><span>A</span><b>已经想开 Pro 5X / 20X</b><p>先发当前订阅、Codex 使用强度和是否需要发票/对公。</p></button>
-            <a href="/codex/"><span>B</span><b>不确定 Plus 还是 Pro</b><p>先看 Codex 专题，按真实工作流判断。</p></a>
-            <a href="/pay/"><span>C</span><b>支付失败或扣款异常</b><p>先排查付款、订阅和账号状态，不要重复提交。</p></a>
-            <a href="/#plans"><span>D</span><b>只是轻度使用或尝鲜</b><p>回首页看 Plus 方案，通常不需要直接开 Pro。</p></a>
-          </div>
-        </section>
+    <div class="article-container decision-shell">
+      <section class="decision-card" id="decision" aria-label="ChatGPT Pro 1分钟判断">
+        <h2>回答 3 个问题</h2>
+        <p>不用填联系方式，也不用提交账号。</p>
+        <form id="proDecisionForm">
+          <fieldset class="question">
+            <legend>1. 你主要用 ChatGPT / Codex 做什么？</legend>
+            <div class="options">
+              <label class="option"><input required type="radio" name="work" value="code"><span><strong>写代码 / Codex</strong><span>读项目、改 Bug、写测试、多轮调试。</span></span></label>
+              <label class="option"><input type="radio" name="work" value="research"><span><strong>研究分析</strong><span>长文、资料比较、复杂推理。</span></span></label>
+              <label class="option"><input type="radio" name="work" value="docs"><span><strong>文档 / 写作</strong><span>材料、翻译、总结、日常办公。</span></span></label>
+              <label class="option"><input type="radio" name="work" value="light"><span><strong>轻度使用</strong><span>聊天、学习、偶尔提问或尝鲜。</span></span></label>
+            </div>
+          </fieldset>
 
-        <h2>Pro 5X / 20X 快速判断</h2>
-        <table class="compare-table">
-          <thead><tr><th>方案</th><th>更适合的人</th><th>开通前重点确认</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Pro 5X</strong></td><td>中重度 Codex、每天使用、预算可控。</td><td>是否每天真实使用，Plus 是否经常不够，当前账号是否已有订阅。</td></tr>
-            <tr><td><strong>Pro 20X</strong></td><td>高频项目、多文件、多轮调试、深度工作流。</td><td>项目数量、任务连续性、是否需要发票/对公，是否有支付失败记录。</td></tr>
-            <tr><td><strong>先不升 Pro</strong></td><td>轻度聊天、写作、偶尔尝鲜、账号无法登录。</td><td>先确认 Plus 是否够用，账号和订阅是否正常。</td></tr>
-          </tbody>
-        </table>
+          <fieldset class="question">
+            <legend>2. 平均每天用几次？</legend>
+            <div class="options">
+              <label class="option"><input required type="radio" name="frequency" value="light"><span><strong>&lt; 3 次</strong><span>偶尔打开，任务不连续。</span></span></label>
+              <label class="option"><input type="radio" name="frequency" value="medium"><span><strong>3-10 次</strong><span>已经进入日常工作节奏。</span></span></label>
+              <label class="option"><input type="radio" name="frequency" value="heavy"><span><strong>&gt; 10 次</strong><span>一天内多轮连续推进任务。</span></span></label>
+            </div>
+          </fieldset>
 
-        <section class="purchase-card inline-card">
-          <span class="card-kicker">详细确认</span>
-          <h2>想看完整开通前清单，可以继续看 Pro 确认页。</h2>
-          <p>详细 Pro 页会继续说明 5X / 20X 适合谁、不适合直接开 Pro 的人、确认清单、流程和 FAQ。看完再咨询，通常更容易选对。</p>
+          <fieldset class="question">
+            <legend>3. 有没有被额度、连续性或支付问题打断过？</legend>
+            <div class="options">
+              <label class="option"><input required type="radio" name="interrupted" value="yes"><span><strong>有</strong><span>中断已经影响工作或交付节奏。</span></span></label>
+              <label class="option"><input type="radio" name="interrupted" value="no"><span><strong>没有</strong><span>目前没有明显卡住。</span></span></label>
+            </div>
+          </fieldset>
+
           <div class="button-row">
-            <a class="button button-primary" href="/chatgpt-pro-recharge/" data-track="pro_short_detail_link">查看 Pro 开通前确认页</a>
-            <button class="button button-secondary" type="button" data-copy-wx data-track="pro_short_inline_consult">直接咨询 Pro</button>
+            <button class="button button-primary" type="submit" data-track="pro_short_form_submit">给我判断</button>
+            <button class="button button-ghost" type="reset" data-track="pro_short_form_reset">重选</button>
           </div>
-        </section>
+        </form>
 
-        <h2>不同意图的下一步</h2>
-        <div class="route-grid">
-          <a class="route-card" href="/chatgpt-pro-recharge/"><strong>确认 Pro 5X / 20X</strong><p>适合已经明确想开 Pro，但还需要判断 5X、20X 和账号状态的人。</p></a>
-          <a class="route-card" href="/codex/"><strong>先看 Codex 专题</strong><p>适合不知道 Plus 是否够用、Codex 额度不够或想看开发者路径的人。</p></a>
-          <a class="route-card" href="/pay/"><strong>支付失败先排查</strong><p>适合 card declined、扣款没到账、续费失败或 iOS 订阅不清楚的人。</p></a>
-          <a class="route-card" href="/safe/"><strong>账号安全与边界</strong><p>适合担心密码、共享号、平台代充、自助激活和账号归属的人。</p></a>
+        <div class="result-card" id="proDecisionResult" hidden aria-live="polite">
+          <strong id="proDecisionTitle"></strong>
+          <p id="proDecisionCopy"></p>
+          <div class="button-row" id="proDecisionActions"></div>
         </div>
+      </section>
 
-        <h2>开通前四步</h2>
-        <div class="mini-flow">
-          <div><b>1. 账号能登录</b><p>先确认账号邮箱、登录入口和当前页面正常。</p></div>
-          <div><b>2. 订阅先看清</b><p>确认 Free、Plus、Pro、iOS 订阅或历史扣款状态。</p></div>
-          <div><b>3. 用量说清楚</b><p>说明每天用多久，Codex 是否多文件、多轮调试。</p></div>
-          <div><b>4. 再确认方案</b><p>人工确认后再选择 5X / 20X，不直接盲开。</p></div>
+      <section class="pro-options-panel" id="pro-options" hidden>
+        <h2>建议升级时，再看 5X / 20X</h2>
+        <p>先按中断成本选，不按焦虑选。</p>
+        <div class="plan-row">
+          <section class="plan-card" id="plan-5x">
+            <span>Pro 5X</span>
+            <h3>高频使用，但预算要控</h3>
+            <p>适合每天用、Plus 偶尔不够、主要想减少普通额度中断的人。</p>
+            <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_5x_consult">咨询 Pro 5X</button>
+          </section>
+          <section class="plan-card" id="plan-20x">
+            <span>Pro 20X</span>
+            <h3>重度工作流，怕被打断</h3>
+            <p>适合多项目、多文件、多轮调试或研究分析，中断会影响交付的人。</p>
+            <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_20x_consult">咨询 Pro 20X</button>
+          </section>
         </div>
-
-        <section class="notice-card">
-          <strong>质保与退款边界</strong>
-          <p>正常个人使用、遵守平台规则，通常不容易出现账号限制；真正需要避免的是共享转卖、异常高频、自动化滥用、违规内容或其他高风险操作。如果出现掉订阅、订阅未生效，或账号被限制/封禁等异常，先保留订单、账号状态和错误提示截图，我们会协助向卡台/支付通道申请对应的官方退款。</p>
-          <p>退款以 ChatGPT 官方或卡台实际退回为前提；退款到账后，会按剩余服务时间或实际可退金额比例退给用户。若因用户滥用、违规使用、共享转卖、异常高风险操作等原因导致官方/卡台拒退，则不承诺退款。</p>
-        </section>
-
-        <section class="next-step-card">
-          <h2>下一步怎么走</h2>
-          <div class="next-step-list">
-            <div><b>已经确定想开 Pro</b><span>直接咨询 Pro 5X / 20X，先说明当前订阅和 Codex 使用强度。</span></div>
-            <div><b>还在比较 Plus 和 Pro</b><span>先看 Codex 专题或详细 Pro 确认页，再决定是否升级。</span></div>
-            <div><b>有支付失败、扣款异常或账号安全疑虑</b><span>先排查付款状态和账号边界，再考虑下单。</span></div>
-          </div>
-          <div class="button-row">
-            <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_bottom_consult">咨询 Pro 5X / 20X</button>
-            <a class="button button-secondary" href="/chatgpt-pro-recharge/" data-track="pro_short_bottom_detail">看详细确认页</a>
-          </div>
-        </section>
-      </article>
-
-      <aside class="article-aside">
-        <div class="purchase-card">
-          <span class="card-kicker">Pro 咨询</span>
-          <h2>适合先人工确认</h2>
-          <p>Codex 高频、发票/对公、账号状态不确定、已有订阅或付款异常，都建议先确认。</p>
-          <ul>
-            <li>Pro 5X / 20X 怎么选</li>
-            <li>已有 Plus 能否升级</li>
-            <li>支付失败怎么处理</li>
-            <li>不需要账号密码</li>
-          </ul>
-          <div class="button-row">
-            <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_side_consult">复制微信咨询</button>
-          </div>
-          <p class="card-note">GPT4.pro / 嘉哥AI 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。</p>
-        </div>
-        <nav class="toc" aria-label="页面目录">
-          <strong>页面目录</strong>
-          <a href="/chatgpt-pro-recharge/">Pro 开通前确认</a>
-          <a href="/codex/">Codex 专题</a>
-          <a href="/pay/">支付失败</a>
-          <a href="/stable/">稳妥开通</a>
-          <a href="/safe/">账号安全</a>
-        </nav>
-      </aside>
+        <p class="compact-note"><strong>官方支付失败、账号已有订阅或扣款异常：</strong>先走支付排查，不要反复提交。GPT4.pro / 嘉哥GPT 为第三方信息与服务网站，并非 OpenAI 官方。</p>
+      </section>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <a href="/">嘉哥AI</a> · <a href="/chatgpt-pro-recharge/">Pro 开通前确认</a> · <a href="/codex/">Codex专题</a> · <a href="/pay/">支付失败</a> · <a href="/stable/">稳妥开通</a>
-    <p>声明：GPT4.pro / 嘉哥AI 为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。官方套餐、权益、额度和使用限制以账号内显示及官方说明为准。</p>
+    <a href="/">嘉哥GPT</a> · <a href="/pro/">Pro 判断</a> · <a href="/codex/">Codex专题</a> · <a href="/pay/">支付失败</a>
+    <p>声明：官方套餐、价格、额度和权益以 ChatGPT 账号内实际显示及 OpenAI 官方说明为准。</p>
   </div>
 </footer>
 
 <div class="mobile-sticky" aria-label="移动端快捷操作">
-  <button class="button button-primary" type="button" data-copy-wx data-track="pro_short_mobile_consult">咨询 Pro</button>
-  <a class="button button-secondary" href="/chatgpt-pro-recharge/" data-track="pro_short_mobile_detail">详细确认页</a>
+  <a class="button button-primary" href="#decision" data-track="pro_short_mobile_start">1分钟判断</a>
+  <a class="button button-secondary" href="/pay/" data-track="pro_short_mobile_pay">支付失败</a>
 </div>
 
-<script src="/assets/gptc-components.js"></script>
+<script>
+(() => {
+  const WX_ID = "jiage01888";
+  const form = document.getElementById("proDecisionForm");
+  const result = document.getElementById("proDecisionResult");
+  const title = document.getElementById("proDecisionTitle");
+  const copy = document.getElementById("proDecisionCopy");
+  const actions = document.getElementById("proDecisionActions");
+  const proOptions = document.getElementById("pro-options");
+  const plan5x = document.getElementById("plan-5x");
+  const plan20x = document.getElementById("plan-20x");
+  if (!form || !result || !title || !copy || !actions || !proOptions || !plan5x || !plan20x) return;
+
+  const scores = {
+    work: { code: 2, research: 2, docs: 1, light: 0 },
+    frequency: { light: 0, medium: 1, heavy: 2 },
+    interrupted: { no: 0, yes: 2 }
+  };
+
+  function checked(name) {
+    return form.querySelector(`input[name="${name}"]:checked`)?.value || "";
+  }
+
+  function showToast(text) {
+    let toast = document.querySelector(".toast");
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "toast";
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    toast.classList.add("show");
+    window.setTimeout(() => toast.classList.remove("show"), 1800);
+  }
+
+  async function copyWx(trackName) {
+    try {
+      await navigator.clipboard.writeText(WX_ID);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: trackName || "pro_short_copy_wx" });
+      showToast(`已复制微信：${WX_ID}`);
+    } catch (error) {
+      showToast(`微信号：${WX_ID}`);
+    }
+  }
+
+  function trackResult(decision, score) {
+    const detail = { decision, score };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "pro_short_decision_result", ...detail });
+    if (typeof window.gtag === "function") window.gtag("event", "pro_short_decision_result", detail);
+  }
+
+  function renderActions(decision) {
+    actions.innerHTML = "";
+    if (decision === "plus") {
+      actions.innerHTML = '<a class="button button-primary" href="/#plans" data-track="pro_short_result_plus">先看 Plus 方案</a><a class="button button-secondary" href="/codex/" data-track="pro_short_result_codex">再看 Codex 专题</a>';
+      return;
+    }
+
+    const consult = document.createElement("button");
+    consult.type = "button";
+    consult.className = "button button-primary";
+    consult.textContent = decision === "pro20" ? "咨询 Pro 20X" : "咨询 Pro 5X";
+    consult.addEventListener("click", () => copyWx(decision === "pro20" ? "pro_short_result_20x_consult" : "pro_short_result_5x_consult"));
+    actions.appendChild(consult);
+
+    const pay = document.createElement("a");
+    pay.className = "button button-secondary";
+    pay.href = "/pay/";
+    pay.dataset.track = "pro_short_result_pay";
+    pay.textContent = "支付卡住先排查";
+    actions.appendChild(pay);
+  }
+
+  function setPlanFocus(decision) {
+    plan5x.classList.toggle("is-focus", decision === "pro5");
+    plan20x.classList.toggle("is-focus", decision === "pro20");
+  }
+
+  form.addEventListener("reset", () => {
+    window.setTimeout(() => {
+      result.hidden = true;
+      result.className = "result-card";
+      proOptions.hidden = true;
+      setPlanFocus("");
+    }, 0);
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const work = checked("work");
+    const frequency = checked("frequency");
+    const interrupted = checked("interrupted");
+    const score = (scores.work[work] || 0) + (scores.frequency[frequency] || 0) + (scores.interrupted[interrupted] || 0);
+    let decision = "plus";
+    if (score >= 6 || ((work === "code" || work === "research") && frequency === "heavy" && interrupted === "yes")) decision = "pro20";
+    else if (score >= 3) decision = "pro5";
+
+    result.hidden = false;
+    proOptions.hidden = decision === "plus";
+    result.className = `result-card ${decision === "plus" ? "is-plus" : decision === "pro20" ? "is-pro20" : "is-pro5"}`;
+    setPlanFocus(decision);
+
+    if (decision === "plus") {
+      title.textContent = "建议继续用 Plus";
+      copy.textContent = "你现在还没到 Pro 门槛。先别因为焦虑买高价套餐，把 Plus 用成稳定工作流后再升级。";
+    } else if (decision === "pro5") {
+      title.textContent = "可以考虑 Pro 5X";
+      copy.textContent = "你已经有高频使用信号，但还不必直接冲最高档。先看 5X，重点确认账号状态和是否经常被额度打断。";
+    } else {
+      title.textContent = "建议看 Pro 20X";
+      copy.textContent = "你的使用强度和中断成本已经偏重。重点看 20X，同时先确认当前订阅、支付状态和账号是否正常。";
+    }
+
+    renderActions(decision);
+    trackResult(decision, score);
+    result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+})();
+</script>
+<script src="../assets/gptc-components.js"></script>
 </body>
 </html>
