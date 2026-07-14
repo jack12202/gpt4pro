@@ -58,10 +58,20 @@ button, input { font: inherit; }
   gap: 20px;
 }
 .site-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   color: var(--gptc-text);
   font-size: 21px;
   font-weight: 900;
   white-space: nowrap;
+}
+
+.site-brand small {
+  color: var(--gptc-muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .02em;
 }
 .site-links {
   display: flex;
