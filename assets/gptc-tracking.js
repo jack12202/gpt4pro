@@ -70,17 +70,17 @@
       .join(" ")
       .toLowerCase();
 
-    if (element.hasAttribute("data-copy-wx") || signal.includes("微信") || signal.includes("咨询") || signal.includes("consult")) {
-      return "consult";
-    }
-    if (signal.includes("fe.dtyuedan.cn/shop") || signal.includes("购买") || signal.includes("激活码") || signal.includes("buy")) {
+    if (signal.includes("fe.dtyuedan.cn/shop") || signal.includes("购买") || signal.includes("buy")) {
       return "purchase";
     }
-    if (signal.includes("987ai.vip/recharge") || signal.includes("激活") || signal.includes("activate")) {
+    if (signal.includes("987ai.vip/recharge") || signal.includes("aipass.me/api/recharge-go") || signal.includes("激活") || signal.includes("activate")) {
       return "activate";
     }
     if (signal.includes("/pro") || signal.includes("pro") || signal.includes("5x") || signal.includes("20x")) {
       return "pro";
+    }
+    if (element.hasAttribute("data-copy-wx") || signal.includes("微信") || signal.includes("咨询") || signal.includes("consult")) {
+      return "consult";
     }
     if (urlMeta.outbound) return "outbound";
     if (href.startsWith("#")) return "anchor";
@@ -94,6 +94,13 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(payload);
     if (typeof window.gtag === "function") window.gtag("event", eventName, detail || {});
+    window._hmt = window._hmt || [];
+    window._hmt.push([
+      "_trackEvent",
+      "conversion",
+      eventName,
+      cleanText(`${window.location.pathname}|${payload.click_area || ""}|${payload.click_text || ""}`, 160),
+    ]);
     window.dispatchEvent(new CustomEvent("gptc:track", { detail: payload }));
   }
 
