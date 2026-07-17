@@ -66,9 +66,9 @@ details p{margin-top:10px}
     <div>
       <span class="eyebrow">Plus 激活码 · 自助充值说明</span>
       <h1>已购买 Plus 激活码？先确认安全边界，再进入自助激活</h1>
-      <p class="lead">激活流程会让你验证激活码、登录自己的 ChatGPT 账号，并复制一段完整 JSON 用于确认账号和订阅状态。它不是你的 ChatGPT 密码，也不是邮箱/短信验证码。</p>
+      <p class="lead">激活流程会让你验证激活码、登录自己的 ChatGPT 账号，并由本人获取临时会话凭证，用于识别账号和完成充值。该凭证可能包含会话授权信息，只在 AIPass 激活页提交，不要转发给客服或其他人。</p>
       <div class="actions">
-        <a rel="noopener" target="_blank" class="btn primary" href="https://987ai.vip/recharge" data-track="activate_code_verify_start" data-track-extra="activate_confirm_submit">进入自助充值系统</a>
+        <a rel="noopener" target="_blank" class="btn primary" href="https://www.aipass.me/api/recharge-go" data-track="activate_code_verify_start" data-track-extra="activate_confirm_submit">进入 AIPass 激活中心</a>
         <a rel="noopener" target="_blank" class="btn secondary" href="https://fe.dtyuedan.cn/shop/jiage">还没有激活码？去购买</a>
       </div>
     </div>
@@ -87,18 +87,18 @@ details p{margin-top:10px}
   <section class="section">
     <div class="grid-3">
       <div class="step"><strong>1. 验证激活码</strong><p>进入自助系统后，先输入购买得到的 Plus 激活码。请确认没有多复制空格或少复制字符。</p></div>
-      <div class="step"><strong>2. 复制完整 JSON</strong><p>按页面提示从当前 ChatGPT 账号获取充值密钥。请复制完整 JSON，不要删字段，也不要重复提交。</p></div>
+      <div class="step"><strong>2. 获取临时会话凭证</strong><p>按页面提示由本人从当前 ChatGPT 账号获取完整凭证。它可能包含会话授权信息，只在激活页提交，不要转发给他人。</p></div>
       <div class="step"><strong>3. 确认账号邮箱</strong><p>提交充值前再次核对账号邮箱和订阅状态。确认无误后再提交，异常时保存截图联系人工。</p></div>
     </div>
   </section>
 
   <section class="section security">
     <div class="card">
-      <h2>这个 JSON 是什么？</h2>
-      <p>它不是你的 ChatGPT 密码，也不是短信/邮箱验证码。系统会用它识别当前账号邮箱、账号 ID 和订阅状态，用于把 Plus 充值到你确认的账号。</p>
+      <h2>临时会话凭证是什么？</h2>
+      <p>它是当前登录会话生成的账号信息，可能包含会话授权内容。系统会用它识别账号邮箱、账号 ID 和订阅状态，用于把 Plus 充值到你确认的账号。</p>
       <ul>
         <li>不要把 ChatGPT 密码、邮箱验证码、短信验证码发给任何人。</li>
-        <li>请复制完整 JSON，不要删字段。</li>
+        <li>只在 AIPass 激活页提交完整内容，不要通过微信、邮件或聊天工具转发。</li>
         <li>提交前会让你再次确认账号邮箱。</li>
         <li>看不懂可以先联系客服，不要重复提交。</li>
       </ul>
@@ -121,7 +121,7 @@ details p{margin-top:10px}
       <h2>什么情况先别重复提交？</h2>
       <p>如果你已经提交过充值、账号已有 iOS 订阅、已扣款但 Plus 没生效、账号无法登录，先保存激活码、订单、账号状态截图和错误提示，再联系人工确认。</p>
       <div class="actions">
-        <a rel="noopener" target="_blank" class="btn primary" href="https://987ai.vip/recharge" data-track="activate_code_verify_start" data-track-extra="activate_confirm_submit">继续进入自助系统</a>
+        <a rel="noopener" target="_blank" class="btn primary" href="https://www.aipass.me/api/recharge-go" data-track="activate_code_verify_start" data-track-extra="activate_confirm_submit">继续进入 AIPass 激活中心</a>
         <button class="btn secondary" type="button" data-copy-wx>复制微信咨询</button>
       </div>
     </div>
@@ -130,7 +130,7 @@ details p{margin-top:10px}
   <section class="section">
     <h2>激活常见问题</h2>
     <div class="faq">
-      <details open><summary>复制 JSON 会泄露密码吗？</summary><p>JSON 不是你的 ChatGPT 登录密码，也不是验证码。页面需要它来确认当前账号信息和订阅状态。任何人索要密码、邮箱验证码或短信验证码，都不要提供。</p></details>
+      <details open><summary>临时会话凭证安全吗？</summary><p>它不是登录密码或验证码，但可能包含当前会话的授权信息。仅由本人在 AIPass 激活页获取和提交，不要转发给客服或其他人；任何人索要密码、邮箱验证码或短信验证码，都不要提供。</p></details>
       <details><summary>提交前为什么还要确认邮箱？</summary><p>Plus 充值会绑定到你确认的 ChatGPT 账号。提交前核对邮箱，可以减少充错账号、登录错账号导致的售后问题。</p></details>
       <details><summary>激活失败怎么办？</summary><p>先不要重复提交。保存激活码、付款记录、账号状态截图和错误提示，再联系人工协助排查。</p></details>
       <details><summary>嘉哥AI 是 OpenAI 官方吗？</summary><p>不是。嘉哥AI / 嘉哥GPT 是第三方数字服务平台，与 OpenAI 或 ChatGPT 官方无隶属关系。</p></details>
@@ -206,7 +206,7 @@ details p{margin-top:10px}
   </div>
 </div>
 <script>
-(()=>{const defaultUrl='https://987ai.vip/recharge';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.open(targetUrl,'_blank','noopener');close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.open(targetUrl,'_blank','noopener');return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://987ai.vip/recharge"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
+(()=>{const defaultUrl='https://www.aipass.me/api/recharge-go';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.location.href=targetUrl;close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.location.href=targetUrl;return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://www.aipass.me/api/recharge-go"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
 </script>
 
 </body>

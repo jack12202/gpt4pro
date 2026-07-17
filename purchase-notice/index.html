@@ -46,7 +46,7 @@ li{margin:8px 0}
 <main class="wrap">
   <nav class="nav">
     <a class="brand" href="/">嘉哥AI</a>
-    <a rel="noopener" target="_blank" class="back" href="https://987ai.vip/recharge">已购买？去站内激活</a>
+    <a rel="noopener" target="_blank" class="back" href="https://www.aipass.me/api/recharge-go">已购买？去 AIPass 激活</a>
   </nav>
 
   <section class="panel">
@@ -59,7 +59,7 @@ li{margin:8px 0}
       <ul data-list>
         <li>请确认商品名称为：ChatGPT Plus 激活码。</li>
         <li>付款后请保存订单号、Plus 激活码和付款记录。</li>
-        <li>拿到 Plus 激活码后，回到站内充值中心按提示操作。</li>
+        <li>拿到 Plus 激活码后，进入 AIPass 光年升级激活中心按提示操作。</li>
         <li>售后请联系嘉哥AI：微信 jiage01888。</li>
       </ul>
     </div>
@@ -70,7 +70,7 @@ li{margin:8px 0}
 
     <div class="actions">
       <a target="_blank" class="btn primary" href="https://fe.dtyuedan.cn/shop/jiage" rel="noopener nofollow" data-continue>我知道了，继续购买</a>
-      <a rel="noopener" target="_blank" class="btn secondary" href="https://987ai.vip/recharge">已购买？去站内激活</a>
+      <a rel="noopener" target="_blank" class="btn secondary" href="https://www.aipass.me/api/recharge-go">已购买？去 AIPass 激活</a>
     </div>
     <p class="fine">如果你已经扣款但没到账，建议先看 <a href="/help/">充值失败排查</a>，不要重复付款。</p>
   </section>
@@ -88,16 +88,16 @@ li{margin:8px 0}
       list: [
         '请确认商品名称为：ChatGPT Plus 激活码。',
         '付款后请保存订单号、Plus 激活码和付款记录。',
-        '拿到 Plus 激活码后，回到站内充值中心按提示操作。',
+        '拿到 Plus 激活码后，进入 AIPass 光年升级激活中心按提示操作。',
         '售后请联系嘉哥AI：微信 jiage01888。'
       ]
     },
     auto: {
-      eyebrow: '站内激活前确认',
-      title: '即将进入嘉哥AI站内充值中心',
-      lead: '你将进入站内充值中心使用已购买的 Plus 激活码。请先准备好 Plus 激活码，并确认你的 ChatGPT 账号可以正常登录。',
-      href: 'https://987ai.vip/recharge',
-      button: '我知道了，去站内激活',
+      eyebrow: 'AIPass 激活前确认',
+      title: '即将进入 AIPass 光年升级激活中心',
+      lead: '你将进入 AIPass 光年升级激活中心使用已购买的 Plus 激活码。请先准备好 Plus 激活码，并确认你的 ChatGPT 账号可以正常登录。',
+      href: 'https://www.aipass.me/api/recharge-go',
+      button: '我知道了，去 AIPass 激活',
       event: 'home_activate_click',
       list: [
         '请准备好 Plus 激活码、订单号和可登录的 ChatGPT 账号。',
@@ -151,7 +151,7 @@ li{margin:8px 0}
   </div>
 </div>
 <script>
-(()=>{const defaultUrl='https://987ai.vip/recharge';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.open(targetUrl,'_blank','noopener');close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.open(targetUrl,'_blank','noopener');return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://987ai.vip/recharge"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
+(()=>{const defaultUrl='https://www.aipass.me/api/recharge-go';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.location.href=targetUrl;close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.location.href=targetUrl;return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://www.aipass.me/api/recharge-go"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
 </script>
 
 </body>
