@@ -40,7 +40,7 @@
       const oldActivateShort = "已购买" + "去激活";
       const oldConsultText = "Pro / " + "异常订单咨询";
       if (text === oldBuyText || text === "购买 Plus 激活码") {
-        node.textContent = "立即购买 Plus 激活码";
+        node.textContent = "立即充值 Plus";
       }
       if (text === oldActivateText || text === oldActivateShort) {
         node.textContent = "已购买？去站内激活";
