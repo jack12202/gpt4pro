@@ -1679,27 +1679,6 @@ var _hmt = _hmt || [];
     return hour >= NIGHT_START_HOUR || hour < DAY_START_HOUR;
   }
 
-  function getNightNoticeKey(){
-    const beijingNow = Date.now() + 8 * 60 * 60 * 1000;
-    const nightBucket = Math.floor((beijingNow + 60 * 60 * 1000) / (24 * 60 * 60 * 1000));
-    return 'gpt4pro-night-recharge-notice-' + nightBucket;
-  }
-
-  function wasNightNoticeShown(){
-    if(NIGHT_PREVIEW) return false;
-    try{
-      return sessionStorage.getItem(getNightNoticeKey()) === '1';
-    }catch(error){
-      return false;
-    }
-  }
-
-  function markNightNoticeShown(){
-    try{
-      sessionStorage.setItem(getNightNoticeKey(), '1');
-    }catch(error){}
-  }
-
   function updateNightGate(){
     if(!rechargePreflightConfirm || !rechargePreflightConfirmTitle) return;
     if(!nightMode){
@@ -1746,7 +1725,7 @@ var _hmt = _hmt || [];
     }, 1000);
   }
 
-  function applyRechargeTimeMode(allowAutoOpen){
+  function applyRechargeTimeMode(){
     const nextNightMode = shouldUseNightMode();
     const modeChanged = nightMode !== nextNightMode;
     nightMode = nextNightMode;
@@ -1769,14 +1748,6 @@ var _hmt = _hmt || [];
       rechargePreflightCancel.textContent = nightMode ? '暂不操作，等客服上班' : '暂不进入';
     }
     if(modeChanged && rechargePreflightModal && !rechargePreflightModal.hidden) resetNightGate();
-    if(modeChanged && nightMode && allowAutoOpen && !wasNightNoticeShown()){
-      markNightNoticeShown();
-      window.setTimeout(() => {
-        if(shouldUseNightMode() && rechargePreflightModal?.hidden){
-          openRechargePreflight(RECHARGE_URL, null);
-        }
-      }, 900);
-    }
   }
 
   function closeRechargePreflight(){
@@ -1803,7 +1774,7 @@ var _hmt = _hmt || [];
       window.location.href = url || RECHARGE_URL;
       return;
     }
-    applyRechargeTimeMode(false);
+    applyRechargeTimeMode();
     rechargeTargetUrl = url || RECHARGE_URL;
     lastRechargeTrigger = trigger || document.activeElement;
     rechargePreflightModal.hidden = false;
@@ -1864,8 +1835,8 @@ var _hmt = _hmt || [];
       }
     });
   }
-  applyRechargeTimeMode(true);
-  window.setInterval(() => applyRechargeTimeMode(true), 30000);
+  applyRechargeTimeMode();
+  window.setInterval(applyRechargeTimeMode, 30000);
 
   document.querySelectorAll('[data-track-event]').forEach((element) => {
     element.addEventListener('click', () => {
