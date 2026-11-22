@@ -109,6 +109,8 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<script src="/assets/gptc-components.js?v=20261122wx2" defer></script>
+<style>.nav-actions{display:inline-flex;align-items:center;gap:8px;flex-shrink:0}.nav-wx{display:inline-flex!important;align-items:center;justify-content:center;padding:8px 14px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;font-size:13.5px;font-weight:800;white-space:nowrap;cursor:pointer}.nav-wx:hover{background:#f8fafc}</style>
 </head>
 <body>
 <main>
@@ -126,7 +128,7 @@ var _hmt = _hmt || [];
       <p class="price-note">官方为美元月费，本站价格包含支付通道、汇率、系统处理和售后协助成本；适合不想反复处理海外支付失败的用户。</p>
       <div class="actions">
         <a rel="noopener" target="_blank" class="btn primary" href="https://qfcc99.com/shop/jiage" data-track="pricing_buy_click">立即充值 Plus</a>
-        <a rel="noopener" target="_blank" class="btn secondary" href="https://www.aipass.me/api/recharge-go" data-track="home_activate_click">已购买？先看自助充值说明</a>
+        <a rel="noopener" target="_blank" class="btn secondary" href=\"/#flow\" data-track="home_activate_click">查看付款后激活说明</a>
       </div>
       <p class="micro">Pro 不支持自助充值，如需 Pro 100 / 200 美元方案，请联系人工确认后开通。</p>
       <div class="proof-row" aria-label="核心承诺">
@@ -161,7 +163,7 @@ var _hmt = _hmt || [];
         <p>它可能包含当前登录会话的授权信息。系统会用它识别账号邮箱、账号 ID 和订阅状态，用于把 Plus 充值到你确认的账号。</p>
         <ul class="check-list">
           <li>不要把 ChatGPT 密码、邮箱验证码、短信验证码发给任何人</li>
-          <li>只在 AIPass 激活页提交完整内容，不要转发给客服或其他人</li>
+          <li>只在订单页提供的自助充值页提交完整内容，不要转发给客服或其他人</li>
           <li>提交前会让你再次确认账号邮箱</li>
           <li>看不懂可以先联系客服，不要重复提交</li>
         </ul>
@@ -250,7 +252,7 @@ var _hmt = _hmt || [];
         </div>
         <div class="actions" style="margin:0">
           <a rel="noopener" target="_blank" class="btn primary" href="https://qfcc99.com/shop/jiage" data-track="pricing_buy_click">立即充值 Plus</a>
-          <a rel="noopener" target="_blank" class="btn secondary" href="https://www.aipass.me/api/recharge-go" data-track="home_activate_click">已购买？先看自助充值说明</a>
+          <a rel="noopener" target="_blank" class="btn secondary" href=\"/#flow\" data-track="home_activate_click">查看付款后激活说明</a>
         </div>
       </div>
     </div>
@@ -305,7 +307,7 @@ var _hmt = _hmt || [];
   </div>
 </div>
 <script>
-(()=>{const defaultUrl='https://www.aipass.me/api/recharge-go';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.location.href=targetUrl;close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.location.href=targetUrl;return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="https://www.aipass.me/api/recharge-go"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
+(()=>{const defaultUrl='/#flow';const modal=document.getElementById('rechargePreflightModal');const confirm=document.getElementById('rechargePreflightConfirm');const cancel=document.getElementById('rechargePreflightCancel');const countdown=document.getElementById('rechargePreflightCountdown');const seconds=8;let timer=null;let remaining=seconds;let targetUrl=defaultUrl;let navigated=false;function update(){if(countdown)countdown.textContent=remaining+' 秒后自动进入充值通道'}function stop(){if(timer){clearInterval(timer);timer=null}}function close(){stop();modal?.classList.remove('is-open');modal?.setAttribute('aria-hidden','true')}function enter(){if(navigated)return;navigated=true;stop();window.location.href=targetUrl;close()}function start(){stop();navigated=false;remaining=seconds;update();timer=setInterval(()=>{remaining-=1;if(remaining<=0){enter();return}update()},1000)}function open(url){targetUrl=url||defaultUrl;if(!modal){window.location.href=targetUrl;return}modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');setTimeout(()=>modal.querySelector('[tabindex="-1"]')?.focus?.(),0);start()}document.querySelectorAll('a[href="/#flow"]').forEach(link=>{link.addEventListener('click',event=>{event.preventDefault();open(link.href)})});confirm?.addEventListener('click',enter);cancel?.addEventListener('click',close);modal?.addEventListener('click',event=>{if(event.target===modal)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&modal?.classList.contains('is-open'))close()})})();
 </script>
 
 </body>

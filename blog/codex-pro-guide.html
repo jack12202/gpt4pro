@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex 与 ChatGPT Pro 100 / 200 / 500 完整选型指南｜嘉哥AI</title>
+<meta name="description" content="Codex 开 Plus 还是 Pro？对比 ChatGPT Plus 与 Pro 100/200/500 价格、订阅与 API Key 区别、额度限制排查及升级避坑指南。">
+<link rel="canonical" href="https://www.gpt4.pro/blog/codex-pro-guide.html">
+<link rel="stylesheet" href="/assets/gptc.css?v=20261122c1">
+<script src="/assets/gptc-components.js?v=20261122wx2" defer></script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V36H9QT9GK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V36H9QT9GK');
+</script>
+<script src="/assets/gptc-tracking.js" defer></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?707cb0fe41fad23ba42b49fef402f68b";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<style>.nav-actions{display:inline-flex;align-items:center;gap:8px}.nav-wx{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#0f172a;font-size:13.5px;font-weight:800;white-space:nowrap;cursor:pointer}.nav-wx:hover{background:#f8fafc}</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="site-brand" href="/"><span class="brand-dot">嘉</span><span>嘉哥AI</span></a>
+    <div class="site-links">
+      <a href="/#plans">ChatGPT 套餐</a>
+      <a href="/gemini/">Gemini / Grok</a>
+      <a href="/invoice/">企业开票</a>
+      <a href="/blog/">指南博客</a>
+    </div>
+    <div class="nav-actions"><button class="nav-wx" type="button" data-copy-wx data-track="nav_wx_click">微信咨询</button><a rel="noopener" target="_blank" class="nav-cta" href="https://qfcc99.com/shop/jiage" data-track="nav_buy_click">立即充值 Plus</a></div>
+  </nav>
+</header>
+<main>
+  <section class="article-hero">
+    <div class="article-container">
+      <div style="max-width:820px;">
+        <nav class="breadcrumbs" aria-label="面包屑">
+          <a href="/">首页</a><span>/</span><a href="/blog/">指南博客</a><span>/</span><span>Codex / Pro 选型</span>
+        </nav>
+        <span class="article-kicker">Codex / Pro 选型</span>
+        <h1>Codex 与 ChatGPT Pro 100 / 200 / 500 完整选型指南</h1>
+        <p class="article-dek">汇总 ChatGPT Plus 与 Pro 100 / 200 / 500 的价格差异、Codex 额度判断、订阅与 API Key 对比，以及升级前的常见避坑事项。</p>
+        <div class="article-meta"><span>更新：2026-11-22</span><span>·</span><span>嘉哥AI 深度指南</span><span>·</span><span>单页完整版</span></div>
+        <div class="button-row hero-wx-row" style="margin-top:16px;"><a rel="noopener" target="_blank" class="button button-primary" href="https://qfcc99.com/shop/jiage">立即充值 Plus（¥188/月）</a><button class="button" type="button" data-copy-wx>扫码加微信咨询（jiage01888）</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="article-shell">
+    <div class="article-container article-grid">
+      <article class="article-main">
+        <h2 id="s1">一、先看结论：Plus 与 Pro 100 / 200 / 500 怎么一眼选对？</h2>
+        <p>选套餐不用看复杂营销词，只看两个指标：<strong>你每天连续使用 Codex / 深度推理的时间</strong>，以及<strong>你的开发/研究任务是否需要长上下文与高并发</strong>。</p>
+        <table>
+          <thead>
+            <tr><th>套餐档位</th><th>月费（含票 +5%）</th><th>主要用途</th><th>适合人群</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>ChatGPT Plus</strong></td><td>¥188 / 月<br><small>含票 ¥198</small></td><td>日常主力 + 轻度 Codex</td><td>日常问答、写作翻译、偶尔解释代码/写脚本</td></tr>
+            <tr><td><strong>ChatGPT Pro 100</strong></td><td>¥880 / 月<br><small>含票 ¥924</small></td><td>中高频开发者 / Codex 进阶</td><td>每天写代码、改真实项目、Plus 明显触发限额</td></tr>
+            <tr><td><strong>ChatGPT Pro 200</strong></td><td>¥1,580 / 月<br><small>含票 ¥1,659</small></td><td>重度 Codex / 深度研究主力</td><td>全天跑 Codex 长任务、多文件重构、科研与高强度推理</td></tr>
+            <tr><td><strong>ChatGPT Pro 500</strong></td><td>¥3,880 / 月<br><small>含票 ¥4,074</small></td><td>顶级重度研发 / 机构主力</td><td>高并发开发、重度自动化工作流、企业研发主力账号</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="s2">二、Plus 到底够不够用 Codex？什么信号说明该上 Pro？</h2>
+        <p><strong>不要一上来直接买最高档。</strong>如果你处于以下状态，先开 <strong>Plus（¥188/月）</strong> 是成本最低的试水方式：</p>
+        <ul>
+          <li>每周只用几次 Codex，主要做单文件函数解释、报错定位、写小脚本或补 SQL；</li>
+          <li>单次对话上下文不长，不依赖它连续跑多轮仓库级重构。</li>
+        </ul>
+        <p>当你连续 3 天遇到以下任一信号时，再升级 <strong>Pro 100 / 200</strong>：</p>
+        <ul>
+          <li><strong>频繁触发速率限额</strong>，开发过程中反复等待冷却，影响交付效率；</li>
+          <li><strong>真实项目多文件联调</strong>，需要反复读取大仓库并自动跑测试；</li>
+          <li><strong>时间成本远高于月费差价</strong>（每天多省 1 小时，Pro 100/200 的回本速度极快）。</li>
+        </ul>
+
+        <h2 id="s3">三、Codex 用 ChatGPT 订阅还是 API Key？</h2>
+        <p>很多开发者容易混淆两者，按使用形态区分非常简单：</p>
+        <ul>
+          <li><strong>优先用 ChatGPT 订阅（Plus / Pro）</strong>：个人本地 IDE / CLI 交互式写代码、日常调试、希望月度封顶可控、不想每次回车都盯着 Token 计费表。</li>
+          <li><strong>优先用 API Key</strong>：CI/CD 无人值守自动化流水线、需要把模型集成进自家后端产品、或需要按部门/项目精确分摊每一次调用成本。</li>
+          <li><strong>混合用法（老手常见）</strong>：日常个人开发用 Pro 订阅封顶，线上自动化脚本单独走 API Key。</li>
+        </ul>
+
+        <h2 id="s4">四、Codex 额度不够怎么办？3 步排查法</h2>
+        <ol>
+          <li><strong>先区分是“速率窗口限制”还是“账号异常”</strong>：如果是短时间高并发触发限流，通常几小时后恢复；如果完全无法调用，先核对账号订阅状态是否仍在有效期。</li>
+          <li><strong>瘦身上下文</strong>：把整个仓库无脑塞进单次会话会极快烧光额度。按模块拆任务、及时新开会话，能直接省下 40%–60% 消耗。</li>
+          <li><strong>再决定升级档位</strong>：已经控制好上下文但每天仍撞墙，直接从 Plus 升 Pro 100，或从 Pro 100 升 Pro 200 / 500。</li>
+        </ol>
+
+        <h2 id="s5">五、升级 Pro 避坑指南（3 个关键注意点）</h2>
+        <ul>
+          <li><strong>已有苹果 iOS 内购订阅</strong>：苹果订阅和网页端订阅通道不同，直接跨端操作容易冲突。升级前建议先联系人工核对当前订阅通道与到期日。</li>
+          <li><strong>只看低价拼车风险极高</strong>：开发者账号沉淀了大量历史对话与项目上下文，低价共享号/黑卡号一旦掉线或连坐封号，损失远大于省下的几十元。</li>
+          <li><strong>需要企业报销或对公转账</strong>：Plus / Pro 均支持 <strong>+5% 开具正规电子发票</strong>与对公转账，下单前加微信 <code>jiage01888</code> 确认开票信息即可。</li>
+        </ul>
+<section data-jiage-cta="1" style="margin:36px 0 8px;padding:24px;border-radius:16px;border:1px solid #e2e8f0;background:#ffffff;box-shadow:0 8px 24px rgba(15,23,42,.05);">
+  <div style="font-size:12.5px;font-weight:800;color:#4338ca;margin-bottom:6px;">嘉哥AI · 2025年7月稳定运营至今</div>
+  <h3 style="margin:0 0 8px;font-size:20px;font-weight:900;color:#0f172a;">ChatGPT Plus / Pro 原号直充 · 支持正规发票与对公</h3>
+  <p style="margin:0 0 16px;font-size:14.5px;line-height:1.75;color:#475569;">Plus <strong>¥188/月</strong>（含票 ¥198）、Pro 100 <strong>¥880</strong>、Pro 200 <strong>¥1580</strong>、Pro 500 <strong>¥3880</strong>，另支持 Gemini / Grok 自助充值。<strong>30 天订阅保障</strong>：失败全额退，30 天内掉订阅按比例退钱或补够 30 天（保订阅，不含平台风控封号）。</p>
+  <div class="button-row" style="margin-top:0;">
+    <a rel="noopener" target="_blank" class="button button-primary" href="https://qfcc99.com/shop/jiage" data-track="pillar_bottom_buy">立即充值 Plus（¥188/月）</a>
+    <button class="button" type="button" data-copy-wx data-track="pillar_bottom_wx">Pro / 开票 / 异常排查 · 复制微信（jiage01888）</button>
+    <a class="button button-secondary" href="/#plans">查看全部 4 档套餐</a>
+  </div>
+</section>
+      </article>
+      <aside class="article-aside">
+        <nav class="toc" aria-label="本页目录">
+          <strong>本页目录（点击直达）</strong>
+          <a href="#s1">一、4 档套餐一眼对比表</a>
+          <a href="#s2">二、Plus 够不够用 Codex？</a>
+          <a href="#s3">三、订阅还是 API Key？</a>
+          <a href="#s4">四、Codex 额度不够排查</a>
+          <a href="#s5">五、升级 Pro 避坑指南</a>
+        </nav>
+        <div style="padding:18px;border:1px solid #e2e8f0;border-radius:16px;background:#fff;text-align:center;box-shadow:0 8px 22px rgba(15,23,42,.04);">
+          <div style="font-size:12px;font-weight:800;color:#4338ca;margin-bottom:6px;">扫码问嘉哥（9:00–23:00）</div>
+          <img src="/assets/wechat-qr.jpg" alt="嘉哥AI 微信二维码 jiage01888" style="width:160px;max-width:100%;height:auto;border-radius:10px;border:1px solid #e2e8f0;display:block;margin:0 auto 8px;">
+          <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:4px;">微信号：jiage01888</div>
+          <div style="font-size:12px;color:#64748b;margin-bottom:10px;">Pro / 开票 / 异常订单人工处理</div>
+          <button class="button" type="button" data-copy-wx style="width:100%;min-height:36px;font-size:13px;">点击复制微信号</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a href="/">嘉哥AI</a> ·
+    <a rel="noopener" target="_blank" href="https://qfcc99.com/shop/jiage">立即充值 Plus</a> ·
+    <a href="/gemini/">Gemini / Grok</a> ·
+    <a href="/invoice/">企业开票</a> ·
+    <a href="/blog/">指南博客</a>
+    <p>声明：嘉哥AI（GPT4.pro）为第三方信息与充值协助服务网站，并非 OpenAI 或 ChatGPT 官方网站。官方套餐权益、额度与风控规则以账号内实际显示为准。</p>
+  </div>
+</footer>
+<div class="mobile-sticky" aria-label="移动端快捷操作">
+  <a rel="noopener" target="_blank" class="button button-primary" href="https://qfcc99.com/shop/jiage" data-track="pillar_mobile_buy">立即充值 Plus</a>
+  <button class="button" type="button" data-copy-wx data-track="pillar_mobile_wx">复制微信咨询</button>
+</div>
+</body>
+</html>

@@ -3,647 +3,333 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChatGPT Plus充值 / Pro 5X升级｜支付宝微信｜嘉哥AI</title>
-<meta name="description" content="嘉哥AI提供ChatGPT Plus国内充值与Pro 5X升级服务。Plus ¥188/月，支持微信、支付宝；经常使用Codex、复杂编程或Plus限额影响工作，可考虑Pro 5X ¥880/月。本站Plus剩余价值可抵扣升级。">
+<title>ChatGPT Plus / Pro 充值套餐｜支持微信支付宝与发票对公｜嘉哥AI</title>
+<meta name="description" content="嘉哥AI 提供 ChatGPT Plus(¥188/月)、Pro 100(¥880)、Pro 200(¥1580)、Pro 500(¥3880) 原号直充，以及 Gemini/Grok 自助充与企业正规发票(+5%)、对公转账服务。">
 <link rel="canonical" href="https://www.gpt4.pro/">
+<meta property="og:title" content="ChatGPT Plus / Pro 充值套餐｜嘉哥AI">
+<meta property="og:description" content="选择适合你的 ChatGPT 套餐：Plus ¥188、Pro 100 ¥880、Pro 200 ¥1580、Pro 500 ¥3880，支持微信/支付宝与正规发票对公。">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:site_name" content="GPT4.pro">
-<meta property="og:title" content="ChatGPT Plus充值 / Pro 5X升级 | 嘉哥AI">
-<meta property="og:description" content="Plus ¥188/月，Pro 5X ¥880/月；本站Plus剩余价值可抵扣升级。">
 <meta property="og:url" content="https://www.gpt4.pro/">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ChatGPT Plus充值 / Pro 5X升级 | 嘉哥AI">
-<meta name="twitter:description" content="充值到自己的账号，支持支付宝 / 微信付款，无需海外信用卡。">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "嘉哥AI",
-  "alternateName": ["嘉哥GPT", "嘉哥充值", "GPT4.pro"],
-  "url": "https://www.gpt4.pro/",
-  "description": "嘉哥AI / 嘉哥GPT 是面向中文用户的 GPT Plus / Pro 充值与升级服务与指南站，正常订单按页面提示操作，异常订单由人工协助。",
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "areaServed": "CN",
-    "availableLanguage": ["zh-CN"]
-  }]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "嘉哥AI",
-  "alternateName": ["嘉哥GPT", "嘉哥充值", "GPT4.pro"],
-  "url": "https://www.gpt4.pro/",
-  "inLanguage": "zh-CN",
-  "publisher": {
-    "@type": "Organization",
-    "name": "嘉哥AI"
-  }
-}
-</script>
 <style>
 :root{
-  --bg:#f7fafc;
+  --bg-white:#ffffff;
+  --bg-gray:#f8fafc;
   --ink:#0f172a;
-  --muted:#64748b;
-  --line:#dbe4ee;
-  --panel:#ffffff;
-  --soft:#eef7f5;
-  --brand:#0d9488;
-  --brand-dark:#0f766e;
-  --gold:#f59e0b;
-  --gold-soft:#fff7ed;
+  --muted:#475569;
+  --light:#64748b;
+  --line:#e2e8f0;
+  --soft:#eef2ff;
+  --brand:#4f46e5;
+  --brand-dark:#4338ca;
   --navy:#0f172a;
-  --navy-2:#172554;
-  --danger-soft:#fff1f2;
-  --shadow:0 18px 50px rgba(15,23,42,.08);
+  --radius:16px;
+  --shadow:0 8px 26px rgba(15,23,42,.05);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
+  font-family:"HarmonyOS Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
   color:var(--ink);
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.72;
-  -webkit-text-size-adjust:100%;
+  background:var(--bg-white);
+  -webkit-font-smoothing:antialiased;
 }
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+strong{color:var(--ink)}
+.wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+
+/* Top Navigation (Clean 4 items + 1 primary CTA) */
 .topbar{
-  position:sticky;
-  top:0;
-  z-index:30;
-  background:rgba(247,250,252,.9);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(219,228,238,.86);
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
 .nav{
-  max-width:1180px;
-  margin:0 auto;
-  padding:14px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  min-height:66px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
 .brand{
-  color:var(--ink);
-  font-weight:950;
-  font-size:20px;
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:900;font-size:18px;letter-spacing:-.02em;color:var(--ink);
+  white-space:nowrap;
 }
-.nav-links{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  align-items:center;
+.brand-dot{
+  width:30px;height:30px;border-radius:9px;
+  background:var(--brand);color:#fff;
+  display:grid;place-items:center;font-size:15px;font-weight:900;
 }
+.nav-links{display:flex;align-items:center;gap:6px}
 .nav-links a{
-  color:#334155;
-  font-weight:850;
-  font-size:14px;
+  color:var(--muted);padding:8px 14px;border-radius:10px;
+  font-size:14.5px;font-weight:700;transition:background .15s,color .15s;white-space:nowrap;
 }
-.hero{
-  background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
-  color:var(--ink);
-  padding:64px 20px 68px;
-  text-align:left;
+.nav-links a:hover{background:#f1f5f9;color:var(--ink)}
+.nav-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:9px 18px;border-radius:10px;
+  background:var(--brand);color:#fff;font-size:14px;font-weight:800;
+  white-space:nowrap;transition:background .15s;
 }
-.hero-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-  gap:56px;
-  align-items:center;
+.nav-cta:hover{background:var(--brand-dark)}
+
+/* Alternating Zone Backgrounds */
+.zone-white{background:var(--bg-white);border-bottom:1px solid var(--line)}
+.zone-gray{background:var(--bg-gray);border-bottom:1px solid var(--line)}
+.section{padding:44px 0}
+
+/* Zone 1: Hero + Light Metrics Strip + 4-Tier Pricing Shelf */
+.hero-zone{padding:42px 0 48px}
+.hero-head{text-align:center}
+.hero-head h1{
+  margin:0;font-size:clamp(28px,4vw,42px);line-height:1.18;
+  letter-spacing:-.03em;font-weight:900;color:var(--ink);
 }
-.hero-main{
-  min-width:0;
+.hero-head p{
+  margin:12px auto 0;max-width:640px;
+  font-size:15.5px;line-height:1.7;color:var(--muted);
 }
-.eyebrow{
-  display:block;
-  color:#64748b;
-  font-size:14px;
-  font-weight:900;
+.metrics-strip{
+  margin:20px auto 30px;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;
+  font-size:13.5px;color:var(--muted);
 }
-h1{
-  max-width:640px;
-  margin:14px 0 24px;
-  font-size:clamp(36px,3.9vw,52px);
-  line-height:1.1;
-  letter-spacing:0;
-  word-break:normal;
-  overflow-wrap:break-word;
+.metrics-strip span{display:inline-flex;align-items:center;gap:6px}
+.metrics-strip span::before{
+  content:"";width:7px;height:7px;border-radius:999px;background:var(--brand);
 }
-.hero-copy{
-  max-width:740px;
-  margin:0;
-  color:#475569;
-  font-size:19px;
-  line-height:1.68;
+
+.plans-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;
+  align-items:stretch;
 }
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:46px;
-  border:0;
-  border-radius:12px;
-  padding:12px 17px;
-  font-weight:950;
-  cursor:pointer;
-  font-size:15px;
-  font-family:inherit;
-}
-.btn.primary{
-  background:linear-gradient(180deg,#6d5df4,#5b35e6);
-  color:#fff;
-  min-width:188px;
-  box-shadow:0 18px 36px rgba(91,53,230,.24);
-}
-.btn.secondary{
-  background:#fff;
-  color:#475569;
-  border:1px solid #dbe4ee;
-}
-.hero-trustline{
-  margin:18px 0 0;
-  color:#475569;
-  font-size:14px;
-  line-height:1.6;
-  font-weight:850;
-}
-.hero-microcopy{
-  max-width:590px;
-  margin:12px 0 0;
-  color:#64748b;
-  font-size:13px;
-  line-height:1.55;
-}
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 20px;
-}
-.section{
-  padding:64px 0;
-  scroll-margin-top:88px;
-}
-.section.alt{background:#fff}
-.section.soft{background:var(--soft)}
-.section-head{
-  max-width:780px;
-  margin-bottom:24px;
-}
-h2{
-  margin:0 0 10px;
-  font-size:clamp(28px,4vw,42px);
-  line-height:1.18;
-  letter-spacing:0;
-}
-.section-head p{
-  color:var(--muted);
-  font-size:17px;
-  margin:0;
-}
-.tag{
-  display:inline-flex;
-  background:#ecfdf5;
-  color:#047857;
-  border-radius:999px;
-  padding:3px 9px;
-  font-size:12px;
-  font-weight:900;
-}
-.official-note{
-  margin:16px 0 0;
-  color:#64748b;
-  font-size:14px;
-}
-.flow{
-  counter-reset:step;
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:14px;
-}
-.flow-step{
+.plan-card{
+  background:var(--bg-white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px 20px;
+  display:flex;flex-direction:column;
+  box-shadow:var(--shadow);
   position:relative;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:48px 18px 18px;
+  transition:border-color .18s,transform .18s;
 }
-.flow-step::before{
-  counter-increment:step;
-  content:counter(step);
-  position:absolute;
-  top:16px;
-  left:18px;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:var(--navy);
-  color:#fff;
-  font-weight:950;
+.plan-card:hover{border-color:#c7d2fe;transform:translateY(-2px)}
+.plan-card.featured{
+  border:2px solid var(--brand);
+  background:linear-gradient(180deg,#ffffff 0%,#f5f7ff 100%);
 }
-.flow-step strong{display:block;margin-bottom:6px}
-.flow-step p{margin:0;color:#475569}
-.faq-list{
-  display:grid;
-  gap:12px;
+.plan-badge{
+  position:absolute;top:-11px;left:20px;
+  background:var(--brand);color:#fff;
+  font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:999px;
 }
-.faq-list details{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
+.plan-head h2{margin:0;font-size:19.5px;font-weight:900;color:var(--ink)}
+.plan-sub{margin:4px 0 0;font-size:13px;color:var(--light);min-height:20px}
+.plan-price{
+  margin:16px 0 14px;padding-bottom:14px;border-bottom:1px solid var(--line);
+  display:flex;align-items:baseline;gap:4px;
+}
+.plan-price .yen{font-size:18px;font-weight:800;color:var(--ink)}
+.plan-price .num{font-size:34px;font-weight:900;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.plan-price .unit{font-size:13.5px;color:var(--light);font-weight:600}
+.plan-features{
+  list-style:none;margin:0;padding:0;flex:1;
+  display:grid;gap:9px;font-size:13.8px;color:#334155;line-height:1.55;
+}
+.plan-features li{display:flex;align-items:flex-start;gap:8px}
+.plan-features li::before{
+  content:"✓";color:var(--brand);font-weight:900;flex:none;margin-top:1px;
+}
+.plan-meta{
+  margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);
+  font-size:12px;color:var(--light);line-height:1.6;
+}
+/* Unified Button Hierarchy: Green = Self-service Plus, Dark = WeChat Direct */
+.plan-btn{
+  margin-top:12px;width:100%;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 14px;border-radius:11px;border:0;
+  font-size:14.5px;font-weight:800;transition:background .15s;
+}
+.plan-btn.primary{background:var(--brand);color:#fff}
+.plan-btn.primary:hover{background:var(--brand-dark)}
+.plan-btn.dark{background:var(--navy);color:#fff}
+.plan-btn.dark:hover{background:#1e293b}
+.plans-helper{
+  margin-top:18px;text-align:center;font-size:13.8px;color:var(--muted);
+}
+.plans-helper a{color:var(--brand-dark);font-weight:800}
+.plans-helper a:hover{text-decoration:underline}
+
+/* Unified Section Header */
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+  margin-bottom:20px;
+}
+.section-head h2{margin:0;font-size:23px;font-weight:900;letter-spacing:-.02em;color:var(--ink)}
+.section-head p{margin:5px 0 0;font-size:14.5px;color:var(--muted);line-height:1.6}
+.head-more{font-size:14px;font-weight:800;color:var(--brand-dark);white-space:nowrap}
+.head-more:hover{text-decoration:underline}
+
+/* Zone 2: Separate Service Zones (1 clear button per card) */
+.zones-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+}
+.zone-card{
+  background:var(--bg-white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  box-shadow:var(--shadow);
+}
+.zone-tag{
+  display:inline-block;font-size:12px;font-weight:800;
+  color:var(--brand-dark);background:var(--soft);
+  padding:3px 9px;border-radius:999px;margin-bottom:8px;
+}
+.zone-card h3{margin:0 0 6px;font-size:18px;font-weight:900;color:var(--ink)}
+.zone-card p{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+.zone-cta{
+  flex:none;display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 18px;border-radius:10px;
+  background:var(--navy);color:#fff;font-size:13.8px;font-weight:800;
+  white-space:nowrap;transition:background .15s;
+}
+.zone-cta:hover{background:#1e293b}
+
+/* Zone 3: Proof Strip */
+.proof-strip{
+  display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,240px);
+  gap:14px;overflow-x:auto;padding-bottom:8px;
+  -webkit-overflow-scrolling:touch;
+}
+.proof-shot{
+  background:var(--bg-white);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;box-shadow:var(--shadow);
+}
+.proof-shot img{display:block;width:100%;height:260px;object-fit:cover}
+
+/* Zone 4: Compact 3-Step Flow */
+.flow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.flow-step{
+  background:var(--bg-white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;display:flex;align-items:flex-start;gap:12px;
+}
+.step-num{
+  width:28px;height:28px;border-radius:8px;flex:none;
+  background:var(--soft);color:var(--brand-dark);
+  display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;
+}
+.flow-step h3{margin:0 0 4px;font-size:15.5px;font-weight:800}
+.flow-step p{margin:0;font-size:13.8px;line-height:1.6;color:var(--muted)}
+
+/* Zone 5: Compact 3-Tab FAQ */
+.faq-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.faq-tab{
+  padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+  background:var(--bg-gray);color:var(--muted);font-size:14px;font-weight:700;
+}
+.faq-tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.faq-panel{display:none;gap:10px}
+.faq-panel.active{display:grid}
+.faq-item{
+  background:var(--bg-gray);border:1px solid var(--line);border-radius:12px;
   padding:16px 18px;
 }
-.faq-list summary{
-  cursor:pointer;
-  font-weight:950;
+.faq-item summary{
+  font-size:15px;font-weight:800;color:var(--ink);cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
 }
-.faq-list p{margin:10px 0 0;color:#475569}
-.blog-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.blog-card{
-  display:block;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:18px;
-  color:var(--ink);
-}
-.blog-card:hover{
-  text-decoration:none;
-  border-color:#99f6e4;
-}
-.blog-card h3{
-  margin:8px 0;
-  font-size:19px;
-  line-height:1.35;
-}
-.blog-card p{
-  margin:0;
-  color:#475569;
-}
-.cta-band{
-  background:linear-gradient(135deg,#0f172a,#134e4a);
-  color:#fff;
-  border-radius:8px;
-  padding:28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-.cta-band p{margin:6px 0 0;color:#d1fae5}
+.faq-item summary::after{content:"+";font-size:18px;color:var(--light);font-weight:600}
+.faq-item[open] summary::after{content:"−"}
+.faq-item p,.faq-item li{font-size:14px;line-height:1.75;color:var(--muted)}
+.faq-item p{margin:10px 0 0}
+.faq-item ul{margin:8px 0 0;padding-left:18px}
+.faq-item li{margin:4px 0}
+
+/* Footer */
 .footer{
-  background:#0f172a;
-  color:#cbd5e1;
-  padding:26px 20px;
+  padding:32px 0 42px;background:var(--bg-gray);
+  font-size:13.5px;color:var(--light);
 }
-.footer-inner{
-  max-width:1180px;
-  margin:0 auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.footer-copy strong{color:#fff;font-size:15px}
-.footer-copy p{margin:4px 0 0;font-size:13px;line-height:1.6}
-.footer a{color:#cbd5e1}
-.footer-links{
-  display:flex;
-  gap:8px 18px;
-  flex-wrap:wrap;
-  font-size:13px;
-}
+.footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-brand strong{display:block;color:var(--ink);font-size:15px;margin-bottom:6px}
+.footer-brand p{margin:4px 0;max-width:520px;line-height:1.6}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px;align-content:flex-start}
+.footer-links a{color:var(--muted);font-weight:600}
+.footer-links a:hover{color:var(--brand-dark)}
+
+/* Mobile Sticky Bar */
 .sticky{
-  position:fixed;
-  left:18px;
-  right:18px;
-  bottom:14px;
-  z-index:40;
-  max-width:780px;
-  margin:auto;
-  background:rgba(15,23,42,.94);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:14px;
-  padding:10px;
-  display:none;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  box-shadow:0 18px 50px rgba(0,0,0,.22);
+  display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;
+  background:rgba(15,23,42,.95);backdrop-filter:blur(10px);
+  padding:10px;border-radius:14px;gap:8px;
+  box-shadow:0 12px 30px rgba(15,23,42,.28);
 }
-.sticky span{font-size:14px;color:#d1fae5}
-.sticky .btn{
-  flex:1 1 0;
-  min-width:0;
-  min-height:40px;
-  padding:9px 12px;
-  line-height:1.25;
-  text-align:center;
+.sticky a,.sticky button{
+  flex:1;padding:11px 10px;border-radius:10px;border:0;
+  font-size:14px;font-weight:800;text-align:center;
 }
-.sticky .btn.primary{
-  min-width:0;
-  box-shadow:none;
-}
+.sticky .s-buy{background:var(--brand);color:#fff}
+.sticky .s-wx{background:#fff;color:var(--ink)}
+
+/* WeChat Modal */
 .modal-backdrop{
-  position:fixed;
-  inset:0;
-  z-index:90;
-  display:grid;
-  place-items:center;
-  padding:18px;
-  background:rgba(15,23,42,.58);
+  position:fixed;inset:0;z-index:100;
+  background:rgba(15,23,42,.56);backdrop-filter:blur(4px);
+  display:grid;place-items:center;padding:16px;
 }
 .modal-backdrop[hidden]{display:none}
 .modal-card{
-  width:min(560px,100%);
-  max-height:calc(100vh - 36px);
-  overflow:auto;
-  background:#fff;
-  border-radius:8px;
-  border:1px solid var(--line);
-  box-shadow:0 28px 80px rgba(15,23,42,.28);
-  padding:24px;
+  width:min(440px,100%);background:#fff;border-radius:18px;
+  padding:24px;box-shadow:0 24px 60px rgba(15,23,42,.24);
 }
-.modal-card:focus{outline:none}
-.modal-card h2{
-  margin:0 0 8px;
-  font-size:28px;
+.modal-card h2{margin:8px 0 8px;font-size:20px;font-weight:900}
+.modal-card p{margin:0 0 16px;font-size:14px;line-height:1.65;color:var(--muted)}
+.wx-box{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);
 }
-.modal-card p{
-  color:#475569;
-  margin:0 0 14px;
-}
-.modal-steps{
-  margin:14px 0 18px;
-  padding-left:22px;
-  color:#334155;
-}
-.modal-steps li{margin:7px 0}
-.wechat-id-card{
-  display:grid;
-  grid-template-columns:1fr auto;
-  gap:12px;
-  align-items:center;
-  margin:16px 0;
-  padding:14px;
-  border:1px solid #99f6e4;
-  border-radius:8px;
-  background:#f0fdfa;
-}
-.wechat-id-card span{
-  display:block;
-  color:#64748b;
-  font-size:13px;
-  line-height:1.4;
-}
-.wechat-id-card strong{
-  display:block;
-  margin-top:2px;
-  color:#0f172a;
-  font-size:24px;
-  line-height:1.2;
+.wx-box span{display:block;font-size:12px;color:var(--light)}
+.wx-box strong{font-size:18px;font-weight:900;color:var(--ink)}
+.wx-box button{
+  padding:9px 14px;border-radius:9px;border:0;
+  background:var(--brand);color:#fff;font-size:13.5px;font-weight:800;
 }
 .modal-close{
-  margin-top:14px;
-  padding:0;
-  border:0;
-  background:transparent;
-  color:#64748b;
-  cursor:pointer;
-  font:inherit;
-  font-weight:850;
-}
-.recharge-modal-card {
-  text-align: center;
-}
-.preflight-warning{
-  margin-top:14px;
-  padding:14px 16px;
-  border:1px solid #fed7aa;
-  border-radius:10px;
-  background:#fff7ed;
-  color:#7c2d12;
-  text-align:left;
-}
-.preflight-warning strong{
-  display:block;
-  margin-bottom:5px;
-  color:#9a3412;
-  font-size:16px;
-}
-.preflight-warning p{
-  margin:0;
-  color:inherit;
-  line-height:1.65;
-}
-.preflight-warning p+p{
-  margin-top:7px;
-  font-weight:800;
-}
-.recharge-status-steps{
-  display:grid;
-  gap:7px;
-  margin:10px 0;
-}
-.recharge-status-steps span{
-  display:flex;
-  gap:8px;
-  align-items:baseline;
-  padding:8px 10px;
-  border-radius:9px;
-  background:rgba(255,255,255,.62);
-  line-height:1.45;
-}
-.recharge-status-steps b{flex:0 0 auto}
-.preflight-warning .recharge-repeat-note{line-height:1.55}
-.recharge-modal-card.night-mode .preflight-warning{
-  border-color:#fca5a5;
-  background:#fef2f2;
-  color:#7f1d1d;
-}
-.recharge-modal-card.night-mode .preflight-warning strong{color:#b91c1c}
-.preflight-night-ack{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  margin:14px 0 0;
-  padding:12px 14px;
-  border:1px solid #fecaca;
-  border-radius:10px;
-  background:#fff;
-  color:#7f1d1d;
-  font-weight:800;
-  line-height:1.55;
-  text-align:left;
-  cursor:pointer;
-}
-.preflight-night-ack[hidden]{display:none}
-.preflight-night-ack input{
-  flex:0 0 auto;
-  width:18px;
-  height:18px;
-  margin:3px 0 0;
-  accent-color:#b91c1c;
-}
-.recharge-modal-actions .btn:disabled{
-  cursor:not-allowed;
-  opacity:.55;
-}
-.recharge-modal-actions {
-  display: grid;
-  gap: 10px;
-  margin-top: 18px;
-}
-.recharge-modal-actions .btn {
-  width: 100%;
-  flex-direction:column;
-  gap:3px;
-}
-.recharge-modal-actions .btn span{
-  font-size:13px;
-  font-weight:650;
-  opacity:.82;
+  margin-top:14px;width:100%;padding:10px;border-radius:10px;
+  border:1px solid var(--line);background:#fff;color:var(--muted);font-weight:700;
 }
 .toast{
-  position:fixed;
-  left:50%;
-  bottom:84px;
-  transform:translateX(-50%);
-  background:rgba(15,23,42,.94);
-  color:#fff;
-  border-radius:12px;
-  padding:10px 13px;
-  z-index:100;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .18s ease;
+  position:fixed;left:50%;bottom:76px;transform:translateX(-50%) translateY(10px);
+  background:var(--navy);color:#fff;padding:10px 18px;border-radius:999px;
+  font-size:13.5px;font-weight:700;opacity:0;pointer-events:none;transition:all .2s;z-index:120;
 }
-.toast.show{opacity:1}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-.nav{gap:18px}
-.nav-actions{display:flex;align-items:center;gap:16px;white-space:nowrap}
-.nav-actions a,.nav-actions button{font-size:14px;font-weight:850}
-.nav-actions .nav-activate{color:#0f766e}
-.nav-cta{background:#6246ea;color:#fff;padding:8px 13px;border:0;border-radius:10px;font-family:inherit;cursor:pointer}
-.hero-main{max-width:820px}
-.hero h1{max-width:640px;margin:14px 0 24px}
-.hero-price-line{display:block;margin:18px 0 20px;color:#5b35e6;font-size:clamp(44px,6vw,64px);line-height:1;font-weight:950}
-.hero-price-line small{font-size:20px;color:#64748b;font-weight:600}
-.hero-plus-cta{margin-top:4px}
-.hero-microcopy{max-width:740px;margin-top:14px}
-.hero-trustline{font-weight:700;margin-top:18px}
-.hero-card{min-width:0;padding:30px;background:#fff;border:1px solid #c7d2fe;border-radius:18px;box-shadow:0 12px 32px rgba(15,23,42,.06)}
-.hero-card h2{margin:14px 0 0;font-size:26px}
-.hero-card .hero-price-line{font-size:50px;margin:18px 0 12px}
-.hero-card .btn{width:100%;box-shadow:none}
-.hero-card-alternative{margin:18px 0 0;padding-top:16px;border-top:1px solid #e2e8f0;font-size:14px;color:#64748b}
-.hero-card-alternative a{display:inline-block;margin-left:4px;font-weight:850}
-.purchase-methods{color:#64748b;font-size:14px;margin:0 0 20px}
-.text-link{font-weight:800;font-size:14px}
-.pro5x-scenarios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:940px;margin-bottom:18px}
-.pro5x-scenarios>div{padding:18px 20px;border:1px solid #dbe4ee;border-radius:12px;background:#fff}
-.pro5x-scenarios h3{margin:0 0 6px;font-size:18px}
-.pro5x-scenarios p{margin:0;color:#64748b}
-.pro5x-fit-note{max-width:940px;color:#334155;font-weight:750}
-.pro5x-steps{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:24px;padding-top:18px;border-top:1px solid #dbe4ee;color:#64748b;font-size:13px}
-.pro5x-steps strong{color:#0f172a;font-size:14px}
-.upgrade-layout{max-width:1180px}
-.upgrade-layout>div{max-width:940px}
-.upgrade-layout p{color:#475569}
-.upgrade-math{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:22px 0 12px}
-.upgrade-math>span,.upgrade-math>strong{padding:14px;border:1px solid #dbe4ee;border-radius:10px;background:#fff;font-size:15px;text-align:center}
-.upgrade-math>strong{border-color:#a5b4fc;color:#5b35e6;background:#f8f7ff}
-.upgrade-caveat{font-size:13px}
-.upgrade-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:18px}
-.upgrade-actions a{font-weight:850;font-size:14px}
-.proof-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.proof-shot{display:block;min-width:0;width:100%;height:300px;overflow:hidden;border:1px solid #dbe4ee;border-radius:12px;background:#eef2f7}
-.proof-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
-.proof-more,.tutorial-more{margin:18px 0 0}
-.plans-focus{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr) minmax(0,1fr);gap:16px;align-items:stretch}
-.plan-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:24px;border:1px solid #dbe4ee;border-radius:16px;background:#fff}
-.plan-card h3{margin:14px 0 0;font-size:23px;line-height:1.3}
-.plan-price{margin:12px 0;font-size:32px;font-weight:950;line-height:1.2;color:#0f172a}
-.plan-price small{font-size:16px;font-weight:600;color:#64748b}
-.plan-card>p:not(.plan-price){margin:0 0 22px;color:#64748b}
-.plan-card>.btn,.plan-card>.text-link{margin-top:auto}
-.plan-featured{border-color:#a5b4fc;background:#f8f7ff;box-shadow:0 12px 30px rgba(91,53,230,.1)}
-.plan-featured .plan-price{color:#5b35e6}
-.plan-featured .btn{width:100%;box-shadow:none}
-.plan-pro20{background:#fafbfc}
-.plan-compare-wrap{overflow-x:auto;margin-top:25px}
-.plan-compare{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
-.plan-compare caption{text-align:left;font-weight:850;font-size:18px;padding:0 0 10px}
-.plan-compare th,.plan-compare td{border-bottom:1px solid #e2e8f0;padding:11px 14px;text-align:left}
-.plan-compare thead{background:#f8fafc}
-.plan-compare th{font-weight:850}
-.compare-note{margin:12px 0 0;color:#64748b;font-size:14px}
-.cta-alt{font-size:14px}
-.cta-alt a{color:#d1fae5}
-.sticky-activate{flex:0 0 auto;color:#d1fae5;font-size:13px;font-weight:800;padding:8px}
+/* C1 Aurora Indigo Polish */
+.hero-zone{background:radial-gradient(60% 50% at 50% 0%, rgba(99,102,241,.10) 0%, rgba(56,189,248,.04) 45%, #ffffff 100%)}
+.nav-cta,.plan-btn.primary,.brand-dot,.plan-badge{background:linear-gradient(135deg,#4f46e5 0%,#6366f1 100%);box-shadow:0 8px 20px rgba(79,70,229,.22)}
+.nav-cta:hover,.plan-btn.primary:hover{background:linear-gradient(135deg,#4338ca 0%,#4f46e5 100%)}
+.plan-card.featured{border:2px solid #6366f1;box-shadow:0 16px 38px rgba(79,70,229,.11)}
 
-@media(max-width:1080px){
-  .nav-links{display:none}
-}
-@media(max-width:960px){
-  .hero-inner,.flow,.blog-grid{grid-template-columns:1fr}
-  .hero-inner{gap:28px}
-  .hero-card{width:100%;max-width:520px}
-  .plans-focus{grid-template-columns:1fr}
-  .plan-featured{order:-1}
-  .proof-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
-  .proof-shot{flex:0 0 min(72%,300px);scroll-snap-align:start}
-  .upgrade-math{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cta-band{align-items:flex-start;flex-direction:column}
-  .sticky{display:flex}
-}
+.nav-actions{display:inline-flex;align-items:center;gap:8px}
+.nav-wx{display:inline-flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:13.5px;font-weight:800;white-space:nowrap;transition:background .15s}
+.nav-wx:hover{background:#f8fafc;border-color:#cbd5e1}
+.float-wx{position:fixed;right:22px;bottom:24px;z-index:80;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:#0f172a;color:#fff;font-size:14px;font-weight:800;box-shadow:0 12px 30px rgba(15,23,42,.24);transition:transform .15s,background .15s}
+.float-wx:hover{transform:translateY(-2px);background:#1e293b}
+.float-wx i{width:8px;height:8px;border-radius:999px;background:#22c55e;display:inline-block}
+@media(max-width:1040px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:680px){.float-wx{bottom:78px;right:14px}.plans{grid-template-columns:1fr!important}}
+
+/* Mobile 390px hardening: prevent table overflow & topbar button crowding */
 @media(max-width:680px){
-  body{padding-bottom:72px}
-  .nav{padding:10px 16px;gap:10px}
-  .brand{font-size:18px}
-  .nav-actions{gap:10px}
-  .nav-actions a,.nav-actions button{font-size:12px}
-  .nav-cta{padding:8px 10px}
-  .hero{padding:44px 20px 48px}
-  .hero-card,.plan-card{padding:21px}
-  .hero h1{font-size:clamp(34px,9vw,44px)}
-  .hero-copy{font-size:17px}
-  .section{padding:42px 0}
-  .pro5x-scenarios{grid-template-columns:1fr}
-  .pro5x-steps{display:grid}
-  .upgrade-math{gap:8px}
-  .upgrade-math>span,.upgrade-math>strong{padding:10px;font-size:13px}
-  .proof-shot{height:280px}
-  .sticky{left:8px;right:8px;bottom:8px}
-  .sticky span{display:none}
-  .sticky .btn{flex:1 1 auto}
-  .sticky-activate{max-width:92px;text-align:center;line-height:1.25}
-  .wechat-id-card{grid-template-columns:1fr}
-  .wechat-id-card .btn{width:100%}
+  .article-main table, .article table{display:block!important;width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch}
 }
-@media(max-width:380px){.nav-actions .nav-activate{display:none}}
-.home-contact{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px;padding:16px 18px;border:1px solid #c7d2fe;border-radius:12px;background:#fff;max-width:580px}
-.home-contact strong{display:block;color:#0f172a;font-size:16px}
-.home-contact p{margin:4px 0 0;color:#64748b;font-size:14px;line-height:1.6}
-.home-contact .btn{flex-shrink:0;font-size:14px;padding:10px 14px}
-@media(max-width:480px){.home-contact{align-items:flex-start;flex-direction:column;gap:12px}.home-contact .btn{width:100%}}
+@media(max-width:480px){
+  .nav-actions{gap:6px!important}
+  .nav-wx,.nav-cta,.site-nav .nav-cta,.home{padding:7px 10px!important;font-size:12.5px!important}
+  .brand,.site-brand{font-size:16px!important;gap:7px!important}
+}
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V36H9QT9GK"></script>
@@ -665,215 +351,285 @@ var _hmt = _hmt || [];
 </script>
 </head>
 <body>
+
 <header class="topbar">
-  <nav class="nav" aria-label="主导航">
-    <a class="brand" href="/">嘉哥AI</a>
+  <nav class="wrap nav" aria-label="主导航">
+    <a class="brand" href="/"><span class="brand-dot">嘉</span><span>嘉哥AI</span></a>
     <div class="nav-links">
-      <a href="#pro5x">Pro 5X</a>
-      <a href="#proof">真实案例</a>
-      <a href="#plans">套餐对比</a>
-      <a href="#flow">充值流程</a>
-      <a href="#faq">常见问题</a>
-      <a href="/blog/">充值指南</a>
+      <a href="#plans">ChatGPT 套餐</a>
+      <a href="/gemini/">Gemini / Grok</a>
+      <a href="/invoice/">企业开票</a>
+      <a href="/blog/">指南博客</a>
     </div>
-    <div class="nav-actions">
-      <a rel="noopener" target="_blank" class="nav-activate" href="https://www.aipass.me/api/recharge-go" data-track="nav_activate_click">已有激活码</a>
-      <button class="nav-cta" data-contact data-track-position="nav_pro5x" type="button">微信咨询</button>
-    </div>
+    <a rel="noopener" target="_blank" class="nav-cta" href="https://qfcc99.com/shop/jiage" data-track="nav_buy_click">立即充值 Plus</a>
   </nav>
 </header>
 
 <main>
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <div class="hero-main">
-        <span class="eyebrow">嘉哥AI · ChatGPT Plus 国内充值</span>
-        <h1>ChatGPT Plus 充值到你自己的账号</h1>
-        <p class="hero-copy">支持微信 / 支付宝付款，无需海外信用卡。充值到你自己的 ChatGPT 账号，无需向客服提供密码。</p>
-        <p class="hero-price-line">¥188 <small>/ 月</small></p>
-        <a rel="noopener" target="_blank" class="btn primary hero-plus-cta" href="https://qfcc99.com/shop/jiage" data-track="home_hero_buy_click" data-track-position="hero_plus">立即开通 Plus ¥188</a>
-        <p class="hero-microcopy">付款获得激活码后按提示完成充值，保留自己的聊天记录与使用习惯。</p>
-        <div class="home-contact" aria-label="联系嘉哥AI">
-          <div><strong>联系嘉哥AI · 微信 jiage01888</strong><p>Plus 开通、5X 升级或订单问题，都可以先问我。</p></div>
-          <button class="btn secondary" type="button" data-copy-wx data-track-position="hero_contact_copy">复制微信号</button>
+  <!-- Zone 1 (White): Hero + Light Metrics Strip + 4-Tier Aligned Shelf -->
+  <section class="zone-white hero-zone" id="plans" aria-label="ChatGPT 套餐方案">
+    <div class="wrap">
+      <div class="hero-head">
+        <h1>选择适合你的 ChatGPT 套餐</h1>
+        <p><strong>直充你自己的原账号</strong>，<strong>无需提供账号密码</strong>。支持微信 / 支付宝付款，支持<strong>开具正规发票与企业对公转账</strong>。</p>
+        <div class="metrics-strip" aria-label="核心服务指标">
+          <span><strong>2025年7月</strong>稳定运营至今</span>
+          <span>月均 <strong>100+ 老客</strong>持续续费</span>
+          <span><strong>30 天掉单保障</strong>（按比例退或补够 30 天）</span>
+          <span>支持 <strong>+5% 正规发票</strong>与对公</span>
         </div>
-        <p class="hero-trustline">截至 2026 年 6 月累计处理 2300+ 次服务与订单记录 · 正常订单通常约 5 分钟完成 · 异常订单人工协助</p>
       </div>
-      <aside class="hero-card" aria-label="了解 ChatGPT Pro 5X">
-        <span class="tag">Plus 经常限额？</span>
-        <h2>看看 Pro 5X</h2>
-        <p class="hero-price-line">¥880 <small>/ 月</small></p>
-        <p class="purchase-methods">如果你经常使用 Codex、复杂编程、深度研究，或者 Plus 限额已经影响工作，Pro 5X 会更适合。</p>
-        <button class="btn primary" data-contact data-track-position="hero_pro5x" type="button">看看我适不适合 Pro 5X</button>
-        <p class="hero-card-alternative">不确定用量？可以先开 Plus，后续剩余价值可抵扣升级 Pro。<a rel="noopener" target="_blank" href="https://qfcc99.com/shop/jiage" data-track="home_hero_buy_click" data-track-position="hero_plus_alternative">先开 Plus →</a></p>
-      </aside>
+
+      <div class="plans-grid">
+        <!-- Plus -->
+        <article class="plan-card">
+          <div class="plan-head">
+            <h2>ChatGPT Plus</h2>
+            <p class="plan-sub">日常办公、学习、PPT 生图与轻度编程</p>
+          </div>
+          <div class="plan-price">
+            <span class="yen">¥</span><span class="num">188</span><span class="unit">/ 月</span>
+          </div>
+          <ul class="plan-features">
+            <li><strong>直充自己原账号</strong>，保留全部历史对话</li>
+            <li>微信 / 支付宝付款，自动发卡密</li>
+            <li>全程<strong>无需提供登录密码</strong></li>
+            <li>需开发票：<strong>含票 ¥198（+5%）</strong></li>
+          </ul>
+          <div class="plan-meta"><strong>失败全额退</strong> · 30天保订阅 · 通常 1–5 分钟到账</div>
+          <a rel="noopener" target="_blank" class="plan-btn primary" href="https://qfcc99.com/shop/jiage" data-track="home_hero_buy_click">立即购买激活码</a>
+        </article>
+
+        <!-- Pro 100 -->
+        <article class="plan-card featured">
+          <span class="plan-badge">高频开发推荐</span>
+          <div class="plan-head">
+            <h2>ChatGPT Pro 100</h2>
+            <p class="plan-sub">原 Pro 5X · 高频编程、Codex 与研究</p>
+          </div>
+          <div class="plan-price">
+            <span class="yen">¥</span><span class="num">880</span><span class="unit">/ 月</span>
+          </div>
+          <ul class="plan-features">
+            <li>适合 Plus 经常撞 5 小时上限的用户</li>
+            <li><strong>正规美元买卡渠道</strong>原号开通</li>
+            <li>加微信先确认账号状态再下单</li>
+            <li>支持 <strong>+5% 正规发票</strong>与对公转账</li>
+          </ul>
+          <div class="plan-meta"><strong>失败全额退</strong> · 30天保订阅 · 嘉哥一对一对接</div>
+          <button type="button" class="plan-btn dark" data-contact data-note="Pro 100（¥880）">加微信开通 Pro 100</button>
+        </article>
+
+        <!-- Pro 200 -->
+        <article class="plan-card">
+          <div class="plan-head">
+            <h2>ChatGPT Pro 200</h2>
+            <p class="plan-sub">原 Pro 20X · 重度开发与复杂工作流</p>
+          </div>
+          <div class="plan-price">
+            <span class="yen">¥</span><span class="num">1580</span><span class="unit">/ 月</span>
+          </div>
+          <ul class="plan-features">
+            <li>适合长时间高强度编码与科研分析</li>
+            <li><strong>正规美元买卡渠道</strong>原号开通</li>
+            <li>加微信一对一核对账号后交付</li>
+            <li>支持 <strong>+5% 正规发票</strong>与对公转账</li>
+          </ul>
+          <div class="plan-meta"><strong>失败全额退</strong> · 30天保订阅 · 嘉哥一对一对接</div>
+          <button type="button" class="plan-btn dark" data-contact data-note="Pro 200（¥1580）">加微信开通 Pro 200</button>
+        </article>
+
+        <!-- Pro 500 -->
+        <article class="plan-card">
+          <div class="plan-head">
+            <h2>ChatGPT Pro 500</h2>
+            <p class="plan-sub">最高用量 · 工作室与重度团队主力</p>
+          </div>
+          <div class="plan-price">
+            <span class="yen">¥</span><span class="num">3880</span><span class="unit">/ 月</span>
+          </div>
+          <ul class="plan-features">
+            <li>面向重度工作室与团队极限算力需求</li>
+            <li><strong>正规美元买卡渠道</strong>原号开通</li>
+            <li>专属人工全程跟进交付与售后</li>
+            <li>支持 <strong>+5% 正规发票</strong>与企业对公</li>
+          </ul>
+          <div class="plan-meta"><strong>失败全额退</strong> · 30天保订阅 · 支持对公采购</div>
+          <button type="button" class="plan-btn dark" data-contact data-note="Pro 500（¥3880）">加微信开通 Pro 500</button>
+        </article>
+      </div>
+
+      <p class="plans-helper">不确定该选 Plus 还是 Pro？<a href="/pro/">1 分钟快速判断 →</a></p>
     </div>
   </section>
 
-  <section class="section alt" id="pro5x">
+  <!-- Zone 2 (Gray): Separate Service Zones (1 clear CTA per card) -->
+  <section class="zone-gray section" aria-label="其他订阅与企业服务">
     <div class="wrap">
       <div class="section-head">
-        <h2>Plus 总是限额？Pro 5X 更适合高频使用</h2>
-        <p>是否需要升级，关键看 Plus 的使用限制有没有影响工作。</p>
-      </div>
-      <div class="pro5x-scenarios">
-        <div><h3>经常使用 Codex</h3><p>持续运行代码、修改项目或处理较长任务，不希望频繁被额度中断。</p></div>
-        <div><h3>复杂编程与大项目</h3><p>多轮分析代码、调试和重构，使用强度高于普通问答。</p></div>
-        <div><h3>深度研究与复杂分析</h3><p>经常处理长任务、资料整理和复杂推理，需要更高使用空间。</p></div>
-        <div><h3>每天把 GPT 当作生产工具</h3><p>每天持续用于工作、编程、研究或内容生产。</p></div>
-      </div>
-      <p class="pro5x-fit-note">如果你只是偶尔遇到一次限额，Plus 通常已经够用；如果限额经常中断工作，再考虑 Pro 5X。</p>
-      <button class="btn primary" data-contact data-track-position="pro5x_section" type="button">看看我适不适合 Pro 5X</button>
-      <div class="pro5x-steps" aria-label="Pro 5X 办理流程">
-        <strong>Pro 5X 怎么开通？</strong>
-        <span>1. 联系人工，说明账号状态和使用场景</span>
-        <span>2. 确认方案、当前订阅和应付金额</span>
-        <span>3. 完成开通后确认账号中的 Pro 状态</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section soft" id="upgrade">
-    <div class="wrap upgrade-layout">
-      <div>
-        <h2>不确定要不要直接上 5X？先开 Plus 也不会浪费</h2>
-        <p>可以先用 Plus ¥188/月。如果后续发现额度不够，本站充值的 Plus 未使用价值可抵扣升级 Pro。升级成功后，Pro 有效期重新计算一个月。</p>
-        <div class="upgrade-math" aria-label="Plus 升级 Pro 5X 计算示例">
-          <span>Plus 剩余 15 天</span><span>可抵扣约 ¥94</span><span>Pro 5X ¥880</span><strong>补付约 ¥786</strong>
+        <div>
+          <h2>其他订阅与企业服务</h2>
+          <p>除 ChatGPT 套餐外，支持<strong>多模型自助充值</strong>与<strong>企业报销开票</strong>。</p>
         </div>
-        <p class="upgrade-caveat">实际剩余天数和升级金额请先联系人工核算，以最终确认金额为准。</p>
-        <div class="upgrade-actions"><button class="btn primary" data-contact data-track-position="upgrade_section" type="button">直接咨询 Pro 5X</button><a rel="noopener" target="_blank" href="https://qfcc99.com/shop/jiage" data-track="upgrade_plus_buy_click" data-track-position="upgrade_section">先开通 Plus ¥188 →</a></div>
+      </div>
+      <div class="zones-grid">
+        <div class="zone-card">
+          <div>
+            <span class="zone-tag">多模型专区</span>
+            <h3>Gemini / Grok 自助充值</h3>
+            <p>提供对应档位<strong>正规海外银行卡</strong>供你自助订阅，按对应官方档位同比例收费。</p>
+          </div>
+          <a class="zone-cta" href="/gemini/">查看方案 →</a>
+        </div>
+        <div class="zone-card">
+          <div>
+            <span class="zone-tag">企业与报销</span>
+            <h3>正规发票与对公转账</h3>
+            <p>支持个人报销与企业批量采购，开具<strong>正规电子发票（+5% 税点，Plus 含票 ¥198）</strong>与对公转账。</p>
+          </div>
+          <a class="zone-cta" href="/invoice/">开票说明 →</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section alt" id="proof">
+  <!-- Zone 3 (White): Proof Strip -->
+  <section class="zone-white section" id="proof" aria-label="老客复购案例">
     <div class="wrap">
       <div class="section-head">
-        <h2>真实服务与交付记录</h2>
-        <p>截至 2026 年 6 月累计处理 2300+ 次服务与订单记录。以下为部分实际交付截图，隐私信息已处理。</p>
+        <div>
+          <h2>真实交付与老客续费记录</h2>
+          <p><strong>2025年7月稳定运营至今</strong>，月均 <strong>100+ 老客</strong>持续回头复购（隐私信息已遮挡）。</p>
+        </div>
+        <a class="head-more" href="/reviews/">查看更多 →</a>
       </div>
-      <div class="proof-strip" aria-label="交付记录截图，手机上可横向滑动">
-        <a class="proof-shot" href="客户案例 1.jpg" target="_blank" rel="noopener"><img src="客户案例 1.jpg" alt="嘉哥AI 服务交付记录截图一" loading="lazy"></a>
-        <a class="proof-shot" href="客户案例 2.jpg" target="_blank" rel="noopener"><img src="客户案例 2.jpg" alt="嘉哥AI 服务交付记录截图二" loading="lazy"></a>
-        <a class="proof-shot" href="客户案例 3.jpg" target="_blank" rel="noopener"><img src="客户案例 3.jpg" alt="嘉哥AI 服务交付记录截图三" loading="lazy"></a>
+      <div class="proof-strip">
+        <div class="proof-shot"><img src="客户案例 1.jpg" alt="嘉哥AI 真实交付记录 1" loading="lazy"></div>
+        <div class="proof-shot"><img src="客户案例 2.jpg" alt="嘉哥AI 真实交付记录 2" loading="lazy"></div>
+        <div class="proof-shot"><img src="客户案例 3.jpg" alt="嘉哥AI 真实交付记录 3" loading="lazy"></div>
+        <div class="proof-shot"><img src="客户案例 4.jpg" alt="嘉哥AI 真实交付记录 4" loading="lazy"></div>
+        <div class="proof-shot"><img src="客户案例 5.jpg" alt="嘉哥AI 真实交付记录 5" loading="lazy"></div>
+        <div class="proof-shot"><img src="客户案例 6.jpg" alt="嘉哥AI 真实交付记录 6" loading="lazy"></div>
       </div>
-      <p class="proof-more"><a href="/reviews/">查看更多真实交付记录 →</a></p>
     </div>
   </section>
 
-  <section class="section soft" id="plans">
+  <!-- Zone 4 (Gray): Compact 3-Step Flow -->
+  <section class="zone-gray section" id="flow" aria-label="充值流程">
     <div class="wrap">
       <div class="section-head">
-        <h2>Plus、Pro 5X、Pro 20X 怎么选？</h2>
-        <p>高频使用优先看 Pro 5X；用量暂时不确定，可以先开 Plus。</p>
+        <div>
+          <h2>Plus 3 步开通流程</h2>
+          <p>全程在自己账号上完成，<strong>无需提供账号密码</strong>，通常 <strong>1–5 分钟</strong>生效。</p>
+        </div>
       </div>
-      <div class="plans-focus">
-        <article class="plan-card plan-plus">
-          <span class="tag">日常使用</span>
-          <h3>ChatGPT Plus</h3>
-          <p class="plan-price">¥188 <small>/ 月</small></p>
-          <p>适合日常办公、学习、写作、图片生成和一般编程。</p>
-          <a rel="noopener" target="_blank" class="text-link" href="https://qfcc99.com/shop/jiage" data-track-event="pricing_buy_click" data-track-position="plans_plus">开通 Plus →</a>
-        </article>
-        <article class="plan-card plan-featured">
-          <span class="tag">重点推荐 · 高频使用</span>
-          <h3>ChatGPT Pro 5X</h3>
-          <p class="plan-price">¥880 <small>/ 月</small></p>
-          <p>适合经常使用 Codex、复杂编程、深度研究和高频专业工作的用户。如果 Plus 限额已经影响工作，优先考虑 5X。</p>
-          <button class="btn primary" data-contact data-track-position="plans_pro5x" type="button">咨询开通 Pro 5X</button>
-        </article>
-        <article class="plan-card plan-pro20">
-          <span class="tag">超高用量</span>
-          <h3>ChatGPT Pro 20X</h3>
-          <p class="plan-price">¥1580 <small>/ 月</small></p>
-          <p>适合长期极高强度使用，对额度需求明显高于 5X 的用户。</p>
-          <a href="/pro/" class="text-link">查看 20X 方案 →</a>
-        </article>
+      <div class="flow-grid">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>付款得卡密与入口</h3>
+            <p>点击“立即购买激活码”用微信/支付宝付款，页面自动显示卡密和专属充值入口。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>粘贴卡密核对账号</h3>
+            <p>打开专属充值入口，按提示核对你的 ChatGPT 邮箱并提交，全程不碰密码。</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>到账并享 30 天保订阅</h3>
+            <p>通常 1–5 分钟生效；充值后建议加嘉哥微信，后续续费、开票或售后直连更省心。</p>
+          </div>
+        </div>
       </div>
-      <div class="plan-compare-wrap"><table class="plan-compare">
-        <caption>Plus 与 Pro 5X 使用情况对比</caption>
-        <thead><tr><th scope="col">使用情况</th><th scope="col">Plus</th><th scope="col">Pro 5X</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">日常办公学习</th><td>适合</td><td>适合</td></tr>
-          <tr><th scope="row">一般编程</th><td>适合</td><td>更适合高频</td></tr>
-          <tr><th scope="row">Codex</th><td>偶尔使用</td><td>高频使用</td></tr>
-          <tr><th scope="row">复杂项目</th><td>轻中度</td><td>更适合持续任务</td></tr>
-          <tr><th scope="row">深度研究</th><td>偶尔</td><td>高频</td></tr>
-          <tr><th scope="row">Plus 限额影响工作</th><td>先评估实际频率</td><td>更值得考虑 5X</td></tr>
-        </tbody>
-      </table></div>
-      <p class="compare-note">是否需要升级，关键看 Plus 的限额是否已经影响你的工作，而不是单纯追求更高套餐。</p>
-      <p class="official-note">官方套餐权益可能变化，本站信息最后核对：2026-06-07。实际权益以 ChatGPT 账号内显示为准。</p>
     </div>
   </section>
 
-  <section class="section alt" id="flow">
+  <!-- Zone 5 (White): Compact 3-Tab FAQ (including detailed warranty vs ban explanation) -->
+  <section class="zone-white section" id="faq" aria-label="常见问题">
     <div class="wrap">
       <div class="section-head">
-        <h2>ChatGPT Plus 国内充值流程</h2>
-        <p>3 步完成，第一次操作跟着页面提示即可。</p>
+        <div>
+          <h2>常见问题与避坑说明</h2>
+          <p>集中说明<strong>质保范围、常见封号原因、Session 安全性与开票规则</strong>。</p>
+        </div>
+        <a class="head-more" href="/blog/">查看更多教程 →</a>
       </div>
-      <div class="flow">
-        <div class="flow-step"><strong>微信或支付宝付款</strong><p>在购买页面完成付款，获取 Plus 激活码。</p></div>
-        <div class="flow-step"><strong>进入激活中心</strong><p>复制激活码，按提示确认要充值的账号。</p></div>
-        <div class="flow-step"><strong>提交并确认状态</strong><p>提交后查看处理状态，再到 ChatGPT 账号中确认 Plus 是否生效。</p></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section soft" id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>购买前常见问题</h2>
-        <p>账号、到账和升级方式，先看清楚再下单。</p>
+      <div class="faq-tabs" role="tablist">
+        <button type="button" class="faq-tab active" data-faq-tab="buy">质保与封号说明</button>
+        <button type="button" class="faq-tab" data-faq-tab="use">充值与安全</button>
+        <button type="button" class="faq-tab" data-faq-tab="pro">Pro 与发票对公</button>
       </div>
-      <div class="faq-list">
-        <details open><summary>没有海外信用卡，可以充值 Plus 吗？</summary><p>可以。本站支持微信和支付宝付款，Plus 充值到你自己的 ChatGPT 账号。</p></details>
-        <details><summary>这是共享账号吗？</summary><p>不是。Plus 会充值到你自己的 ChatGPT 账号，原来的聊天记录和使用习惯会保留。</p></details>
-        <details><summary>需要把 ChatGPT 密码交给客服吗？</summary><p>不需要。你本人按激活页面提示操作，不要把密码或验证码发给任何人。</p></details>
-        <details><summary>付款后怎么操作？</summary><p>付款后获取 Plus 激活码，进入激活中心，按提示核对账号并提交；完成后查看账号中的套餐状态。</p></details>
-        <details><summary>什么情况下需要 Pro 5X？</summary><p>偶尔使用或偶尔遇到限额，Plus 通常够用；经常使用 Codex、复杂编程、深度研究，或 Plus 限额频繁影响工作，可以考虑 Pro 5X。<a href="/pro/">查看 Pro 详细方案</a>。</p></details>
-        <details><summary>已有 Plus，还能升级 Pro 5X 吗？</summary><p>可以。本站充值的 Plus 可按未使用天数折算剩余价值，抵扣 Pro 升级费用；升级后重新计算一个月，具体金额先联系人工核算。</p></details>
-        <details><summary>Pro 5X 怎么开通？</summary><p>建议先联系人工，确认当前账号订阅状态、使用需求和开通方案后办理。</p></details>
-        <details><summary>遇到充值问题怎么办？</summary><p>保留订单和页面提示，查看 <a href="/pay/">充值问题排查</a>，或联系人工协助核查。</p></details>
-      </div>
-    </div>
-  </section>
 
-  <section class="section alt" id="tutorials">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>ChatGPT Plus 充值相关教程</h2>
-        <p>如果还在确认支付方式、充值失败或账号问题，可以继续查看下面的说明。</p>
+      <div class="faq-panel active" data-faq-panel="buy">
+        <details class="faq-item" open>
+          <summary>30 天质保保什么？保封号吗？</summary>
+          <p><strong>质保只保订阅，不保封号。</strong></p>
+          <ul>
+            <li><strong>保订阅</strong>：充值失败 <strong>100% 全额退款</strong>；订阅 <strong>30 天内若发生异常掉订阅</strong>，我们按剩余天数比例退款，或补差价给你充够 30 天为止。</li>
+            <li><strong>不保封号</strong>：账号封禁属于 OpenAI 平台风控行为，任何第三方充值均无法对平台封号兜底。</li>
+          </ul>
+        </details>
+        <details class="faq-item" open>
+          <summary>什么情况会导致 ChatGPT 账号被官方封号？（详细避坑）</summary>
+          <p><strong>正规美元卡充值可以显著降低因支付问题导致的封号概率，但用户自身滥用或 OpenAI 平台风控是无法完全避免的。</strong>以下 <strong>4 类常见原因</strong>请务必注意避坑：</p>
+          <ul>
+            <li><strong>1. 网络节点与 IP 异常</strong>：频繁跨国家/地区切换代理节点，或长期使用万人共用的免费/低价机场 IP，极易触发平台风控。</li>
+            <li><strong>2. 高风险邮箱或成品号</strong>：部分被官方集中清退的邮箱（例如曾出现过的微软邮箱批量封禁风控），以及来路不明的批量注册成品号。</li>
+            <li><strong>3. 账号历史违规充值记录</strong>：账号此前在其他渠道刷过<strong>“0 元购”漏洞</strong>、用过黑卡盗刷代充、或多人共享拼车，后续被 OpenAI 追缴清算封号。</li>
+            <li><strong>4. 账号滥用与违规行为</strong>：脚本高频并发刷取、多人共用或发送违反 OpenAI 安全政策的内容。</li>
+          </ul>
+        </details>
+        <details class="faq-item">
+          <summary>官方 $20 约 ¥145，为什么正规直充是 ¥188？</summary>
+          <p>¥188 包含官方美元费用、海外正规虚拟卡台购卡与通道损耗、30 天掉单保障及人工售后。市面几十元或超低价代充多为黑卡或共享号，容易触发官方追缴封号。</p>
+        </details>
       </div>
-      <div class="blog-grid">
-        <a class="blog-card" href="/blog/chatgpt-plus-recharge-failed.html"><span class="tag">充值失败</span><h3>GPT Plus 充值失败怎么办？</h3><p>核对支付、激活和到账状态。</p></a>
-        <a class="blog-card" href="/blog/chatgpt-plus-no-foreign-card.html"><span class="tag">支付方式</span><h3>没有海外信用卡怎么开通 GPT Plus？</h3><p>了解国内开通的准备与流程。</p></a>
-        <a class="blog-card" href="/blog/chatgpt-plus-alipay-recharge.html"><span class="tag">支付宝</span><h3>GPT Plus 支付宝充值可以吗？</h3><p>查看付款方式与注意事项。</p></a>
-      </div>
-      <p class="tutorial-more"><a href="/blog/">查看更多 ChatGPT Plus 教程 →</a> · <a href="/guide/">查看开通指南</a></p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="cta-band">
-        <div><h2>Plus 限额已经影响工作？可以考虑 Pro 5X</h2><p>Pro 5X ¥880/月。已有本站 Plus，可先核算剩余价值，再补差价升级。</p><p class="cta-alt">还不确定用量？<a rel="noopener" target="_blank" href="https://qfcc99.com/shop/jiage" data-track="bottom_plus_buy_click" data-track-position="bottom_plus">先用 Plus 也可以 →</a></p></div>
-        <button class="btn primary" data-contact data-track-position="bottom_pro5x" type="button">看看我适不适合 Pro 5X</button>
+      <div class="faq-panel" data-faq-panel="use">
+        <details class="faq-item" open>
+          <summary>不用密码，那充值时为什么需要复制网页代码（Session）？安全吗？</summary>
+          <p>系统需要借助一次性临时会话凭证替你的原账号调起官方结账通道，<strong>全程不接触也不保存你的登录密码</strong>。充值完成后账号与全部历史对话完全归你本人掌控。</p>
+        </details>
+        <details class="faq-item">
+          <summary>付款后去哪里激活？多久到账？</summary>
+          <p>在合作发卡页付款成功后，页面会直接显示激活码与专属充值入口，通常 <strong>1–5 分钟</strong>完成生效。如未找到入口，直接加嘉哥微信（<strong>jiage01888</strong>）发送订单号即可。</p>
+        </details>
+      </div>
+
+      <div class="faq-panel" data-faq-panel="pro">
+        <details class="faq-item" open>
+          <summary>开发票与企业对公转账怎么办理？</summary>
+          <p>支持开具<strong>正规电子发票</strong>及<strong>企业对公转账</strong>，开发票统一加收 <strong>5% 税点</strong>（例如 Plus 含票 ¥198，Pro 各档同理 +5%）。加嘉哥微信发送开票抬头与需求即可办理。</p>
+        </details>
+        <details class="faq-item">
+          <summary>Plus、Pro 100 / 200 / 500 和 Gemini / Grok 怎么选？</summary>
+          <p>日常办公、PPT 生图选 <strong>Plus（¥188）</strong>；写代码 / Codex 经常撞 5 小时上限选 <strong>Pro 100（¥880）</strong>或 <strong>Pro 200（¥1580）</strong>；重度工作室选 <strong>Pro 500（¥3880）</strong>。如需 <strong>Gemini / Grok</strong>，提供对应档位海外卡自助充值，加微信咨询即可。</p>
+        </details>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-copy">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
       <strong>嘉哥AI · GPT4.pro</strong>
-      <p>第三方充值服务平台，与 OpenAI 无隶属关系。</p>
+      <p>2025年7月稳定运营至今，提供 ChatGPT Plus / Pro、Gemini / Grok 正规原号充值及企业对公发票服务。</p>
+      <p>声明：本站为第三方数字服务平台，并非相关官方平台，页面提及的产品名称仅用于说明服务适配对象。</p>
     </div>
-    <div class="footer-links" aria-label="服务与法律信息">
-      <a href="/pay/">支付失败排查</a>
+    <div class="footer-links">
+      <a href="#plans">ChatGPT 套餐</a>
+      <a href="/pro/">Pro 选型</a>
+      <a href="/gemini/">Gemini / Grok</a>
+      <a href="/invoice/">企业开票</a>
+      <a href="/reviews/">查看更多案例</a>
+      <a href="/blog/">指南博客</a>
       <a href="/faq/">常见问题</a>
       <a href="/terms/">服务条款</a>
       <a href="/privacy/">隐私政策</a>
@@ -881,328 +637,88 @@ var _hmt = _hmt || [];
   </div>
 </footer>
 
-<div class="sticky" aria-label="快速操作">
-  <span>Pro 5X · ¥880</span>
-  <button class="btn primary" data-contact data-track-position="sticky_pro5x" type="button">微信咨询 / 售后</button>
-  <a rel="noopener" target="_blank" class="sticky-activate" href="https://qfcc99.com/shop/jiage" data-track="sticky_plus_buy_click" data-track-position="sticky_plus">先用 Plus</a>
+<div class="sticky" aria-label="移动端快捷操作">
+  <a rel="noopener" target="_blank" class="s-buy" href="https://qfcc99.com/shop/jiage" data-track="sticky_buy_click">购买 Plus ¥188</a>
+  <button type="button" class="s-wx" data-contact data-note="咨询套餐/开票">加微信咨询</button>
 </div>
 
 <div class="modal-backdrop" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle" hidden>
-  <div class="modal-card wechat-modal" tabindex="-1">
-    <span class="tag">人工咨询</span>
-    <h2 id="wechatModalTitle">微信联系嘉哥AI</h2>
-    <p>Plus 开通、Pro 5X 升级或订单问题，都可以通过微信咨询。想了解 5X，可以先说说你的使用场景和限额情况，我会先帮你判断是否适合。</p>
-    <p>已有本站 Plus，也可以告诉我剩余天数，先核算升级差价。</p>
-    <div class="wechat-id-card">
+  <div class="modal-card" tabindex="-1">
+    <span class="zone-tag">嘉哥人工对接</span>
+    <h2 id="wechatModalTitle">添加嘉哥微信</h2>
+    <p id="wechatModalDesc">Pro 100 / 200 / 500、Gemini / Grok 充值、正规发票（+5%）与对公转账，或需要人工协助，均可直接加微信联系。</p>
+    <div style="margin:14px auto;text-align:center;">
+      <img src="/assets/wechat-qr.jpg" alt="嘉哥AI 微信二维码 jiage01888" style="width:210px;max-width:100%;height:auto;border-radius:12px;border:1px solid #e2e8f0;display:block;margin:0 auto 6px;">
+      <div style="font-size:12.5px;color:#64748b;">手机微信扫一扫添加（9:00–23:00 在线）</div>
+    </div>
+    <div class="wx-box">
       <div>
         <span>嘉哥AI 微信号</span>
         <strong id="wechatIdText">jiage01888</strong>
       </div>
-      <button class="btn primary" type="button" data-copy-wx>复制微信号</button>
+      <button type="button" id="copyWxBtn">复制微信号</button>
     </div>
-    <ol class="modal-steps">
-      <li>复制微信号，打开微信搜索并添加好友。</li>
-      <li>添加后说明来意：Plus 开通、Pro 5X 升级或订单问题。</li>
-    </ol>
-    <button class="modal-close" type="button" data-modal-close>关闭弹窗</button>
+    <button type="button" class="modal-close" id="closeWxModal">关闭</button>
   </div>
 </div>
 
-<div class="modal-backdrop" id="rechargePreflightModal" role="dialog" aria-modal="true" aria-labelledby="rechargePreflightTitle" hidden>
-  <div class="modal-card recharge-modal-card" tabindex="-1">
-    <h2 id="rechargePreflightTitle">进入激活系统前，请先确认</h2>
-    <div class="preflight-warning" role="note" aria-label="避免重复充值提醒">
-      <div id="rechargeDayWarning">
-        <strong>未到账，先查卡密状态</strong>
-        <div class="recharge-status-steps">
-          <span><b>处理中</b>继续等待，不代表失败</span>
-          <span><b>已使用但未到账</b>刷新账号或联系客服</span>
-          <span><b>充值过程中</b>保持 GPT 页面打开并保持登录，否则可能失败</span>
-        </div>
-        <p class="recharge-repeat-note">结果确认前，不要提交第二张卡密。重复充值可能消耗两张卡密，但有效期不会叠加，仍只有一个月。</p>
-      </div>
-      <div id="rechargeNightWarning" hidden>
-        <strong>夜间可能延迟到账</strong>
-        <div class="recharge-status-steps">
-          <span><b>正在处理</b>夜间可能排队，请继续等待</span>
-          <span><b>客服时间</b>9:00—23:00，未到账请上班后核查</span>
-          <span><b>充值过程中</b>保持 GPT 页面打开并保持登录，否则可能失败</span>
-        </div>
-        <p class="recharge-repeat-note">结果确认前，不要在任何平台提交第二张卡密。重复充值可能消耗两张卡密，但有效期不叠加；已消耗卡密无法退款。</p>
-      </div>
-    </div>
-    <label class="preflight-night-ack" id="rechargeNightAckRow" hidden>
-      <input id="rechargeNightAck" type="checkbox">
-      <span>我已知晓：夜间未到账需要等人工核实，不购买或提交第二张卡密。</span>
-    </label>
-    <div class="recharge-modal-actions">
-      <button class="btn primary" id="rechargePreflightConfirm" type="button">
-        <strong id="rechargePreflightConfirmTitle">我已了解，进入激活系统</strong>
-        <span id="rechargePreflightConfirmDesc">先查卡密状态，未确认结果前不提交第二张卡密</span>
-      </button>
-      <button class="btn secondary" id="rechargePreflightCancel" type="button">暂不进入</button>
-    </div>
-  </div>
-</div>
-
+<button class="float-wx" type="button" data-contact data-note="微信咨询"><i></i><span>微信咨询</span></button>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
   const WX_ID = 'jiage01888';
+  const modal = document.getElementById('wechatModal');
+  const modalDesc = document.getElementById('wechatModalDesc');
+  const closeBtn = document.getElementById('closeWxModal');
+  const copyBtn = document.getElementById('copyWxBtn');
   const toast = document.getElementById('toast');
-  const wechatModal = document.getElementById('wechatModal');
-  const rechargePreflightModal = document.getElementById('rechargePreflightModal');
-  const rechargePreflightConfirm = document.getElementById('rechargePreflightConfirm');
-  const rechargePreflightCancel = document.getElementById('rechargePreflightCancel');
-  const rechargePreflightConfirmTitle = document.getElementById('rechargePreflightConfirmTitle');
-  const rechargePreflightConfirmDesc = document.getElementById('rechargePreflightConfirmDesc');
-  const rechargeNightAck = document.getElementById('rechargeNightAck');
-  const RECHARGE_URL = 'https://www.aipass.me/api/recharge-go';
-  const NIGHT_START_HOUR = 23;
-  const DAY_START_HOUR = 9;
-  const NIGHT_GATE_SECONDS = 3;
-  const NIGHT_PREVIEW = new URLSearchParams(window.location.search).get('preview') === 'night';
-  let lastContactTrigger = null;
-  let lastRechargeTrigger = null;
-  let rechargeTargetUrl = RECHARGE_URL;
-  let rechargeNavigated = false;
-  let nightMode = null;
-  let nightGateTimer = null;
-  let nightGateRemaining = 0;
-  let nightDelayPassed = false;
-  function showToast(message){
-    if(!toast) return;
-    toast.textContent = message;
+
+  function showToast(msg){
+    toast.textContent = msg;
     toast.classList.add('show');
-    window.clearTimeout(showToast.timer);
-    showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1500);
+    clearTimeout(showToast.t);
+    showToast.t = setTimeout(() => toast.classList.remove('show'), 1800);
   }
 
-  function track(eventName, detail){
-    if(!eventName) return;
-    const payload = Object.assign({event: eventName}, detail || {});
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(payload);
-    if(typeof window.gtag === 'function'){
-      window.gtag('event', eventName, detail || {});
+  function openModal(note){
+    if(note){
+      modalDesc.textContent = '添加微信后请备注「' + note + '」，嘉哥在线为您一对一确认并办理（9:00–23:00）。';
+    } else {
+      modalDesc.textContent = 'Pro 100 / 200 / 500、Gemini / Grok 充值、正规发票（+5%）与对公转账，均可直接加微信联系。';
     }
-    window.dispatchEvent(new CustomEvent('gptc:track', {detail: payload}));
+    modal.hidden = false;
   }
 
-  async function copyWx(){
-    try{
+  document.querySelectorAll('[data-contact]').forEach((el) => {
+    el.addEventListener('click', () => openModal(el.getAttribute('data-note') || ''));
+  });
+  closeBtn.addEventListener('click', () => { modal.hidden = true; });
+  modal.addEventListener('click', (e) => { if(e.target === modal) modal.hidden = true; });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !modal.hidden) modal.hidden = true; });
+
+  copyBtn.addEventListener('click', async () => {
+    try {
       await navigator.clipboard.writeText(WX_ID);
-      track('home_wechat_copy');
-      showToast('已复制微信：' + WX_ID);
-    }catch(error){
-      track('home_wechat_copy', {fallback: true});
-      showToast('微信号：' + WX_ID);
+      showToast('已复制微信号：' + WX_ID);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = WX_ID;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      ta.remove();
+      showToast('已复制微信号：' + WX_ID);
     }
-  }
-
-  function openWechatModal(trigger){
-    if(!wechatModal) return;
-    lastContactTrigger = trigger || document.activeElement;
-    wechatModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    track('home_wechat_modal_open', {position: trigger?.getAttribute('data-track-position') || undefined});
-    const modalCard = wechatModal.querySelector('.modal-card');
-    if(modalCard) modalCard.focus();
-  }
-
-  function closeWechatModal(){
-    if(!wechatModal || wechatModal.hidden) return;
-    wechatModal.hidden = true;
-    document.body.style.overflow = '';
-    if(lastContactTrigger && typeof lastContactTrigger.focus === 'function'){
-      lastContactTrigger.focus();
-    }
-  }
-
-  function getBeijingHour(){
-    const hourPart = new Intl.DateTimeFormat('en-GB',{
-      timeZone:'Asia/Shanghai',
-      hour:'2-digit',
-      hourCycle:'h23'
-    }).formatToParts(new Date()).find((part) => part.type === 'hour');
-    return Number(hourPart?.value || 0);
-  }
-
-  function shouldUseNightMode(){
-    if(NIGHT_PREVIEW) return true;
-    const hour = getBeijingHour();
-    return hour >= NIGHT_START_HOUR || hour < DAY_START_HOUR;
-  }
-
-  function updateNightGate(){
-    if(!rechargePreflightConfirm || !rechargePreflightConfirmTitle) return;
-    if(!nightMode){
-      rechargePreflightConfirm.disabled = false;
-      rechargePreflightConfirmTitle.textContent = '我已了解，进入激活系统';
-      return;
-    }
-    const checked = Boolean(rechargeNightAck?.checked);
-    rechargePreflightConfirm.disabled = !(nightDelayPassed && checked);
-    if(!nightDelayPassed){
-      rechargePreflightConfirmTitle.textContent = '请先阅读夜间提醒（' + nightGateRemaining + '秒）';
-    }else if(!checked){
-      rechargePreflightConfirmTitle.textContent = '请勾选确认后继续';
-    }else{
-      rechargePreflightConfirmTitle.textContent = '我已了解风险，继续进入激活系统';
-    }
-  }
-
-  function stopNightGate(){
-    if(nightGateTimer){
-      window.clearInterval(nightGateTimer);
-      nightGateTimer = null;
-    }
-  }
-
-  function resetNightGate(){
-    stopNightGate();
-    if(rechargeNightAck) rechargeNightAck.checked = false;
-    if(!nightMode){
-      nightDelayPassed = true;
-      updateNightGate();
-      return;
-    }
-    nightDelayPassed = false;
-    nightGateRemaining = NIGHT_GATE_SECONDS;
-    updateNightGate();
-    nightGateTimer = window.setInterval(() => {
-      nightGateRemaining -= 1;
-      if(nightGateRemaining <= 0){
-        stopNightGate();
-        nightDelayPassed = true;
-      }
-      updateNightGate();
-    }, 1000);
-  }
-
-  function applyRechargeTimeMode(){
-    const nextNightMode = shouldUseNightMode();
-    const modeChanged = nightMode !== nextNightMode;
-    nightMode = nextNightMode;
-    const modalCard = rechargePreflightModal?.querySelector('.recharge-modal-card');
-    modalCard?.classList.toggle('night-mode', nightMode);
-    const title = document.getElementById('rechargePreflightTitle');
-    if(title) title.textContent = nightMode ? '当前为夜间时段，请先确认' : '进入激活系统前，请先确认';
-    const dayWarning = document.getElementById('rechargeDayWarning');
-    const nightWarning = document.getElementById('rechargeNightWarning');
-    const ackRow = document.getElementById('rechargeNightAckRow');
-    if(dayWarning) dayWarning.hidden = nightMode;
-    if(nightWarning) nightWarning.hidden = !nightMode;
-    if(ackRow) ackRow.hidden = !nightMode;
-    if(rechargePreflightConfirmDesc){
-      rechargePreflightConfirmDesc.textContent = nightMode
-        ? '夜间先查卡密状态，未确认结果前不提交第二张卡密'
-        : '先查卡密状态，未确认结果前不提交第二张卡密';
-    }
-    if(rechargePreflightCancel){
-      rechargePreflightCancel.textContent = nightMode ? '暂不操作，等客服上班' : '暂不进入';
-    }
-    if(modeChanged && rechargePreflightModal && !rechargePreflightModal.hidden) resetNightGate();
-  }
-
-  function closeRechargePreflight(){
-    if(!rechargePreflightModal || rechargePreflightModal.hidden) return;
-    stopNightGate();
-    rechargePreflightModal.hidden = true;
-    document.body.style.overflow = '';
-    if(lastRechargeTrigger && typeof lastRechargeTrigger.focus === 'function'){
-      lastRechargeTrigger.focus();
-    }
-  }
-
-  function enterRecharge(){
-    if(rechargePreflightConfirm?.disabled) return;
-    if(rechargeNavigated) return;
-    rechargeNavigated = true;
-    stopNightGate();
-    window.location.href = rechargeTargetUrl;
-    closeRechargePreflight();
-  }
-
-  function openRechargePreflight(url, trigger){
-    if(!rechargePreflightModal){
-      window.location.href = url || RECHARGE_URL;
-      return;
-    }
-    applyRechargeTimeMode();
-    rechargeTargetUrl = url || RECHARGE_URL;
-    lastRechargeTrigger = trigger || document.activeElement;
-    rechargePreflightModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    const modalCard = rechargePreflightModal.querySelector('.modal-card');
-    if(modalCard) modalCard.focus();
-    rechargeNavigated = false;
-    resetNightGate();
-  }
-
-  document.querySelectorAll('[data-contact]').forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      openWechatModal(button);
-    });
   });
 
-  document.querySelectorAll('[data-copy-wx]').forEach((button) => {
-    button.addEventListener('click', copyWx);
-  });
-
-  document.querySelectorAll('[data-modal-close]').forEach((button) => {
-    button.addEventListener('click', closeWechatModal);
-  });
-
-  if(wechatModal){
-    wechatModal.addEventListener('click', (event) => {
-      if(event.target === wechatModal) closeWechatModal();
-    });
-    document.addEventListener('keydown', (event) => {
-      if(event.key === 'Escape') closeWechatModal();
-    });
-  }
-
-  document.querySelectorAll('a[href="https://www.aipass.me/api/recharge-go"]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      openRechargePreflight(link.href, link);
-    });
-  });
-
-  if(rechargePreflightConfirm){
-    rechargePreflightConfirm.addEventListener('click', enterRecharge);
-  }
-  if(rechargeNightAck){
-    rechargeNightAck.addEventListener('change', updateNightGate);
-  }
-  if(rechargePreflightCancel){
-    rechargePreflightCancel.addEventListener('click', closeRechargePreflight);
-  }
-  if(rechargePreflightModal){
-    rechargePreflightModal.addEventListener('click', (event) => {
-      if(event.target === rechargePreflightModal) closeRechargePreflight();
-    });
-    document.addEventListener('keydown', (event) => {
-      if(event.key === 'Escape' && !rechargePreflightModal.hidden){
-        closeRechargePreflight();
-      }
-    });
-  }
-  applyRechargeTimeMode();
-  window.setInterval(applyRechargeTimeMode, 30000);
-
-  document.querySelectorAll('[data-track-event]').forEach((element) => {
-    element.addEventListener('click', () => {
-      track(element.getAttribute('data-track-event'), {position: element.getAttribute('data-track-position') || undefined});
-    });
-  });
-
-  document.querySelectorAll('[data-track]').forEach((element) => {
-    element.addEventListener('click', () => {
-      track(element.getAttribute('data-track'), {position: element.getAttribute('data-track-position') || undefined});
+  document.querySelectorAll('[data-faq-tab]').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-faq-tab');
+      document.querySelectorAll('[data-faq-tab]').forEach((t) => t.classList.toggle('active', t === tab));
+      document.querySelectorAll('[data-faq-panel]').forEach((p) => {
+        p.classList.toggle('active', p.getAttribute('data-faq-panel') === target);
+      });
     });
   });
 })();

@@ -6,15 +6,15 @@
 <title>Codex 用 ChatGPT 订阅还是 API Key？按使用场景判断｜GPT4.pro</title>
 <meta name="description" content="Codex 可以用 ChatGPT 订阅登录，也可以用 API Key 按量计费。本文按本地交互、CI 自动化、团队权限和费用归属，帮你判断该选哪一种。">
 <meta name="keywords" content="Codex订阅,Codex API Key,ChatGPT Plus Codex,Codex登录,Codex计费,GPT4.pro">
-<link rel="canonical" href="https://www.gpt4.pro/blog/codex-subscription-vs-api-key.html">
+<link rel="canonical" href="https://www.gpt4.pro/blog/codex-pro-guide.html">
 <meta property="og:title" content="Codex 用 ChatGPT 订阅还是 API Key？按使用场景判断">
 <meta property="og:description" content="本地交互、CI 自动化、团队权限和费用归属不同，Codex 的登录方式也应该不同。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.gpt4.pro/blog/codex-subscription-vs-api-key.html">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Codex 用 ChatGPT 订阅还是 API Key？按使用场景判断","description":"Codex 可以用 ChatGPT 订阅登录，也可以用 API Key 按量计费。本文按本地交互、CI 自动化、团队权限和费用归属，帮你判断该选哪一种。","datePublished":"2026-07-15","dateModified":"2026-07-15","author":{"@type":"Organization","name":"嘉哥AI"},"publisher":{"@type":"Organization","name":"嘉哥GPT","url":"https://www.gpt4.pro/"},"mainEntityOfPage":"https://www.gpt4.pro/blog/codex-subscription-vs-api-key.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"有 ChatGPT Plus 后还需要 API Key 吗？","acceptedAnswer":{"@type":"Answer","text":"如果你主要在 Codex 桌面端、CLI 或 IDE 中交互使用，通常先用 ChatGPT 订阅登录即可。只有需要 CI、脚本、后端服务等程序化按量调用时，才需要单独考虑 API Key。"}},{"@type":"Question","name":"API Key 会消耗 ChatGPT Plus 的 Codex 额度吗？","acceptedAnswer":{"@type":"Answer","text":"不会。使用 API Key 时，费用由 OpenAI Platform 账户按标准 API 费率结算，不使用 ChatGPT 套餐内的 Codex 额度。"}},{"@type":"Question","name":"Codex Cloud 可以用 API Key 登录吗？","acceptedAnswer":{"@type":"Answer","text":"OpenAI 当前说明是 Codex Cloud 需要使用 ChatGPT 登录；API Key 更适合本地 Codex 和程序化工作流。"}}]}</script>
-<link rel="stylesheet" href="/assets/article-system.css">
-<script src="/assets/gptc-components.js" defer></script>
+<link rel="stylesheet" href="/assets/article-system.css?v=20261122c1">
+<script src="/assets/gptc-components.js?v=20261122wx2" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V36H9QT9GK"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-V36H9QT9GK');</script>
 <script src="/assets/gptc-tracking.js" defer></script>
@@ -27,9 +27,21 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<style>.nav-actions{display:inline-flex;align-items:center;gap:8px;flex-shrink:0}.nav-wx{display:inline-flex!important;align-items:center;justify-content:center;padding:8px 14px;border-radius:10px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;font-size:13.5px;font-weight:800;white-space:nowrap;cursor:pointer}.nav-wx:hover{background:#f8fafc}</style>
 </head>
 <body>
-<header class="site-header"><nav class="site-nav" aria-label="主导航"><a class="site-brand" href="/"><span>嘉哥GPT</span><small>嘉哥AI主理</small></a><div class="site-links"><a href="/pro/">Pro升级</a><a href="/codex/">Codex专题</a><a href="/pay/">支付判断</a><a href="/blog/">博客</a><button type="button" data-copy-wx>复制微信咨询</button><a rel="noopener" target="_blank" class="nav-buy" href="https://qfcc99.com/shop/jiage" data-track="codex_auth_nav_buy">充值 Plus</a></div></nav></header>
+<header class="site-header">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="site-brand" href="/"><span class="brand-dot">嘉</span><span>嘉哥AI</span></a>
+    <div class="site-links">
+      <a href="/#plans">ChatGPT 套餐</a>
+      <a href="/gemini/">Gemini / Grok</a>
+      <a href="/invoice/">企业开票</a>
+      <a href="/blog/">指南博客</a>
+    </div>
+    <div class="nav-actions"><button class="nav-wx" type="button" data-copy-wx>微信咨询</button><a rel="noopener" target="_blank" class="nav-cta" href="https://qfcc99.com/shop/jiage" data-track="nav_buy_click">立即充值 Plus</a></div>
+  </nav>
+</header>
 <main>
 <section class="article-hero"><div class="article-container hero-grid"><div><nav class="breadcrumbs" aria-label="面包屑"><a href="/">首页</a><span>/</span><a href="/blog/">博客</a><span>/</span><a href="/codex/">Codex专题</a><span>/</span><span>订阅与 API Key</span></nav><span class="article-kicker">Codex 使用方式判断</span><h1>Codex 用 ChatGPT 订阅还是 API Key？</h1><p class="article-dek">你是在电脑前和 Codex 一起改代码，还是要让脚本、CI 和后端自动调用？这个区别，比单纯比较价格更能决定该用 ChatGPT 订阅还是 API Key。</p><div class="article-meta"><span>2026-07-15</span><span>·</span><span>Codex 决策指南</span><span>·</span><span>嘉哥AI</span></div></div><div class="purchase-card compact"><span class="card-kicker">一分钟判断</span><h2>人主导任务，用订阅；程序主导调用，看 API</h2><p>日常在桌面端、CLI、IDE 里对话式改代码，先看 ChatGPT 套餐；CI、定时脚本和后端集成，再单独核算 API。</p><div class="button-row"><a class="button button-primary" href="/codex/" data-track="codex_auth_top_topic">进入 Codex 专题做判断</a><button class="button button-secondary" type="button" data-copy-wx data-track="codex_auth_top_consult">不确定就先咨询</button></div></div></div></section>
 <section class="article-shell"><div class="article-container article-grid"><article class="article-main">
@@ -44,6 +56,18 @@ var _hmt = _hmt || [];
 <section class="related-box" id="related"><strong>继续判断</strong><div class="related-grid"><a href="/codex/">Codex / Pro 专题页</a><a href="/blog/codex-plus-or-pro.html">Codex 开 Plus 还是 Pro？</a><a href="/blog/codex-usage-limit.html">Codex 额度不够怎么办？</a><a href="/blog/chatgpt-plus-codex-enough.html">Plus 对 Codex 是否够用？</a><a rel="noopener" target="_blank" href="https://github.com/jack12202/chatgpt-pro-codex-guide/blob/main/docs/codex-subscription-vs-api-key.md">GitHub：订阅与 API Key 长期指南</a></div></section>
 <section class="next-step-card" aria-label="下一步"><h2>把登录方式和使用强度一次判断清楚</h2><div class="next-step-list"><div><b>个人交互式开发</b><span>进入 Codex 专题，先判断 Plus 是否够用。</span></div><div><b>CI / 后端自动化</b><span>按 API 调用量和密钥权限单独设计，不和个人订阅混算。</span></div><div><b>支付或套餐仍拿不准</b><span>先咨询账号状态和使用场景，再选开通方案。</span></div></div><div class="button-row"><a class="button button-primary" href="/codex/" data-track="codex_auth_bottom_topic">进入 Codex 专题</a><button class="button button-ghost" type="button" data-copy-wx data-track="codex_auth_bottom_consult">复制微信咨询</button></div></section>
 </article><aside class="article-aside"><div class="purchase-card"><span class="card-kicker">嘉哥GPT（GPT4.pro）</span><h2>Pro / Codex 升级判断</h2><p>嘉哥AI主理，面向已经有 ChatGPT 账号、需要比较 Plus、Pro 和 API 使用路径的中文开发者。</p><ul><li>先按任务发起方式选登录</li><li>再按使用强度选套餐</li><li>Pro、发票、对公可先确认</li><li>30 天订阅售后保障</li></ul><div class="button-row"><a class="button button-primary" href="/codex/" data-track="codex_auth_side_topic">查看 Codex 专题</a><button class="button button-secondary" type="button" data-copy-wx data-track="codex_auth_side_consult">咨询套餐选择</button></div><p class="card-note">保障订阅服务，不承诺账号不会被 OpenAI 封禁。</p></div><nav class="toc" aria-label="文章目录"><strong>文章目录</strong><a href="#subscription">订阅适合什么场景</a><a href="#api-key">API Key 适合什么场景</a><a href="#mixed">两种方式如何并存</a><a href="#faq">FAQ</a><a href="#related">继续判断</a></nav></aside></div></section>
+
+<section data-jiage-cta="1" style="margin:28px auto 12px;max-width:860px;padding:20px 22px;border-radius:14px;border:1px solid #e2e8f0;background:#ffffff;box-shadow:0 8px 24px rgba(15,23,42,.05);">
+  <div style="font-size:12px;font-weight:800;color:#4338ca;margin-bottom:4px;">嘉哥AI · 2025年7月稳定运营至今</div>
+  <h3 style="margin:0 0 6px;font-size:18px;color:#0f172a;">ChatGPT Plus / Pro 原号直充 · 支持正规发票与对公</h3>
+  <p style="margin:0 0 14px;font-size:14px;line-height:1.7;color:#475569;">Plus ¥188/月（含票 ¥198）、Pro 100 ¥880、Pro 200 ¥1580、Pro 500 ¥3880，另支持 Gemini / Grok 自助充值。<strong>30 天订阅保障</strong>：失败全额退，30 天内掉订阅按比例退钱或补够 30 天（保订阅，不含平台风控封号）。</p>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <a rel="noopener" target="_blank" href="https://qfcc99.com/shop/jiage" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:10px;background:#4f46e5;color:#fff;font-weight:800;font-size:14px;text-decoration:none;">立即购买 Plus ¥188</a>
+    <a href="/#plans" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#f8fafc;color:#0f172a;font-weight:700;font-size:14px;text-decoration:none;">查看全部 4 档套餐</a>
+    <a href="/invoice/" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#f8fafc;color:#0f172a;font-weight:700;font-size:14px;text-decoration:none;">开票 / Pro 加微信（jiage01888）</a>
+  </div>
+</section>
+
 </main>
 <footer class="site-footer"><div class="footer-inner"><a href="/">嘉哥GPT</a> · <span>嘉哥AI主理</span> · <a href="/codex/">Codex专题</a> · <a href="/pro/">Pro升级</a> · <a href="/blog/">博客</a><p>嘉哥GPT（GPT4.pro）是嘉哥AI主理的 Pro / Codex 升级与开通说明站，为第三方信息与服务网站，并非 OpenAI 或 ChatGPT 官方网站。</p></div></footer><div class="mobile-sticky" aria-label="移动端快捷操作"><a class="button button-primary" href="/codex/" data-track="codex_auth_mobile_topic">判断 Plus / Pro / API</a><button class="button button-secondary" type="button" data-copy-wx data-track="codex_auth_mobile_consult">咨询</button></div>
 </body>
